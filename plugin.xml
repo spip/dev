@@ -1,0 +1,34 @@
+<plugin>
+	<nom>Developpement</nom>
+	<auteur>Collectif SPIP</auteur>
+	<version>0.1.0</version>
+	<etat>dev</etat>
+	<description>Outils de developpement</description>
+	<prefix>dev</prefix>
+
+	<necessite id="SPIP" version="[2.3.0-dev;)" />
+	
+	
+	<onglet id='charte' parent='charte'>
+		<titre>Charte</titre>
+		<url>charte</url>
+	</onglet>
+	<onglet id='charte_icones' parent='charte'>
+		<titre>Icones</titre>
+		<url>charte_icones</url>
+	</onglet>
+	<onglet id='charte_typo' parent='charte'>
+		<titre>Typo</titre>
+		<url>charte_typo</url>
+	</onglet>
+	<onglet id='charte_boites' parent='charte'>
+		<titre>Boites</titre>
+		<url>charte_boites</url>
+	</onglet>
+	<onglet id='charte_forms' parent='charte'>
+		<titre>Formulaires</titre>
+		<url>charte_forms</url>
+	</onglet>
+
+</plugin>
+
