@@ -7,7 +7,7 @@
 	<prefix>dev</prefix>
 
 	<necessite id="SPIP" version="[2.3.0-dev;)" />
-	
+	<options>dev_options.php</options>
 	
 	<onglet id='charte' parent='charte'>
 		<titre>Charte</titre>

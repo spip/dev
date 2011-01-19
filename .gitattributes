@@ -1,4 +1,5 @@
 * text=auto !eol
+/dev_options.php -text
 formulaires/charter.html -text
 formulaires/charter.php -text
 lang/charter_fr.php -text
