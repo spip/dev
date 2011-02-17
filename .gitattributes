@@ -2,6 +2,7 @@
 /dev_options.php -text
 formulaires/charter.html -text
 formulaires/charter.php -text
+inc/minipres.php -text
 lang/charter_fr.php -text
 modeles/typo.html -text
 /plugin.xml -text
