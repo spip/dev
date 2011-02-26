@@ -58,9 +58,11 @@ function install_debut_html($titre = 'AUTO', $onLoad = '') {
 
 // http://doc.spip.org/@install_fin_html
 function install_fin_html() {
-	echo "<pre>";
-	debug_print_backtrace();
-	echo "</pre>";
+	if (!_request('exec')=='install') {
+		echo "<pre>";
+		debug_print_backtrace();
+		echo "</pre>";
+	}
 	return "\n\t</div>\n\t</div>\n</body>\n</html>";
 }
 
