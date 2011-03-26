@@ -2,6 +2,17 @@
 	<h3 class="titrem">Titre du formulaire</h3>
 	[<p class="reponse_formulaire reponse_formulaire_ok">(#ENV*{message_ok})</p>]
 	[<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
+	<h4>Des fois on utilise un sous-titre (Etape 1/N)</h4>
+	<p>Un texte d'introduction, qui peut parfois sur plusieurs lignes.
+		Un texte d'introduction, qui peut parfois sur plusieurs lignes.
+		Un texte d'introduction, qui peut parfois sur plusieurs lignes.
+		Un texte d'introduction, qui peut parfois sur plusieurs lignes.
+	</p>
+	<ul class="spip">
+		<li>avec une enumeration</li>
+		<li>de plusieurs items</li>
+		<li>qui doivent tomber bien</li>
+	</ul>
 	[(#ENV{editable})
 	<form method='post' action='#ENV{action}'><div>
 		[(#REM) declarer les hidden qui declencheront le service du formulaire
