@@ -5,6 +5,7 @@
 	<etat>dev</etat>
 	<description>Outils de developpement</description>
 	<prefix>dev</prefix>
+	<categorie>outil</categorie>
 
 	<necessite id="SPIP" version="[2.3.0-dev;)" />
 	<options>dev_options.php</options>
