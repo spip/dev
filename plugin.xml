@@ -26,6 +26,10 @@
 		<titre>Boites</titre>
 		<url>charte_boites</url>
 	</onglet>
+	<onglet id='charte_listes' parent='charte'>
+		<titre>Listes</titre>
+		<url>charte_listes</url>
+	</onglet>
 	<onglet id='charte_forms' parent='charte'>
 		<titre>Formulaires</titre>
 		<url>charte_forms</url>
