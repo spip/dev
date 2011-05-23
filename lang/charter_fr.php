@@ -16,6 +16,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 'label_text_obli' => 'Une saisie obligatoire',
 'label_textarea' => 'Une saisie en bloc',
 'label_textarea_pleine_largeur' => 'Une saisie en bloc en <tt>.pleine_largeur</tt>',
+'label_textarea_pleine_largeur_obli' => 'Une saisie obligatoire en bloc en <tt>.pleine_largeur</tt>',
 'label_text_long_label' => 'Une saisie avec un tres tres long label qui utilise une class <tt>.long_label</tt>',
 'label_radio' => 'Un choix unique',
 'label_radio_oui' => 'Oui',

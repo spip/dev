@@ -27,15 +27,16 @@ function formulaires_charter_charger_dist(){
 function formulaires_charter_verifier_dist(){
 	$erreurs = array();
 	if (_request('cancel')){
-		$erreurs['message_erreur'] = _L('Un long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur...');
-		$erreurs['text'] = _L('Erreur');
-		$erreurs['text_obli'] = _L('Erreur');
-		$erreurs['textarea'] = _L('Un long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur...');
-		$erreurs['textarea_pleine_largeur'] = _L('Erreur');
-		$erreurs['text_long_label'] = _L('Erreur');
-		$erreurs['radio'] = _L('Erreur');
-		$erreurs['checkbox'] = _L('Erreur');
-		$erreurs['checkbox_long_label'] = _L('Erreur');
+		$erreurs['message_erreur'] = ('Un long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur...');
+		$erreurs['text'] = ('Erreur<br />'."<input type='checkbox' name='confirm' id='confirm' value='oui' /><label for='confirm'>Confirmez que vous &ecirc;tes sur</label>");
+		$erreurs['text_obli'] = ('Erreur');
+		$erreurs['textarea'] = ('Un long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur...');
+		$erreurs['textarea_pleine_largeur'] = ('Erreur');
+		$erreurs['textarea_pleine_largeur_obli'] = ('Erreur');
+		$erreurs['text_long_label'] = ('Erreur');
+		$erreurs['radio'] = ('Erreur');
+		$erreurs['checkbox'] = ('Erreur');
+		$erreurs['checkbox_long_label'] = ('Erreur');
 	}
 
 	return $erreurs;
@@ -45,7 +46,7 @@ function formulaires_charter_verifier_dist(){
  * Traitement de la saisie
  */
 function formulaires_charter_traiter_dist(){
-	return array('message_ok'=>_L('Bravo, c\'est une reussite !'));
+	return array('message_ok'=>('Bravo, c\'est une reussite !'));
 }
 
 ?>
