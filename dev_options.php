@@ -4,6 +4,7 @@ define('_LOG_FILTRE_GRAVITE',8);
 $GLOBALS['test_i18n'] = true; // signaler les trads manquantes
 
 function affiche_usage_memoire(){
+	chdir(_ROOT_CWD); // precaution
 	// dans l'espace prive uniquement, et si la fonction taille_en_octets est deja chargee
 	if (test_espace_prive()
 	    AND function_exists('taille_en_octets')
