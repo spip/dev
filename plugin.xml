@@ -3,6 +3,7 @@
 	<auteur>Collectif SPIP</auteur>
 	<version>0.1.0</version>
 	<etat>dev</etat>
+	<slogan>Outils de developpement</slogan>
 	<description>Outils de developpement</description>
 	<prefix>dev</prefix>
 	<categorie>outil</categorie>
