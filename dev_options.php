@@ -12,5 +12,7 @@ function affiche_usage_memoire(){
 		echo "<div style='position:fixed;top:0;right:0;color:#fff;background:#666;padding:5px;z-index:1000;'>"
 		 . taille_en_octets(memory_get_usage())
 		 . '</div>';
+	if (isset($GLOBALS['_debug']))
+		echo var_export($GLOBALS['_debug'],true);
 }
 register_shutdown_function('affiche_usage_memoire');
