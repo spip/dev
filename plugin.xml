@@ -12,27 +12,27 @@
 	<options>dev_options.php</options>
 	
 	<onglet id='charte' parent='charte'>
-		<titre>Charte</titre>
+		<titre>charter:titre_charte</titre>
 		<url>charte</url>
 	</onglet>
 	<onglet id='charte_icones' parent='charte'>
-		<titre>Icones</titre>
+		<titre>charter:titre_icones</titre>
 		<url>charte_icones</url>
 	</onglet>
 	<onglet id='charte_typo' parent='charte'>
-		<titre>Typo</titre>
+		<titre>charter:titre_typo</titre>
 		<url>charte_typo</url>
 	</onglet>
 	<onglet id='charte_boites' parent='charte'>
-		<titre>Boites</titre>
+		<titre>charter:titre_boites</titre>
 		<url>charte_boites</url>
 	</onglet>
 	<onglet id='charte_listes' parent='charte'>
-		<titre>Listes</titre>
+		<titre>charter:titre_listes</titre>
 		<url>charte_listes</url>
 	</onglet>
 	<onglet id='charte_forms' parent='charte'>
-		<titre>Formulaires</titre>
+		<titre>charter:titre_formulaires</titre>
 		<url>charte_forms</url>
 	</onglet>
 

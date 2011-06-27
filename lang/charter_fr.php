@@ -24,6 +24,13 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 'label_checkbox' => 'Un choix multiple',
 'label_checkbox_long_label' => 'Un choix multiple avec un tres tres long label qui utilise une class <tt>.long_label</tt>',
 
+'titre_boites' => 'Boites',
+'titre_charte' => 'Charte',
+'titre_formulaires' => 'Formulaires',
+'titre_icones' => 'Icones',
+'titre_listes' => 'Listes',
+'titre_typo' => 'Typo',
+
 );
 
 ?>
