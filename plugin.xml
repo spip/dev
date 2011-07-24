@@ -4,6 +4,7 @@
 	<version>0.1.0</version>
 	<etat>dev</etat>
 	<slogan>Outils de developpement</slogan>
+	<icon>dev-32.png</icon>
 	<description>Outils de developpement</description>
 	<prefix>dev</prefix>
 	<categorie>outil</categorie>
