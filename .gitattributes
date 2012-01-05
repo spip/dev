@@ -6,6 +6,7 @@ formulaires/charter.php -text
 inc/minipres.php -text
 lang/charter.xml -text
 lang/charter_fr.php -text
+lang/paquet-dev.xml -text
 modeles/typo.html -text
 prive/squelettes/contenu/charte.html -text
 prive/squelettes/contenu/charte_boites.html -text
