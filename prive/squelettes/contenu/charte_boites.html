@@ -8,23 +8,23 @@
 
 	<h1>Boîtes</h1>
 	#BOITE_OUVRIR
-		<p>"box" est le conteneur de <b>base</b> des boites.
+		<p>"box" est le conteneur de <b>base</b> des boîtes.
 		Tous les autres conteneurs sont herites de celui la.</p>
 		<h3><tt>&#35;BOITE_OUVRIR</tt></h3>
-		<p><tt>&#35;BOITE_OUVRIR</tt> ouvre une boite HTML et accepte 3 arguments optionnels :</p>
+		<p><tt>&#35;BOITE_OUVRIR</tt> ouvre une boîte HTML et accepte 3 arguments optionnels :</p>
 		<ul>
 			<li>le contenu du header en premier argument, en général un titre.
 				Si il ne contient pas de balise &lt;hn> il est automatiquement wrappé par un &lt;h3></li>
-			<li>les classes de la boite, qui peuvent etre des classes d'habillages ou de fond, décrites ci-dessous</li>
+			<li>les classes de la boîte, qui peuvent etre des classes d'habillages ou de fond, décrites ci-dessous</li>
 			<li>les classes du header</li>
 		</ul>
 		<h3><tt>&#35;BOITE_PIED</tt></h3>
-		<p><tt>&#35;BOITE_PIED</tt> ferme le corps de la boite HTML et ouvre son pied</p>
+		<p><tt>&#35;BOITE_PIED</tt> ferme le corps de la boîte HTML et ouvre son pied</p>
 		<h3><tt>&#35;BOITE_FERMER</tt></h3>
-		<p><tt>&#35;BOITE_FERMER</tt> ferme la boite HTML. Elle ne prend pas d'argument</p>
+		<p><tt>&#35;BOITE_FERMER</tt> ferme la boîte HTML. Elle ne prend pas d'argument</p>
 	#BOITE_FERMER
 
-	<h2>Habillage des boites</h2>
+	<h2>Habillage des boîtes</h2>
 	<h3>Contour</h3>
 	#BOITE_OUVRIR{'Boîte simple','simple'}
 		<p><tt>&#35;BOITE_OUVRIR{'Boîte simple','simple'}</tt></p>
@@ -93,41 +93,41 @@
 		<p><tt>&#35;BOITE_FERMER</tt></p>
 	#BOITE_FERMER
 
-	<h2>Header de boite</h2>
+	<h2>Header de boîte</h2>
 	<p>Les headers disposent de variantes</p>
-	#BOITE_OUVRIR{#CHEMIN_IMAGE{article-24.png}|balise_img{'',cadre-icone}|concat{Boîte simple&titrem avec icone},'simple','titrem'}
-		<p><tt>&#35;BOITE_OUVRIR{&#35;CHEMIN_IMAGE{article-24.png}|balise_img{'',cadre-icone}|concat{Boîte simple&titrem avec icone},'simple','titrem'}</tt></p>
+	#BOITE_OUVRIR{#CHEMIN_IMAGE{article-24.png}|balise_img{'',cadre-icone}|concat{Boîte simple & titrem avec icône},'simple','titrem'}
+		<p><tt>&#35;BOITE_OUVRIR{&#35;CHEMIN_IMAGE{article-24.png}|balise_img{'',cadre-icone}|concat{Boîte simple & titrem avec icône},'simple','titrem'}</tt></p>
 		<p><tt>&#35;BOITE_FERMER</tt></p>
 	#BOITE_FERMER
-	#BOITE_OUVRIR{'<h2>Boîte simple&titrem, en h2</h2>','simple','titrem'}
-		<p><tt>&#35;BOITE_OUVRIR{&lt;h2>Boîte simple&titrem, en h2&lt;/h2>,'simple','titrem'}</tt></p>
-		<p><tt>&#35;BOITE_FERMER</tt></p>
-	#BOITE_FERMER
-
-	#BOITE_OUVRIR{#CHEMIN_IMAGE{article-24.png}|balise_img{'',cadre-icone}|concat{Boîte simple&section avec icone},'simple','section'}
-		<p><tt>&#35;BOITE_OUVRIR{&#35;CHEMIN_IMAGE{article-24.png}|balise_img{'',cadre-icone}|concat{Boîte simple&section avec icone},'simple','section'}</tt></p>
+	#BOITE_OUVRIR{'<h2>Boîte simple & titrem, en h2</h2>','simple','titrem'}
+		<p><tt>&#35;BOITE_OUVRIR{&lt;h2>Boîte simple & titrem, en h2&lt;/h2>,'simple','titrem'}</tt></p>
 		<p><tt>&#35;BOITE_FERMER</tt></p>
 	#BOITE_FERMER
 
-	#BOITE_OUVRIR{'Boîte simple&section','simple','section'}
-		<p><tt>&#35;BOITE_OUVRIR{'Boîte simple&section','simple','section'}</tt></p>
+	#BOITE_OUVRIR{#CHEMIN_IMAGE{article-24.png}|balise_img{'',cadre-icone}|concat{Boîte simple & section avec icône},'simple','section'}
+		<p><tt>&#35;BOITE_OUVRIR{&#35;CHEMIN_IMAGE{article-24.png}|balise_img{'',cadre-icone}|concat{Boîte simple & section avec icône},'simple','section'}</tt></p>
 		<p><tt>&#35;BOITE_FERMER</tt></p>
 	#BOITE_FERMER
 
-	#BOITE_OUVRIR{'Boîte simple&bam','simple','bam'}
-		<p><tt>&#35;BOITE_OUVRIR{'Boîte simple&bam','simple','bam'}</tt></p>
+	#BOITE_OUVRIR{'Boîte simple & section','simple','section'}
+		<p><tt>&#35;BOITE_OUVRIR{'Boîte simple & section','simple','section'}</tt></p>
 		<p><tt>&#35;BOITE_FERMER</tt></p>
 	#BOITE_FERMER
 
-	#BOITE_OUVRIR{'Boîte basic inverse&topper','basic inverse','topper'}
-		<p><tt>&#35;BOITE_OUVRIR{'Boîte basic inverse&topper','basic inverse','topper'}</tt></p>
+	#BOITE_OUVRIR{'Boîte simple & bam','simple','bam'}
+		<p><tt>&#35;BOITE_OUVRIR{'Boîte simple & bam','simple','bam'}</tt></p>
 		<p><tt>&#35;BOITE_FERMER</tt></p>
 	#BOITE_FERMER
 
-	<h2>Pied de boite</h2>
-	<p>Le pied de boite est utilise pour des boutons d'action</p>
-	#BOITE_OUVRIR{'Boîte simple&titrem','simple','titrem'}
-		<p><tt>&#35;BOITE_OUVRIR{'Boîte simple&titrem','simple','titrem'}</tt></p>
+	#BOITE_OUVRIR{'Boîte basic inverse & topper','basic inverse','topper'}
+		<p><tt>&#35;BOITE_OUVRIR{'Boîte basic inverse & topper','basic inverse','topper'}</tt></p>
+		<p><tt>&#35;BOITE_FERMER</tt></p>
+	#BOITE_FERMER
+
+	<h2>Pied de boîte</h2>
+	<p>Le pied de boîte est utilise pour des boutons d'action</p>
+	#BOITE_OUVRIR{'Boîte simple & titrem','simple','titrem'}
+		<p><tt>&#35;BOITE_OUVRIR{'Boîte simple & titrem','simple','titrem'}</tt></p>
 		<p><tt>&#35;BOITE_PIED</tt></p>
 		<p><tt>&#35;BOUTON_ACTION{demo,&#35;SELF}</tt></p>
 		<p><tt>&#35;BOITE_FERMER</tt></p>

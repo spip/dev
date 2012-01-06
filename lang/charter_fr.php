@@ -27,10 +27,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'legend' => 'Legende d\'un fieldset, pour un groupe de saisie',
 
 	// T
-	'titre_boites' => 'Boites',
+	'titre_boites' => 'Boîtes',
 	'titre_charte' => 'Charte',
 	'titre_formulaires' => 'Formulaires',
-	'titre_icones' => 'Icones',
+	'titre_icones' => 'Icônes',
 	'titre_listes' => 'Listes',
 	'titre_typo' => 'Typo'
 );
