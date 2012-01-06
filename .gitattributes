@@ -7,6 +7,8 @@ inc/minipres.php -text
 lang/charter.xml -text
 lang/charter_fr.php -text
 lang/paquet-dev.xml -text
+lang/paquet-dev_en.php -text
+lang/paquet-dev_sk.php -text
 modeles/typo.html -text
 prive/squelettes/contenu/charte.html -text
 prive/squelettes/contenu/charte_boites.html -text
