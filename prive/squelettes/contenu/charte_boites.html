@@ -8,15 +8,13 @@
 
 	<h1>Boîtes</h1>
 	#BOITE_OUVRIR
-		<p>«box» est le conteneur de <b>base</b> des boîtes.
-		Tous les autres conteneurs sont hérités de celui-là.</p>
+		<p>«box» est le conteneur de <strong>base</strong> des boîtes. Tous les autres conteneurs sont hérités de celui-là.</p>
 		<h3><tt>&#35;BOITE_OUVRIR</tt></h3>
 		<p><tt>&#35;BOITE_OUVRIR</tt> ouvre une boîte HTML et accepte 3 arguments optionnels :</p>
 		<ul>
-			<li>le contenu du header en premier argument, en général un titre.
-				Si il ne contient pas de balise &lt;hn> il est automatiquement «wrappé» par un &lt;h3></li>
-			<li>les classes de la boîte, qui peuvent être des classes d'habillages ou de fond, décrites ci-dessous</li>
-			<li>les classes du header</li>
+			<li>le contenu du header en premier argument, en général un titre. Si il ne contient pas de balise &lt;hn> il est automatiquement «wrappé» par un &lt;h3>,</li>
+			<li>les classes de la boîte, qui peuvent être des classes d'habillages ou de fond, décrites ci-dessous,</li>
+			<li>les classes du header.</li>
 		</ul>
 		<h3><tt>&#35;BOITE_PIED</tt></h3>
 		<p><tt>&#35;BOITE_PIED</tt> ferme le corps de la boîte HTML et ouvre son pied</p>
@@ -25,7 +23,7 @@
 	#BOITE_FERMER
 
 	<h2>Habillage des boîtes</h2>
-	<h3>Contour</h3>
+	<h3>1- Contour</h3>
 	#BOITE_OUVRIR{'Boîte simple','simple'}
 		<p><tt>&#35;BOITE_OUVRIR{'Boîte simple','simple'}</tt></p>
 		<p><tt>&#35;BOITE_FERMER</tt></p>
@@ -51,7 +49,7 @@
 		<p><tt>&#35;BOITE_FERMER</tt></p>
 	#BOITE_FERMER
 
-	<h3>Fonds</h3>
+	<h3>2- Fonds</h3>
 	<p>Combiner la classe basic avec une classe de fond</p>
 
 	#BOITE_OUVRIR{'Boîte basic highlight','basic highlight'}
@@ -64,7 +62,7 @@
 		<p><tt>&#35;BOITE_FERMER</tt></p>
 	#BOITE_FERMER
 
-	<h3>Erreurs, succès, avertissement</h3>
+	<h3>3- Erreurs, succès, avertissement</h3>
 
 	#BOITE_OUVRIR{'Message de succès','success'}
 		<p><tt>&#35;BOITE_OUVRIR{'Message de succès','success'}</tt></p>
