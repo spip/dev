@@ -2,20 +2,20 @@
 
   Squelette
   (c) 2009 xxx
-  Distribue sous licence GPL
+  Distribué sous licence GPL
 
 ]
 
 	<h1>Boîtes</h1>
 	#BOITE_OUVRIR
-		<p>"box" est le conteneur de <b>base</b> des boîtes.
-		Tous les autres conteneurs sont herites de celui la.</p>
+		<p>«box» est le conteneur de <b>base</b> des boîtes.
+		Tous les autres conteneurs sont hérités de celui-là.</p>
 		<h3><tt>&#35;BOITE_OUVRIR</tt></h3>
 		<p><tt>&#35;BOITE_OUVRIR</tt> ouvre une boîte HTML et accepte 3 arguments optionnels :</p>
 		<ul>
 			<li>le contenu du header en premier argument, en général un titre.
-				Si il ne contient pas de balise &lt;hn> il est automatiquement wrappé par un &lt;h3></li>
-			<li>les classes de la boîte, qui peuvent etre des classes d'habillages ou de fond, décrites ci-dessous</li>
+				Si il ne contient pas de balise &lt;hn> il est automatiquement «wrappé» par un &lt;h3></li>
+			<li>les classes de la boîte, qui peuvent être des classes d'habillages ou de fond, décrites ci-dessous</li>
 			<li>les classes du header</li>
 		</ul>
 		<h3><tt>&#35;BOITE_PIED</tt></h3>
@@ -64,7 +64,7 @@
 		<p><tt>&#35;BOITE_FERMER</tt></p>
 	#BOITE_FERMER
 
-	<h3>Erreurs, succes, avertissement</h3>
+	<h3>Erreurs, succès, avertissement</h3>
 
 	#BOITE_OUVRIR{'Message de succès','success'}
 		<p><tt>&#35;BOITE_OUVRIR{'Message de succès','success'}</tt></p>
@@ -76,7 +76,7 @@
 	#BOITE_FERMER
 
 	#BOITE_OUVRIR{'Message d&#39;avertissement','notice'}
-		<p><tt>&#35;BOITE_OUVRIR{'Message d&#39;avertissement','notice'}</tt></p>
+		<p><tt>&#35;BOITE_OUVRIR{'Message d&amp;#39;avertissement','notice'}</tt></p>
 		<p><tt>&#35;BOITE_FERMER</tt></p>
 	#BOITE_FERMER
 	#BOITE_OUVRIR{'','notice'}
@@ -85,7 +85,7 @@
 	#BOITE_FERMER
 
 	#BOITE_OUVRIR{'Message d&#39;erreur','error'}
-		<p><tt>&#35;BOITE_OUVRIR{'Message d&#39;erreur','error'}</tt></p>
+		<p><tt>&#35;BOITE_OUVRIR{'Message d&amp;#39;erreur','error'}</tt></p>
 		<p><tt>&#35;BOITE_FERMER</tt></p>
 	#BOITE_FERMER
 	#BOITE_OUVRIR{'','error'}
@@ -125,7 +125,7 @@
 	#BOITE_FERMER
 
 	<h2>Pied de boîte</h2>
-	<p>Le pied de boîte est utilise pour des boutons d'action</p>
+	<p>Le pied de boîte est utilisé pour des boutons d'action</p>
 	#BOITE_OUVRIR{'Boîte simple & titrem','simple','titrem'}
 		<p><tt>&#35;BOITE_OUVRIR{'Boîte simple & titrem','simple','titrem'}</tt></p>
 		<p><tt>&#35;BOITE_PIED</tt></p>
