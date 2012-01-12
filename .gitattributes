@@ -5,6 +5,7 @@ formulaires/charter.html -text
 formulaires/charter.php -text
 inc/minipres.php -text
 lang/charter.xml -text
+lang/charter_en.php -text
 lang/charter_fr.php -text
 lang/paquet-dev.xml -text
 lang/paquet-dev_en.php -text
