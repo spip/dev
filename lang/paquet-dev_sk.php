@@ -8,8 +8,8 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// D
-	'dev_description' => 'Nástroje na vývoj',
-	'dev_slogan' => 'Nástroje na vývoj'
+	'dev_description' => 'Nástroje na vývoj', # MODIF
+	'dev_slogan' => 'Nástroje na vývoj' # MODIF
 );
 
 ?>
