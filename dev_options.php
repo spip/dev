@@ -6,7 +6,7 @@ define('_LOG_FILTRE_GRAVITE',8);
 $GLOBALS['test_i18n'] = true; // signaler les trads manquantes
 
 if(!defined('_DEBUG_MINIPRES'))
-	define('_DEBUG_MINIPRES',false);
+	define('_DEBUG_MINIPRES',true);
 
 function affiche_usage_memoire(){
 	chdir(_ROOT_CWD); // precaution
