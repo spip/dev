@@ -1,5 +1,6 @@
 * text=auto !eol
 /dev-32.png -text
+/dev_fonctions.php -text
 /dev_options.php -text
 formulaires/charter.html -text
 formulaires/charter.php -text
