@@ -5,6 +5,9 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 define('_LOG_FILTRE_GRAVITE',8);
 $GLOBALS['test_i18n'] = true; // signaler les trads manquantes
 
+if(!defined('_DEBUG_MINIPRES'))
+	define('_DEBUG_MINIPRES',false);
+
 function affiche_usage_memoire(){
 	chdir(_ROOT_CWD); // precaution
 	// dans l'espace prive uniquement, et si la fonction taille_en_octets est deja chargee

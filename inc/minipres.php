@@ -59,7 +59,7 @@ function install_debut_html($titre = 'AUTO', $onLoad = '') {
 
 // http://doc.spip.org/@install_fin_html
 function install_fin_html() {
-	if (!_request('exec')=='install') {
+	if (!_request('exec')=='install' && _DEBUG_MINIPRES) {
 		echo "<pre>";
 		debug_print_backtrace();
 		echo "</pre>";
