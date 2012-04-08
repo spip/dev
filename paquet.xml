@@ -2,7 +2,7 @@
 	prefix="dev"
 	categorie="outil"
 	version="0.2.0"
-	etat="dev"
+	etat="stable"
 	compatibilite="[3.0.0-alpha2;["
 	logo="dev-32.png"
 >	
