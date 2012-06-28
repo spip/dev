@@ -2,8 +2,8 @@
 
 if (!defined('_ECRIRE_INC_VERSION')) return;
 
-define('_LOG_FILTRE_GRAVITE',8);
-define('_DEBUG_AUTORISER', true);
+defined('_LOG_FILTRE_GRAVITE') || define('_LOG_FILTRE_GRAVITE', 8);
+defined('_DEBUG_AUTORISER')    || define('_DEBUG_AUTORISER', true);
 
 $GLOBALS['test_i18n'] = true; // signaler les trads manquantes
 
