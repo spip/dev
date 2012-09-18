@@ -180,12 +180,12 @@
 	  [(#REM) ajouter les saisies supplémentaires : extra et autre, à cet endroit ]
 	  <!--extra-->
 	  <p class='boutons'><span class='image_loading'>&nbsp;</span>
-			<input type='submit' name="cancel" class='submit' value='<:bouton_annuler:>' />
-			<input type='submit' class='submit' value='<:bouton_enregistrer:>' /></p>
+			<input type='submit' name="cancel" class='submit' value='<:bouton_annuler|attribut_html:>' />
+			<input type='submit' class='submit' value='<:bouton_enregistrer|attribut_html:>' /></p>
 	</div></form>
 	]
 	[(#ENV{editable}|non)
 	  <p class='boutons'><span class='image_loading'>&nbsp;</span>
-			<input type='submit' name="cancel" class='submit' value='<:bouton_fermer:>' onclick="$.modalboxclose();return false;" />
+			<input type='submit' name="cancel" class='submit' value='<:bouton_fermer|attribut_html:>' onclick="$.modalboxclose();return false;" />
 	]
 </div>
