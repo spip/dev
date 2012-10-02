@@ -137,6 +137,22 @@
 						<label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_',#GET{name},'_',#GET{val}}|_T)]</label>
 					</div>
 				</li>
+                <!--EX10b-->
+                #SET{name,checkbox_ouinon}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
+                <li class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+                    <label>[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
+                    <span class='erreur_message'>(#GET{erreurs})</span>
+                    ]
+                    #SET{val_non,0}
+                    #SET{val,1}
+                    <div class="choix">[
+                        (#REM) Valeur envoyee si case non cochee]
+                        <input type="hidden" name="#GET{name}" value="#GET{val_non}" />
+                        <input type="checkbox" name="#GET{name}" class="checkbox" id="#GET{name}_#GET{val}" value="#GET{val}"[(#GET{val}|=={#ENV{#GET{name},#GET{defaut}}}|oui)checked="checked"] />
+                        <label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_',#GET{name},'_',#GET{val}}|_T)]</label>
+                    </div>
+                </li>
+
 				<!--EX11-->
 				#SET{name,checkbox_long_label}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
 				<li class="editer long_label editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
