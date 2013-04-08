@@ -77,7 +77,7 @@
 				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
 					<label for="#GET{name}">[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
-					]<textarea name="#GET{name}" class="textarea">
+					]<textarea name="#GET{name}" id="#GET{name}" class="textarea">
 #ENV*{#GET{name},#GET{defaut}}</textarea>
 				</div>
 				<!--EX07-->
@@ -85,14 +85,14 @@
 				<div class="editer pleine_largeur editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
 					<label for="#GET{name}">[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
-					]<textarea name="#GET{name}" class="textarea">
+					]<textarea name="#GET{name}" id="#GET{name}"  class="textarea">
 #ENV*{#GET{name},#GET{defaut}}</textarea>
 				</div>
 				#SET{name,textarea_pleine_largeur_obli}#SET{obli,'obligatoire'}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
 				<div class="editer pleine_largeur editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
 					<label for="#GET{name}">[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
-					]<textarea name="#GET{name}" class="textarea">
+					]<textarea name="#GET{name}" id="#GET{name}" class="textarea">
 #ENV*{#GET{name},#GET{defaut}}</textarea>
 				</div>
 				<!--EX08-->
