@@ -4,6 +4,7 @@
 /dev_options.php -text
 formulaires/charter.html -text
 formulaires/charter.php -text
+formulaires/charter_chantier_en_cours.html -text
 inc/minipres.php -text
 lang/charter.xml -text
 lang/charter_ar.php -text
