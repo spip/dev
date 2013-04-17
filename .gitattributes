@@ -8,12 +8,14 @@ inc/minipres.php -text
 lang/charter.xml -text
 lang/charter_ar.php -text
 lang/charter_en.php -text
+lang/charter_es.php -text
 lang/charter_fa.php -text
 lang/charter_fr.php -text
 lang/charter_sk.php -text
 lang/paquet-dev.xml -text
 lang/paquet-dev_ar.php -text
 lang/paquet-dev_en.php -text
+lang/paquet-dev_es.php -text
 lang/paquet-dev_fa.php -text
 lang/paquet-dev_it.php -text
 lang/paquet-dev_ru.php -text
