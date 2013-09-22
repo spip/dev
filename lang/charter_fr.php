@@ -17,14 +17,14 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'label_radio_oui' => 'Oui',
 	'label_select' => 'Une saisie sous forme de select',
 	'label_select_non' => 'Non merci, pas du tout',
-	'label_select_oui' => 'C\'est cela, OUI',
+	'label_select_oui' => 'C’est cela, OUI',
 	'label_text' => 'Une saisie en text',
 	'label_text_long_label' => 'Une saisie avec un très très long label qui utilise une class <tt>.long_label</tt>',
 	'label_text_obli' => 'Une saisie obligatoire',
 	'label_textarea' => 'Une saisie en bloc',
 	'label_textarea_pleine_largeur' => 'Une saisie en bloc en <tt>.pleine_largeur</tt>',
 	'label_textarea_pleine_largeur_obli' => 'Une saisie obligatoire en bloc en <tt>.pleine_largeur</tt>',
-	'legend' => 'Légende d\'un fieldset, pour un groupe de saisie',
+	'legend' => 'Légende d’un fieldset, pour un groupe de saisie',
 
 	// T
 	'titre_boites' => 'Boîtes',
