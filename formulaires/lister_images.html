@@ -9,6 +9,7 @@
         <li>
             <label for="champ_prefixe"><:fonction:label_prefixe_images:></label>
             <select name="prefixe" id="champ_prefixe">
+            <option value=""><:fonction:tout_voir:></option>
             <BOUCLE_lister (DATA) {source table, (#REM|lister_images|array_keys)} {par valeur}>
                 <option value="#VALEUR" [(#ENV{prefixe}|=={#VALEUR}|oui)selected="selected"]>#VALEUR [((#VALEUR|lister_images|count))]</option>
             </BOUCLE_lister>

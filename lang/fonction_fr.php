@@ -5,26 +5,27 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 
-	// D
+    // D
     'des_fonctions' => '@nb@ fonctions',
-	'des_images' => '@nb@ images',
+    'des_images' => '@nb@ images',
 
     // I
     'info_nom' => 'Nom',
     'info_prefixe' => 'Préfixe',
     'info_technique' => 'Infos techniques',
 
-	// L
+    // L
     'label_prefixe_fonction' => 'Préfixe de la fonction',
-	'label_prefixe_images' => 'Préfixe de l\'image',
+    'label_prefixe_images' => 'Préfixe de l\'image',
 
-	// T
+    // T
     'titre_page_fonction' => 'Lister les fonctions',
-	'titre_page_images' => 'Lister les images des thèmes de SPIP',
+    'titre_page_images' => 'Lister les images des thèmes de SPIP',
+    'tout_voir' => 'Tout voir',
 
-	// U
+    // U
     'une_fonction' => 'Une fonction',
-	'une_image' => 'Une image',
+    'une_image' => 'Une image',
 
 );
 

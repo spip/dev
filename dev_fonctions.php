@@ -51,6 +51,8 @@ function lister_fonctions ($prefixe = null) {
 			}
 		}
 	}
+	ksort($fonctions_user);
+
 	$resultat = $fonctions_user;
 
 	if ($prefixe) {
