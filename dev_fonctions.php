@@ -37,7 +37,7 @@ function bel_env($env) {
 	return $res;
 }
 
-function lister_fonctions ($nom = null) {
+function lister_fonctions ($prefixe = null) {
 	$fonctions = get_defined_functions();
 
 	$fonctions_user = $fonctions["user"];
@@ -53,13 +53,41 @@ function lister_fonctions ($nom = null) {
 	}
 	$resultat = $fonctions_user;
 
-	if ($nom) {
+	if ($prefixe) {
 		// On pourrait faire aussi un contrôle avec array_key_exists()
 		// Mais ça risque de fausser le résultat attendu.
-		$resultat = $fonctions_user[$nom];
+		$resultat = $fonctions_user[$prefixe];
 	}
 
 	return $resultat;
 
 }
+
+function lister_images ($prefixe = null) {
+	$images = find_all_in_path("themes/spip/images/", "\w.\w");
+
+	foreach ($images as $key => $value) {
+		if ($image = preg_split('/-/', $key, -1, PREG_SPLIT_NO_EMPTY)) {
+			if (count($image) > 1) {
+				$images[$image[0]][] = $value;
+			} else {
+				$image = explode('.', $image[0]);
+				$images[$image[0]][] = $value;
+			}
+			unset($images[$key]);
+		}
+	}
+
+	$resultat = $images;
+
+	if ($prefixe) {
+		// On pourrait faire aussi un contrôle avec array_key_exists()
+		// Mais ça risque de fausser le résultat attendu.
+		$resultat = $images[$prefixe];
+	}
+
+	return $resultat;
+
+}
+
 ?>

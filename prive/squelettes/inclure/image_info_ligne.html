@@ -1,0 +1,16 @@
+[(#SET{pathinfo,[(#ENV{image}|pathinfo)]})]
+<tr class="[(#ENV{class})]">
+    <td class="nom principale">
+        [<a href="#ENV{image}"[ title="(#ENV{image}|attribut_html)"] class="mediabox">(#ENV{image}|balise_img|image_reduire{125,100}|inserer_attribut{alt,[(#ENV{image}|basename|attribut_html)]})
+        [<br/><em>(#ENV{image}|basename)</em>]
+    </a>]
+</td>
+<td class="exif secondaire">
+    [<strong class="extension">(#GET{pathinfo}|table_valeur{extension})</strong>]
+    <div class="dimensions">[(#ENV{image}|largeur)] x [(#ENV{image}|hauteur)] px </div>
+    [<div class="taille">(#ENV{image}|filesize|taille_en_octets)</div>]
+</td>
+<td class="prefixe secondaire">
+    [(#ENV{prefixe})]
+</td>
+</tr>

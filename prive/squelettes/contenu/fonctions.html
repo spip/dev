@@ -8,17 +8,17 @@
 [<strong class="caption">[(#ENV{prefixe,''})&nbsp;: ](#TOTAL_BOUCLE|singulier_ou_pluriel{fonction:une_fonction,fonction:des_fonctions})</strong>]
     <ul class="spip liste">
     <BOUCLE_fonctions (DATA) {source table, (#ENV{prefixe,''}|lister_fonctions)} {par valeur}>
-        <B_nom>
+        <B_prefixe>
         <li>#CLE
         <ul class="spip liste">
-            <BOUCLE_nom (DATA) {source table, #VALEUR} {si #VALEUR|is_array}>
+            <BOUCLE_prefixe (DATA) {source table, #VALEUR} {si #VALEUR|is_array}>
             <li>#VALEUR <a href="http://code.spip.net/@#VALEUR" target="_blank" class="aide">[(#CHEMIN_IMAGE{aide-16.png}|balise_img|inserer_attribut{title,<:titre_image_aide:>})]</a></li>
-            </BOUCLE_nom>
+            </BOUCLE_prefixe>
             </li>
         </ul>
-        </B_nom>
+        </B_prefixe>
         <li>#VALEUR <a href="http://code.spip.net/@#VALEUR" target="_blank" class="aide">[(#CHEMIN_IMAGE{aide-16.png}|balise_img)]</a></li>
-        <//B_nom>
+        <//B_prefixe>
     </BOUCLE_fonctions>
     </ul>
 </div>

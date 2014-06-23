@@ -7,6 +7,8 @@ formulaires/charter.php -text
 formulaires/charter_chantier_en_cours.html -text
 formulaires/lister_fonctions.html -text
 formulaires/lister_fonctions.php -text
+formulaires/lister_images.html -text
+formulaires/lister_images.php -text
 inc/minipres.php -text
 lang/charter.xml -text
 lang/charter_ar.php -text
@@ -35,6 +37,7 @@ prive/squelettes/contenu/charte_listes.html -text
 prive/squelettes/contenu/charte_php.html -text
 prive/squelettes/contenu/charte_typo.html -text
 prive/squelettes/contenu/fonctions.html -text
+prive/squelettes/inclure/image_info_ligne.html -text
 prive/squelettes/top/charte.html -text
 prive/squelettes/top/charte_boites.html -text
 prive/squelettes/top/charte_forms.html -text
