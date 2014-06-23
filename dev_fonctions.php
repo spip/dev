@@ -64,16 +64,22 @@ function lister_fonctions ($prefixe = null) {
 }
 
 function lister_images ($prefixe = null) {
-	$images = find_all_in_path("themes/spip/images/", "\w.\w");
+	$images = find_all_in_path("prive/themes/spip/images/", "\w.\w");
 
 	foreach ($images as $key => $value) {
-		if ($image = preg_split('/-/', $key, -1, PREG_SPLIT_NO_EMPTY)) {
-			if (count($image) > 1) {
-				$images[$image[0]][] = $value;
-			} else {
-				$image = explode('.', $image[0]);
-				$images[$image[0]][] = $value;
+		// On ne prend que les images issues des thèmes.
+		if (est_image($value)) {
+			if ($image = preg_split('/-/', $key, -1, PREG_SPLIT_NO_EMPTY)) {
+				if (count($image) > 1) {
+					$images[$image[0]][] = $value;
+				} else {
+					$image = explode('.', $image[0]);
+					$images[$image[0]][] = $value;
+				}
+				unset($images[$key]);
 			}
+		} else {
+			// Si ce n'est pas une image, on l'enlève du tableau.
 			unset($images[$key]);
 		}
 	}
@@ -88,6 +94,29 @@ function lister_images ($prefixe = null) {
 
 	return $resultat;
 
+}
+/**
+ * Cette fonction vérifie si le fichier est une image ou pas.
+ * On fait un test selon l'existence des fonctions PHP qui peuvent nous aider.
+ * On évite ainsi une alerte PHP
+ *
+ * @param  string $fichier
+ *         url relative du fichier.
+ * @return bool
+ */
+function est_image ($fichier)
+{
+    $image = false;
+    if (function_exists('exif_imagetype')) {
+        if (is_numeric(exif_imagetype($fichier))) {
+            $image = true;
+        }
+    } elseif (function_exists('getimagesize')) {
+        if (is_array(getimagesize($fichier))) {
+            $image = true;
+        }
+    }
+    return $image;
 }
 
 ?>
