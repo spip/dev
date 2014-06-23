@@ -1,7 +1,7 @@
 <paquet
 	prefix="dev"
 	categorie="outil"
-	version="0.3.4"
+	version="0.3.5"
 	etat="stable"
 	compatibilite="[3.0.0;3.1.*]"
 	logo="dev-32.png"
@@ -11,6 +11,8 @@
 	<!-- Outils de developpement -->
 
 	<auteur>Collectif SPIP</auteur>
+
+        <menu nom="charte" titre="charter:titre_charte" parent="menu_squelette"/>
 
 	<onglet nom="charte" titre="charter:titre_charte" parent="charte" action="charte" />
 	<onglet nom="charte_icones" titre="charter:titre_icones" parent="charte" action="charte_icones" />
