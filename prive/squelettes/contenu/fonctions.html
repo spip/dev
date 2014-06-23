@@ -1,0 +1,24 @@
+<h1><:fonction:titre_page_fonction:></h1>
+
+#FORMULAIRE_LISTER_FONCTIONS
+<div class="nettoyeur"></div>
+
+[(#BOITE_OUVRIR)]
+<B_fonctions>
+<ul class="spip">
+<BOUCLE_fonctions (DATA) {source table, (#ENV{nom,''}|lister_fonctions)} {par valeur}>
+    <B_nom>
+    <li>#CLE
+    <ul class="spip">
+        <BOUCLE_nom (DATA) {source table, #VALEUR} {si #VALEUR|is_array}>
+        <li>#VALEUR</li>
+        </BOUCLE_nom>
+        </li>
+    </ul>
+    </B_nom>
+    <li>#VALEUR</li>
+    <//B_nom>
+</BOUCLE_fonctions>
+</ul>
+</B_fonctions>
+[(#BOITE_FERMER)]
