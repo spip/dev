@@ -5,7 +5,7 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 function formulaires_liste_fonctions_charger_dist () {
 
     $valeurs = array();
-    $valeurs['nom'] = (_request('nom')) ? _request('nom') : '' ;
+    $valeurs['prefixe'] = (_request('prefixe')) ? _request('prefixe') : '' ;
 
     return $valeurs;
 }

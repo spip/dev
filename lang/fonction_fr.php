@@ -5,11 +5,17 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 
+	// U
+	'des_fonctions' => '@nb@ fonctions',
+
 	// L
 	'label_prefixe_fonction' => 'Préfixe de la fonction',
 
 	// T
 	'titre_page_fonction' => 'Lister les fonctions',
+
+	// U
+	'une_fonction' => 'Une fonction',
 
 );
 

@@ -2,14 +2,15 @@
     [<p class="reponse_formulaire reponse_formulaire_ok">(#ENV*{message_ok})</p>]
     [<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
 
-    <form action="#SELF" class="formulaire_spip">
-    [(#SELF|parametre_url{nom,''}|form_hidden)]
+    <form action="#ENV{action}" class="formulaire_spip" method="post">
+    [(#ACTION_FORMULAIRE{#ENV{action}})]
+    [(#SELF|parametre_url{prefixe,''}|form_hidden)]
     <ul>
         <li>
-            <label for="champ_nom"><:fonction:label_prefixe_fonction:></label>
-            <select name="nom" id="champ_nom">
+            <label for="champ_prefixe"><:fonction:label_prefixe_fonction:></label>
+            <select name="prefixe" id="champ_prefixe">
             <BOUCLE_lister (DATA) {source table, (#REM|lister_fonctions|array_keys)} {par valeur}>
-                <option value="#VALEUR">#VALEUR [((#VALEUR|lister_fonctions|count))]</option>
+                <option value="#VALEUR" [(#ENV{prefixe}|=={#VALEUR}|oui)selected="selected"]>#VALEUR [((#VALEUR|lister_fonctions|count))]</option>
             </BOUCLE_lister>
             </select>
         </li>
