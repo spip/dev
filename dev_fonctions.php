@@ -31,10 +31,35 @@ function bel_env($env) {
 			$val = entites_html($val);
 		}
 		$res .= "<tr>\n<td$style><strong>". entites_html($nom).
-				"&nbsp;:&nbsp;</strong></td><td$style>" .$val. "</td>\n</tr>\n";
+		"&nbsp;:&nbsp;</strong></td><td$style>" .$val. "</td>\n</tr>\n";
 	}
 	$res .= "</table>";
 	return $res;
 }
 
+function lister_fonctions ($nom = null) {
+	$fonctions = get_defined_functions();
+
+	$fonctions_user = $fonctions["user"];
+	sort($fonctions_user);
+
+	foreach ($fonctions_user as $value) {
+		if ($fonction = preg_split('/_/', $value, -1, PREG_SPLIT_NO_EMPTY)) {
+			$fonctions_user[$fonction[0]][] = $value;
+			if (($key = array_search($value, $fonctions_user)) !== false) {
+				unset($fonctions_user[$key]);
+			}
+		}
+	}
+	$resultat = $fonctions_user;
+
+	if ($nom) {
+		// On pourrait faire aussi un contrôle avec array_key_exists()
+		// Mais ça risque de fausser le résultat attendu.
+		$resultat = $fonctions_user[$nom];
+	}
+
+	return $resultat;
+
+}
 ?>

@@ -5,6 +5,8 @@
 formulaires/charter.html -text
 formulaires/charter.php -text
 formulaires/charter_chantier_en_cours.html -text
+formulaires/lister_fonctions.html -text
+formulaires/lister_fonctions.php -text
 inc/minipres.php -text
 lang/charter.xml -text
 lang/charter_ar.php -text
@@ -14,6 +16,7 @@ lang/charter_fa.php -text
 lang/charter_fr.php -text
 lang/charter_nl.php -text
 lang/charter_sk.php -text
+lang/fonction_fr.php -text
 lang/paquet-dev.xml -text
 lang/paquet-dev_ar.php -text
 lang/paquet-dev_en.php -text
