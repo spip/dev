@@ -83,6 +83,7 @@ function lister_images ($prefixe = null) {
 			unset($images[$key]);
 		}
 	}
+	ksort($images);
 
 	$resultat = $images;
 
