@@ -9,7 +9,7 @@
             <label for="champ_nom"><:fonction:label_prefixe_fonction:></label>
             <select name="nom" id="champ_nom">
             <BOUCLE_lister (DATA) {source table, (#REM|lister_fonctions|array_keys)} {par valeur}>
-                <option value="#VALEUR">#VALEUR</option>
+                <option value="#VALEUR">#VALEUR [((#VALEUR|lister_fonctions|count))]</option>
             </BOUCLE_lister>
             </select>
         </li>
