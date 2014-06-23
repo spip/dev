@@ -1,25 +1,43 @@
-<h1><:fonction:titre_page_fonction:></h1>
+[(#VAL{lister_fonctions}|barre_onglets{lister_fonctions})]
 
+<h1><:fonction:titre_page_fonctions:></h1>
+[(#SET{icone_ok,[(#CHEMIN_IMAGE{ok-16.png}|balise_img)]})]
+[(#SET{icone_ko,[(#CHEMIN_IMAGE{supprimer-8.png}|balise_img)]})]
 #FORMULAIRE_LISTER_FONCTIONS
 <div class="nettoyeur"></div>
 
 <B_fonctions>
 <div class="liste-objets fonctions">
-[<strong class="caption">[(#ENV{prefixe,''})&nbsp;: ](#TOTAL_BOUCLE|singulier_ou_pluriel{fonction:une_fonction,fonction:des_fonctions})</strong>]
-    <ul class="spip liste">
-    <BOUCLE_fonctions (DATA) {source table, (#ENV{prefixe,''}|lister_fonctions)}>
-        <B_prefixe>
-        <li>#CLE
-        <ul class="spip liste">
+    [<h3>(#ENV{titre})</h3>]
+
+    <table class="spip liste">
+        [<caption>[(#ENV{prefixe,''})&nbsp;: ](#GRAND_TOTAL|singulier_ou_pluriel{fonction:une_fonction,fonction:des_fonctions})</caption>]
+        <thead>
+            <tr class="first_row">
+                <th class="prefixe secondaire"><:fonction:info_prefixe:></th>
+                <th class="fonction principale"><:fonction:info_fonction:></th>
+                <th class="surcharge secondaire"><:fonction:info_surchargeable:></th>
+            </tr>
+        </thead>
+        <tbody>
+        <BOUCLE_fonctions (DATA) {source table, (#ENV{prefixe,''}|lister_fonctions)}>
             <BOUCLE_prefixe (DATA) {source table, #VALEUR} {si #VALEUR|is_array}>
-            <li>#VALEUR <a href="http://code.spip.net/@#VALEUR" target="_blank" class="aide">[(#CHEMIN_IMAGE{aide-16.png}|balise_img|inserer_attribut{title,<:titre_image_aide:>})]</a></li>
+                <tr class="[(#COMPTEUR_BOUCLE|alterner{'row_odd','row_even'})]">
+                    <td class="prefixe secondaire">[<strong>(#_fonctions:CLE|unique)</strong>]</td>
+                    <td class="fonction principale">[(#VALEUR|replace{'_','_<wbr/>'})] <a href="http://code.spip.net/@#VALEUR" target="_blank" class="aide">[(#CHEMIN_IMAGE{aide-16.png}|balise_img|inserer_attribut{title,<:titre_image_aide:>})]</a></td>
+                    <td class="surcharge secondaire">[(#VALEUR|match{(_dist)$}|?{[(#GET{icone_ok})],[(#GET{icone_ko})]})]</td>
+                </tr>
             </BOUCLE_prefixe>
-            </li>
-        </ul>
-        </B_prefixe>
-        <li>#VALEUR <a href="http://code.spip.net/@#VALEUR" target="_blank" class="aide">[(#CHEMIN_IMAGE{aide-16.png}|balise_img)]</a></li>
-        <//B_prefixe>
-    </BOUCLE_fonctions>
-    </ul>
+            </B_prefixe>
+                <tr class="[(#COMPTEUR_BOUCLE|alterner{'row_odd','row_even'})]">
+                    <td class="prefixe secondaire">[<strong>(#ENV{prefixe,''}|unique)</strong>]</td>
+                    <td class="fonction principale">[(#VALEUR|replace{'_','_<wbr/>'})] <a href="http://code.spip.net/@#VALEUR" target="_blank" class="aide">[(#CHEMIN_IMAGE{aide-16.png}|balise_img|inserer_attribut{title,<:titre_image_aide:>})]</a></td>
+                    <td class="surcharge secondaire">[(#VALEUR|match{(_dist)$}|?{[(#GET{icone_ok})],[(#GET{icone_ko})]})]</td>
+                </tr>
+            <//B_prefixe>
+        </BOUCLE_fonctions>
+        </tbody>
+    </table>
 </div>
 </B_fonctions>
+

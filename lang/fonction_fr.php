@@ -6,24 +6,35 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 
     // D
+    'des_constantes' => '@nb@ constantes',
     'des_fonctions' => '@nb@ fonctions',
     'des_images' => '@nb@ images',
 
     // I
+    'info_constante' => 'Constante',
+    'info_fonction' => 'Fonction',
     'info_nom' => 'Nom',
     'info_prefixe' => 'Préfixe',
+    'info_surchargeable' => 'Surchargeable',
     'info_technique' => 'Infos techniques',
+    'info_valeur' => 'Valeur',
 
     // L
+    'label_prefixe_constante' => 'Préfixe de la constante',
     'label_prefixe_fonction' => 'Préfixe de la fonction',
     'label_prefixe_images' => 'Préfixe de l\'image',
 
     // T
-    'titre_page_fonction' => 'Lister les fonctions',
+    'titre_onglet_constantes' => 'Les constantes',
+    'titre_onglet_fonctions' => 'Les fonctions',
+    'titre_onglet_images' => 'Les images de thèmes',
+    'titre_page_constantes' => 'Lister les constantes',
+    'titre_page_fonctions' => 'Lister les fonctions',
     'titre_page_images' => 'Lister les images des thèmes de SPIP',
     'tout_voir' => 'Tout voir',
 
     // U
+    'une_constante' => 'Une constante',
     'une_fonction' => 'Une fonction',
     'une_image' => 'Une image',
 

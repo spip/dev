@@ -37,11 +37,21 @@ function bel_env($env) {
 	return $res;
 }
 
+/**
+ * Lister toutes les fonctions définies dans l'instance de SPIP.
+ * Les fonctions fournies par les différents plugins actifs seront aussi prise en compte.
+ *
+ * @param  null|string $prefixe
+ *         Préfixe de la fonction. Exemple : `autoriser`, `auth`, etc.
+ * @return array
+ *         Si aucun préfixe, on listera toutes les fonctions.
+ *         Si un préfixe est identifié, on listera toutes les fonctions avec ce préfixe.
+ */
 function lister_fonctions ($prefixe = null) {
 	$fonctions = get_defined_functions();
 
 	$fonctions_user = $fonctions["user"];
-	sort($fonctions_user);
+	sort($fonctions_user, SORT_NATURAL | SORT_FLAG_CASE);
 
 	foreach ($fonctions_user as $value) {
 		if ($fonction = preg_split('/_/', $value, -1, PREG_SPLIT_NO_EMPTY)) {
@@ -51,7 +61,7 @@ function lister_fonctions ($prefixe = null) {
 			}
 		}
 	}
-	ksort($fonctions_user);
+	ksort($fonctions_user, SORT_NATURAL | SORT_FLAG_CASE);
 
 	$resultat = $fonctions_user;
 
@@ -65,6 +75,56 @@ function lister_fonctions ($prefixe = null) {
 
 }
 
+/**
+ * Lister toutes les constantes définies dans l'instance de SPIP.
+ * Les constantes fournies par les différents plugins actifs seront aussi prise en compte.
+ *
+ * @param  null|string $prefixe
+ *         Préfixe de la constantes.
+ * @return array
+ *         Si aucun préfixe, on listera toutes les constantes.
+ *         Si un préfixe est identifié, on listera toutes les constantes avec ce préfixe.
+ */
+function lister_constantes ($prefixe = null) {
+	$constantes = get_defined_constants(true);
+
+	$constantes_user = $constantes["user"];
+
+	foreach ($constantes_user as $key => $value) {
+		if ($constante = preg_split('/_/', $key, -1, PREG_SPLIT_NO_EMPTY)) {
+			if ($constante[0] == '_') {
+				$constantes_user[$constante[1]][$key] = $value;
+			} else {
+				$constantes_user[$constante[0]][$key] = $value;
+			}
+				unset($constantes_user[$key]);
+		}
+	}
+
+	ksort($constantes_user, SORT_NATURAL | SORT_FLAG_CASE);
+
+	$resultat = $constantes_user;
+
+	if ($prefixe) {
+		// On pourrait faire aussi un contrôle avec array_key_exists()
+		// Mais ça risque de fausser le résultat attendu.
+		$resultat = $constantes_user[$prefixe];
+	}
+
+	return $resultat;
+
+}
+
+/**
+ * Lister toutes les images issues du thème SPIP de l'espace privé.
+ * Les images fournies par les différents plugins sont aussi prises en compte.
+ *
+ * @param  null|string $prefixe
+ *         Préfixe de l'image. Exemple : `auteur`, `article`, etc.
+ * @return array
+ *         Si aucun préfixe, on listera toutes les images.
+ *         Si un préfixe est identifié, on listera toutes les images avec ce préfixe.
+ */
 function lister_images ($prefixe = null) {
 	$images = find_all_in_path("prive/themes/spip/images/", "\w.\w");
 
@@ -85,7 +145,7 @@ function lister_images ($prefixe = null) {
 			unset($images[$key]);
 		}
 	}
-	ksort($images);
+	ksort($images, SORT_NATURAL | SORT_FLAG_CASE);
 
 	$resultat = $images;
 
@@ -98,6 +158,7 @@ function lister_images ($prefixe = null) {
 	return $resultat;
 
 }
+
 /**
  * Cette fonction vérifie si le fichier est une image ou pas.
  * On fait un test selon l'existence des fonctions PHP qui peuvent nous aider.

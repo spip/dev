@@ -1,3 +1,5 @@
+[(#VAL{lister_fonctions}|barre_onglets{lister_images})]
+
 <h1><:fonction:titre_page_images:></h1>
 
 #FORMULAIRE_LISTER_IMAGES
@@ -11,9 +13,9 @@
         [<caption>[(#ENV{prefixe,''})&nbsp;: ](#GRAND_TOTAL|singulier_ou_pluriel{fonction:une_image,fonction:des_images})</caption>]
         <thead>
             <tr class="first_row">
+                <th class="prefixe secondaire"><:fonction:info_prefixe:></th>
                 <th class="nom principale"><:fonction:info_nom:></th>
                 <th class="exif secondaire"><:fonction:info_technique:></th>
-                <th class="prefixe secondaire"><:fonction:info_prefixe:></th>
             </tr>
         </thead>
         <tbody>
