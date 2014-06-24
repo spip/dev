@@ -51,7 +51,7 @@ function lister_fonctions ($prefixe = null) {
 	$fonctions = get_defined_functions();
 
 	$fonctions_user = $fonctions["user"];
-	sort($fonctions_user, SORT_NATURAL | SORT_FLAG_CASE);
+	sort($fonctions_user);
 
 	foreach ($fonctions_user as $value) {
 		if ($fonction = preg_split('/_/', $value, -1, PREG_SPLIT_NO_EMPTY)) {
@@ -61,7 +61,7 @@ function lister_fonctions ($prefixe = null) {
 			}
 		}
 	}
-	ksort($fonctions_user, SORT_NATURAL | SORT_FLAG_CASE);
+	ksort($fonctions_user);
 
 	$resultat = $fonctions_user;
 
@@ -101,7 +101,7 @@ function lister_constantes ($prefixe = null) {
 		}
 	}
 
-	ksort($constantes_user, SORT_NATURAL | SORT_FLAG_CASE);
+	ksort($constantes_user);
 
 	$resultat = $constantes_user;
 
@@ -145,7 +145,7 @@ function lister_images ($prefixe = null) {
 			unset($images[$key]);
 		}
 	}
-	ksort($images, SORT_NATURAL | SORT_FLAG_CASE);
+	ksort($images);
 
 	$resultat = $images;
 
