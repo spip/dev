@@ -12,6 +12,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
     // I
     'info_constante' => 'Constante',
+    'info_core_spip' => 'Core de SPIP',
+    'info_filename' => 'Fichier d\'origine',
     'info_fonction' => 'Fonction',
     'info_nom' => 'Nom',
     'info_prefixe' => 'Préfixe',

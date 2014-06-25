@@ -13,19 +13,19 @@
         [<caption>[(#ENV{prefixe,''})&nbsp;: ](#GRAND_TOTAL|singulier_ou_pluriel{fonction:une_image,fonction:des_images})</caption>]
         <thead>
             <tr class="first_row">
-                <th class="prefixe secondaire"><:fonction:info_prefixe:></th>
                 <th class="nom principale"><:fonction:info_nom:></th>
                 <th class="exif secondaire"><:fonction:info_technique:></th>
+                <th class="core secondaire"><:fonction:info_core_spip:></th>
             </tr>
         </thead>
         <tbody>
     <BOUCLE_images (DATA) {source table, (#ENV{prefixe,''}|lister_images)}>
         <B_prefixe>
             <BOUCLE_prefixe (DATA) {source table, #VALEUR} {si #VALEUR|is_array}>
-            #INCLURE{fond=prive/squelettes/inclure/image_info_ligne,image=#VALEUR,class=(#COMPTEUR_BOUCLE|alterner{'row_odd','row_even'}),prefixe=#_images:CLE,env}
+            #INCLURE{fond=prive/squelettes/inclure/image_info_ligne,image=#VALEUR,class=(#COMPTEUR_BOUCLE|alterner{'row_odd','row_even'}),prefixe=(#_images:CLE|unique),env}
             </BOUCLE_prefixe>
         </B_prefixe>
-            #INCLURE{fond=prive/squelettes/inclure/image_info_ligne,image=#VALEUR,class=(#COMPTEUR_BOUCLE|alterner{'row_odd','row_even'}),prefixe=#ENV{prefixe,''},env}
+            #INCLURE{fond=prive/squelettes/inclure/image_info_ligne,image=#VALEUR,class=(#COMPTEUR_BOUCLE|alterner{'row_odd','row_even'}),prefixe=(#ENV{prefixe,''}|unique),env}
         <//B_prefixe>
     </BOUCLE_images>
     </tbody>

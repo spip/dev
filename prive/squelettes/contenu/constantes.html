@@ -13,7 +13,6 @@
         [<caption>[(#ENV{prefixe,''})&nbsp;: ](#GRAND_TOTAL|singulier_ou_pluriel{fonction:une_constante,fonction:des_constantes})</caption>]
         <thead>
             <tr class="first_row">
-                <th class="prefixe secondaire"><:fonction:info_prefixe:></th>
                 <th class="constante principale"><:fonction:info_constante:></th>
                 <th class="valeur secondaire"><:fonction:info_valeur:></th>
             </tr>
@@ -21,15 +20,19 @@
         <tbody>
         <BOUCLE_constantes (DATA) {source table, (#ENV{prefixe,''}|lister_constantes)}>
             <BOUCLE_prefixe (DATA) {source table, #VALEUR} {si #VALEUR|is_array}>
+                [<tr class="prefixe">
+                    <td colspan="2"><h3>(#_constantes:CLE|unique)</h3></td>
+                </tr>]
                 <tr class="[(#COMPTEUR_BOUCLE|alterner{'row_odd','row_even'})]">
-                    <td class="prefixe secondaire">[<strong>(#_constantes:CLE|unique)</strong>]</td>
                     <td class="constante principale">#CLE</td>
                     <td class="valeur secondaire">[(#VALEUR|print_r{1})]</td>
                 </tr>
             </BOUCLE_prefixe>
             </B_prefixe>
+                [<tr class="prefixe">
+                    <td colspan="2"><h3>(#ENV{prefixe,''}|unique)</h3></td>
+                </tr>]
                 <tr class="[(#COMPTEUR_BOUCLE|alterner{'row_odd','row_even'})]">
-                    <td class="prefixe secondaire">[<strong>(#ENV{prefixe,''}|unique)</strong>]</td>
                     <td class="constante principale">#CLE</td>
                     <td class="valeur secondaire">[(#VALEUR|print_r{1})]</td>
                 </tr>

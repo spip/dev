@@ -183,4 +183,27 @@ function est_image ($fichier)
     return $image;
 }
 
+/**
+ * Afficher le nom et le chemin du fichier dans lequel
+ * est défini la fonction passée en paramètre.
+ *
+ * @param  null|string $fonction
+ * @return void|string
+ */
+function fonction_fichier ($fonction = null) {
+
+	if ($fonction == null) {
+		return;
+	}
+	// On prépare le pattern pour ne pas avoir le chemin depuis les méandres du serveur d'hébergement.
+	$pattern_root = "/^" . preg_replace('/\//', '\/', $_SERVER['DOCUMENT_ROOT']) . "/";
+
+	// API offerte par PHP 5.
+	$refFonction = new ReflectionFunction($fonction);
+
+	// On enlève le chemin 'root' pour ne garder que le chemin à la "racine" de notre site.
+	$filename = preg_replace($pattern_root, '', $refFonction->getFileName()) . '#L' . $refFonction->getEndLine();
+
+	return $filename;
+}
 ?>

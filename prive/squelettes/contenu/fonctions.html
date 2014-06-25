@@ -14,24 +14,30 @@
         [<caption>[(#ENV{prefixe,''})&nbsp;: ](#GRAND_TOTAL|singulier_ou_pluriel{fonction:une_fonction,fonction:des_fonctions})</caption>]
         <thead>
             <tr class="first_row">
-                <th class="prefixe secondaire"><:fonction:info_prefixe:></th>
                 <th class="fonction principale"><:fonction:info_fonction:></th>
+                <th class="filename secondaire"><:fonction:info_filename:></th>
                 <th class="surcharge secondaire"><:fonction:info_surchargeable:></th>
             </tr>
         </thead>
         <tbody>
         <BOUCLE_fonctions (DATA) {source table, (#ENV{prefixe,''}|lister_fonctions)}>
             <BOUCLE_prefixe (DATA) {source table, #VALEUR} {si #VALEUR|is_array}>
-                <tr class="[(#COMPTEUR_BOUCLE|alterner{'row_odd','row_even'})]">
-                    <td class="prefixe secondaire">[<strong>(#_fonctions:CLE|unique)</strong>]</td>
-                    <td class="fonction principale">[(#VALEUR|replace{'_','_<wbr/>'})] <a href="http://code.spip.net/@#VALEUR" target="_blank" class="aide">[(#CHEMIN_IMAGE{aide-16.png}|balise_img|inserer_attribut{title,<:titre_image_aide:>})]</a></td>
+                [<tr class="prefixe">
+                    <td colspan="3"><h3>(#_fonctions:CLE|unique)</h3></td>
+                </tr>]
+                <tr class="[(#COMPTEUR_BOUCLE|alterner{'row_even','row_odd'})]">
+                    <td class="fonction principale">[(#VALEUR|replace{'_','_<wbr/>'})] [(#VALEUR|fonction_fichier|match{'/plugins/'}|non)<a href="http://code.spip.net/@#VALEUR" target="_blank" class="aide">[(#CHEMIN_IMAGE{aide-16.png}|balise_img|inserer_attribut{title,<:titre_image_aide:>})]</a>]</td>
+                    <td class="filename secondaire">[(#VALEUR|fonction_fichier|replace{(/|_),$1<wbr/>})]</td>
                     <td class="surcharge secondaire">[(#VALEUR|match{(_dist)$}|?{[(#GET{icone_ok})],[(#GET{icone_ko})]})]</td>
                 </tr>
             </BOUCLE_prefixe>
             </B_prefixe>
+                [<tr class="prefixe">
+                    <td colspan="3"><h3>(#ENV{prefixe,''}|unique)</h3></td>
+                </tr>]
                 <tr class="[(#COMPTEUR_BOUCLE|alterner{'row_odd','row_even'})]">
-                    <td class="prefixe secondaire">[<strong>(#ENV{prefixe,''}|unique)</strong>]</td>
-                    <td class="fonction principale">[(#VALEUR|replace{'_','_<wbr/>'})] <a href="http://code.spip.net/@#VALEUR" target="_blank" class="aide">[(#CHEMIN_IMAGE{aide-16.png}|balise_img|inserer_attribut{title,<:titre_image_aide:>})]</a></td>
+                    <td class="fonction principale">[(#VALEUR|replace{'_','_<wbr/>'})] [(#VALEUR|fonction_fichier|match{'/plugins/'}|non)<a href="http://code.spip.net/@#VALEUR" target="_blank" class="aide">[(#CHEMIN_IMAGE{aide-16.png}|balise_img|inserer_attribut{title,<:titre_image_aide:>})]</a>]</td>
+                    <td class="filename secondaire">[(#VALEUR|fonction_fichier|replace{(/|_),$1<wbr/>})]</td>
                     <td class="surcharge secondaire">[(#VALEUR|match{(_dist)$}|?{[(#GET{icone_ok})],[(#GET{icone_ko})]})]</td>
                 </tr>
             <//B_prefixe>
