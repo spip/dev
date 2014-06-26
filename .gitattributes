@@ -1,5 +1,4 @@
 * text=auto !eol
-/dev-32.png -text
 /dev_fonctions.php -text
 /dev_options.php -text
 formulaires/charter.html -text
@@ -38,10 +37,13 @@ prive/squelettes/contenu/charte_icones.html -text
 prive/squelettes/contenu/charte_listes.html -text
 prive/squelettes/contenu/charte_php.html -text
 prive/squelettes/contenu/charte_typo.html -text
-prive/squelettes/contenu/constantes.html -text
-prive/squelettes/contenu/fonctions.html -text
-prive/squelettes/contenu/images.html -text
+prive/squelettes/contenu/source_constantes.html -text
+prive/squelettes/contenu/source_fonctions.html -text
+prive/squelettes/contenu/source_images.html -text
 prive/squelettes/inclure/image_info_ligne.html -text
+prive/squelettes/navigation/source_constantes.html -text
+prive/squelettes/navigation/source_fonctions.html -text
+prive/squelettes/navigation/source_images.html -text
 prive/squelettes/top/charte.html -text
 prive/squelettes/top/charte_boites.html -text
 prive/squelettes/top/charte_forms.html -text
@@ -49,3 +51,7 @@ prive/squelettes/top/charte_icones.html -text
 prive/squelettes/top/charte_listes.html -text
 prive/squelettes/top/charte_typo.html -text
 prive/style_prive_plugin_dev.html -text
+prive/themes/spip/images/dev-32.png -text
+prive/themes/spip/images/fonctions-16.png -text
+prive/themes/spip/images/fonctions-24.png -text
+prive/themes/spip/images/fonctions-32.png -text

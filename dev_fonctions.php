@@ -202,7 +202,7 @@ function fonction_fichier ($fonction = null) {
 	$refFonction = new ReflectionFunction($fonction);
 
 	// On enlève le chemin 'root' pour ne garder que le chemin à la "racine" de notre site.
-	$filename = preg_replace($pattern_root, '', $refFonction->getFileName()) . '#L' . $refFonction->getEndLine();
+	$filename = preg_replace($pattern_root, '', $refFonction->getFileName()) . '#L' . $refFonction->getStartLine();
 
 	return $filename;
 }
