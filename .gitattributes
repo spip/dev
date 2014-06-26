@@ -40,6 +40,7 @@ prive/squelettes/contenu/charte_typo.html -text
 prive/squelettes/contenu/source_constantes.html -text
 prive/squelettes/contenu/source_fonctions.html -text
 prive/squelettes/contenu/source_images.html -text
+prive/squelettes/inclure/fonction_info_ligne.html -text
 prive/squelettes/inclure/image_info_ligne.html -text
 prive/squelettes/navigation/source_constantes.html -text
 prive/squelettes/navigation/source_fonctions.html -text

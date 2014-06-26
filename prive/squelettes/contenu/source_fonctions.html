@@ -1,9 +1,6 @@
-[(#VAL{lister_fonctions}|barre_onglets{lister_fonctions})]
+[(#VAL{source_fonctions}|barre_onglets{source_fonctions})]
 
 <h1><:fonction:titre_page_fonctions:></h1>
-[(#SET{icone_ok,[(#CHEMIN_IMAGE{ok-16.png}|balise_img)]})]
-[(#SET{icone_ko,[(#CHEMIN_IMAGE{supprimer-8.png}|balise_img)]})]
-
 
 <B_fonctions>
 <div class="liste-objets fonctions">
@@ -21,24 +18,10 @@
         <tbody>
         <BOUCLE_fonctions (DATA) {source table, (#ENV{prefixe,''}|lister_fonctions)}>
             <BOUCLE_prefixe (DATA) {source table, #VALEUR} {si #VALEUR|is_array}>
-                [<tr class="prefixe">
-                    <td colspan="3"><h3>(#_fonctions:CLE|unique)</h3></td>
-                </tr>]
-                <tr class="[(#COMPTEUR_BOUCLE|alterner{'row_even','row_odd'})]">
-                    <td class="fonction principale">[(#VALEUR|replace{'_','_<wbr/>'})] [(#VALEUR|fonction_fichier|match{'/plugins/'}|non)<a href="http://code.spip.net/@#VALEUR" target="_blank" class="aide">[(#CHEMIN_IMAGE{aide-16.png}|balise_img|inserer_attribut{title,<:titre_image_aide:>})]</a>]</td>
-                    <td class="filename secondaire">[(#VALEUR|fonction_fichier|replace{(/|_),$1<wbr/>})]</td>
-                    <td class="surcharge secondaire">[(#VALEUR|match{(_dist)$}|?{[(#GET{icone_ok})],[(#GET{icone_ko})]})]</td>
-                </tr>
+            #INCLURE{fond=prive/squelettes/inclure/fonction_info_ligne,fonction=#VALEUR,class=(#COMPTEUR_BOUCLE|alterner{'row_odd','row_even'}),prefixe=(#_images:CLE|unique)}
             </BOUCLE_prefixe>
             </B_prefixe>
-                [<tr class="prefixe">
-                    <td colspan="3"><h3>(#ENV{prefixe,''}|unique)</h3></td>
-                </tr>]
-                <tr class="[(#COMPTEUR_BOUCLE|alterner{'row_odd','row_even'})]">
-                    <td class="fonction principale">[(#VALEUR|replace{'_','_<wbr/>'})] [(#VALEUR|fonction_fichier|match{'/plugins/'}|non)<a href="http://code.spip.net/@#VALEUR" target="_blank" class="aide">[(#CHEMIN_IMAGE{aide-16.png}|balise_img|inserer_attribut{title,<:titre_image_aide:>})]</a>]</td>
-                    <td class="filename secondaire">[(#VALEUR|fonction_fichier|replace{(/|_),$1<wbr/>})]</td>
-                    <td class="surcharge secondaire">[(#VALEUR|match{(_dist)$}|?{[(#GET{icone_ok})],[(#GET{icone_ko})]})]</td>
-                </tr>
+            #INCLURE{fond=prive/squelettes/inclure/fonction_info_ligne,fonction=#VALEUR,class=(#COMPTEUR_BOUCLE|alterner{'row_odd','row_even'}),prefixe=(#ENV{prefixe,''}|unique),env}
             <//B_prefixe>
         </BOUCLE_fonctions>
         </tbody>
