@@ -29,9 +29,13 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
     // T
     'titre_onglet_constantes' => 'Les constantes',
     'titre_onglet_fonctions' => 'Les fonctions',
+    'titre_onglet_fonctions_completes' => 'Toutes les fonctions',
+    'titre_onglet_fonctions_utilisateur' => 'Les fonctions chargées',
     'titre_onglet_images' => 'Les images de thèmes',
     'titre_page_constantes' => 'Lister les constantes',
     'titre_page_fonctions' => 'Lister les fonctions',
+    'titre_page_fonctions_completes' => 'Lister toutes les fonctions',
+    'titre_page_fonctions_utilisateur' => 'Lister les fonctions chargées',
     'titre_page_images' => 'Lister les images des thèmes de SPIP',
     'tout_voir' => 'Tout voir',
 

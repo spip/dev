@@ -1,6 +1,6 @@
-[(#VAL{source_fonctions}|barre_onglets{source_fonctions})]
+[(#VAL{source_fonctions_utilisateur}|barre_onglets{source_fonctions_utilisateur})]
 
-<h1><:fonction:titre_page_fonctions:></h1>
+<h1><:fonction:titre_page_fonctions_utilisateur:></h1>
 
 <B_fonctions>
 <div class="liste-objets fonctions">
@@ -18,7 +18,7 @@
         <tbody>
         <BOUCLE_fonctions (DATA) {source table, (#ENV{prefixe,''}|lister_fonctions)}>
             <BOUCLE_prefixe (DATA) {source table, #VALEUR} {si #VALEUR|is_array}>
-            #INCLURE{fond=prive/squelettes/inclure/fonction_info_ligne,fonction=#VALEUR,class=(#COMPTEUR_BOUCLE|alterner{'row_odd','row_even'}),prefixe=(#_images:CLE|unique)}
+            #INCLURE{fond=prive/squelettes/inclure/fonction_info_ligne,fonction=#VALEUR,class=(#COMPTEUR_BOUCLE|alterner{'row_odd','row_even'}),prefixe=(#_fonctions:CLE|unique)}
             </BOUCLE_prefixe>
             </B_prefixe>
             #INCLURE{fond=prive/squelettes/inclure/fonction_info_ligne,fonction=#VALEUR,class=(#COMPTEUR_BOUCLE|alterner{'row_odd','row_even'}),prefixe=(#ENV{prefixe,''}|unique),env}

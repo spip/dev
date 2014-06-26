@@ -4,37 +4,36 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 
 /**
  * Une fonction récursive pour joliment afficher #ENV, #GET, #SESSION...
- *		en squelette : [(#ENV|bel_env)], [(#GET|bel_env)], [(#SESSION|bel_env)]
- *		ou encore [(#ARRAY{0,1, a,#SESSION, 1,#ARRAY{x,y}}|bel_env)]
+ *      en squelette : [(#ENV|bel_env)], [(#GET|bel_env)], [(#SESSION|bel_env)]
+ *      ou encore [(#ARRAY{0,1, a,#SESSION, 1,#ARRAY{x,y}}|bel_env)]
  *
  * @param string|array $env
- *		si une string est passée elle doit être le serialize d'un array 
+ *      si une string est passée elle doit être le serialize d'un array 
  *
  * @return string
- *		une chaîne html affichant une <table>
+ *      une chaîne html affichant une <table>
 **/
 function bel_env($env) {
-	$env = str_replace(array('&quot;', '&#039;'), array('"', '\''), $env);
-	if (is_array($env_tab = @unserialize($env))) {
-		$env = $env_tab;
-	}
-	if (!is_array($env)) {
-		return '';
-	}
-	$style = " style='border:1px solid #ddd;'";
-	$res = "<table style='border-collapse:collapse;'>\n";
-	foreach ($env as $nom => $val) {
-		if (is_array($val) || is_array(@unserialize($val))) {
-			$val = bel_env($val);
-		}
-		else {
-			$val = entites_html($val);
-		}
-		$res .= "<tr>\n<td$style><strong>". entites_html($nom).
-		"&nbsp;:&nbsp;</strong></td><td$style>" .$val. "</td>\n</tr>\n";
-	}
-	$res .= "</table>";
-	return $res;
+    $env = str_replace(array('&quot;', '&#039;'), array('"', '\''), $env);
+    if (is_array($env_tab = @unserialize($env))) {
+        $env = $env_tab;
+    }
+    if (!is_array($env)) {
+        return '';
+    }
+    $style = " style='border:1px solid #ddd;'";
+    $res = "<table style='border-collapse:collapse;'>\n";
+    foreach ($env as $nom => $val) {
+        if (is_array($val) || is_array(@unserialize($val))) {
+            $val = bel_env($val);
+        } else {
+            $val = entites_html($val);
+        }
+        $res .= "<tr>\n<td$style><strong>". entites_html($nom).
+        "&nbsp;:&nbsp;</strong></td><td$style>" .$val. "</td>\n</tr>\n";
+    }
+    $res .= "</table>";
+    return $res;
 }
 
 /**
@@ -48,30 +47,30 @@ function bel_env($env) {
  *         Si un préfixe est identifié, on listera toutes les fonctions avec ce préfixe.
  */
 function lister_fonctions ($prefixe = null) {
-	$fonctions = get_defined_functions();
+    $fonctions = get_defined_functions();
 
-	$fonctions_user = $fonctions["user"];
-	sort($fonctions_user);
+    $fonctions_user = $fonctions["user"];
+    sort($fonctions_user);
 
-	foreach ($fonctions_user as $value) {
-		if ($fonction = preg_split('/_/', $value, -1, PREG_SPLIT_NO_EMPTY)) {
-			$fonctions_user[$fonction[0]][] = $value;
-			if (($key = array_search($value, $fonctions_user)) !== false) {
-				unset($fonctions_user[$key]);
-			}
-		}
-	}
-	ksort($fonctions_user);
+    foreach ($fonctions_user as $value) {
+        if ($fonction = preg_split('/_/', $value, -1, PREG_SPLIT_NO_EMPTY)) {
+            $fonctions_user[$fonction[0]][] = $value;
+            if (($key = array_search($value, $fonctions_user)) !== false) {
+                unset($fonctions_user[$key]);
+            }
+        }
+    }
+    ksort($fonctions_user);
 
-	$resultat = $fonctions_user;
+    $resultat = $fonctions_user;
 
-	if ($prefixe) {
-		// On pourrait faire aussi un contrôle avec array_key_exists()
-		// Mais ça risque de fausser le résultat attendu.
-		$resultat = $fonctions_user[$prefixe];
-	}
+    if ($prefixe) {
+        // On pourrait faire aussi un contrôle avec array_key_exists()
+        // Mais ça risque de fausser le résultat attendu.
+        $resultat = $fonctions_user[$prefixe];
+    }
 
-	return $resultat;
+    return $resultat;
 
 }
 
@@ -86,32 +85,32 @@ function lister_fonctions ($prefixe = null) {
  *         Si un préfixe est identifié, on listera toutes les constantes avec ce préfixe.
  */
 function lister_constantes ($prefixe = null) {
-	$constantes = get_defined_constants(true);
+    $constantes = get_defined_constants(true);
 
-	$constantes_user = $constantes["user"];
+    $constantes_user = $constantes["user"];
 
-	foreach ($constantes_user as $key => $value) {
-		if ($constante = preg_split('/_/', $key, -1, PREG_SPLIT_NO_EMPTY)) {
-			if ($constante[0] == '_') {
-				$constantes_user[$constante[1]][$key] = $value;
-			} else {
-				$constantes_user[$constante[0]][$key] = $value;
-			}
-				unset($constantes_user[$key]);
-		}
-	}
+    foreach ($constantes_user as $key => $value) {
+        if ($constante = preg_split('/_/', $key, -1, PREG_SPLIT_NO_EMPTY)) {
+            if ($constante[0] == '_') {
+                $constantes_user[$constante[1]][$key] = $value;
+            } else {
+                $constantes_user[$constante[0]][$key] = $value;
+            }
+                unset($constantes_user[$key]);
+        }
+    }
 
-	ksort($constantes_user);
+    ksort($constantes_user);
 
-	$resultat = $constantes_user;
+    $resultat = $constantes_user;
 
-	if ($prefixe) {
-		// On pourrait faire aussi un contrôle avec array_key_exists()
-		// Mais ça risque de fausser le résultat attendu.
-		$resultat = $constantes_user[$prefixe];
-	}
+    if ($prefixe) {
+        // On pourrait faire aussi un contrôle avec array_key_exists()
+        // Mais ça risque de fausser le résultat attendu.
+        $resultat = $constantes_user[$prefixe];
+    }
 
-	return $resultat;
+    return $resultat;
 
 }
 
@@ -126,36 +125,36 @@ function lister_constantes ($prefixe = null) {
  *         Si un préfixe est identifié, on listera toutes les images avec ce préfixe.
  */
 function lister_images ($prefixe = null) {
-	$images = find_all_in_path("prive/themes/spip/images/", "\w.\w");
+    $images = find_all_in_path("prive/themes/spip/images/", "\w.\w");
 
-	foreach ($images as $key => $value) {
-		// On ne prend que les images issues des thèmes.
-		if (est_image($value)) {
-			if ($image = preg_split('/-/', $key, -1, PREG_SPLIT_NO_EMPTY)) {
-				if (count($image) > 1) {
-					$images[$image[0]][] = $value;
-				} else {
-					$image = explode('.', $image[0]);
-					$images[$image[0]][] = $value;
-				}
-				unset($images[$key]);
-			}
-		} else {
-			// Si ce n'est pas une image, on l'enlève du tableau.
-			unset($images[$key]);
-		}
-	}
-	ksort($images);
+    foreach ($images as $key => $value) {
+        // On ne prend que les images issues des thèmes.
+        if (est_image($value)) {
+            if ($image = preg_split('/-/', $key, -1, PREG_SPLIT_NO_EMPTY)) {
+                if (count($image) > 1) {
+                    $images[$image[0]][] = $value;
+                } else {
+                    $image = explode('.', $image[0]);
+                    $images[$image[0]][] = $value;
+                }
+                unset($images[$key]);
+            }
+        } else {
+            // Si ce n'est pas une image, on l'enlève du tableau.
+            unset($images[$key]);
+        }
+    }
+    ksort($images);
 
-	$resultat = $images;
+    $resultat = $images;
 
-	if ($prefixe) {
-		// On pourrait faire aussi un contrôle avec array_key_exists()
-		// Mais ça risque de fausser le résultat attendu.
-		$resultat = $images[$prefixe];
-	}
+    if ($prefixe) {
+        // On pourrait faire aussi un contrôle avec array_key_exists()
+        // Mais ça risque de fausser le résultat attendu.
+        $resultat = $images[$prefixe];
+    }
 
-	return $resultat;
+    return $resultat;
 
 }
 
@@ -192,18 +191,87 @@ function est_image ($fichier)
  */
 function fonction_fichier ($fonction = null) {
 
-	if ($fonction == null) {
-		return;
-	}
-	// On prépare le pattern pour ne pas avoir le chemin depuis les méandres du serveur d'hébergement.
-	$pattern_root = "/^" . preg_replace('/\//', '\/', $_SERVER['DOCUMENT_ROOT']) . "/";
+    if ($fonction == null) {
+        return;
+    }
+    // On prépare le pattern pour ne pas avoir le chemin depuis les méandres du serveur d'hébergement.
+    $pattern_root = "/^" . preg_replace('/\//', '\/', $_SERVER['DOCUMENT_ROOT']) . "/";
 
-	// API offerte par PHP 5.
-	$refFonction = new ReflectionFunction($fonction);
+    // API offerte par PHP 5.
+    $refFonction = new ReflectionFunction($fonction);
 
-	// On enlève le chemin 'root' pour ne garder que le chemin à la "racine" de notre site.
-	$filename = preg_replace($pattern_root, '', $refFonction->getFileName()) . '#L' . $refFonction->getStartLine();
+    // On enlève le chemin 'root' pour ne garder que le chemin à la "racine" de notre site.
+    $filename = preg_replace($pattern_root, '', $refFonction->getFileName()) . ':' . $refFonction->getStartLine();
 
-	return $filename;
+    return $filename;
+}
+
+function lister_fichiers_php ($dir = _DIR_RACINE) {
+    global $list;
+    $ffs = scandir($dir);
+    $exclu = preg_match('/(tmp|local)/', $dir);
+    foreach ($ffs as $ff) {
+        if ($ff != '.' and $ff != '..' and $ff != '.svn' and $exclu == false) {
+            if (strlen($ff) >= 5) {
+                if (substr($ff, -4) == '.php') {
+                    if (substr($dir, -1) == '/') {
+                        $list[] = $dir . $ff;
+                    } else {
+                        $list[] = $dir . '/' . $ff;
+                    }
+                    //echo dirname($ff) . $ff . "<br/>";
+                }
+            }
+            if (is_dir($dir . $ff)) {
+                lister_fichiers_php($dir . $ff);
+            } elseif (is_dir($dir . '/' . $ff)) {
+                lister_fichiers_php($dir . '/' . $ff);
+            }
+        }
+    }
+    return $list;
+}
+
+function lister_noms_fonctions ($fichier) {
+    $liste_fonctions = array();
+    $content = file_get_contents($fichier);
+    preg_match_all("/(function)([\s|\t]+)(\w+)/", $content, $fonctions);
+    foreach ($fonctions[3] as $fonction) {
+        $liste_fonctions[] = array('fichier' => $fichier, 'fonction' => $fonction);
+    }
+    return $liste_fonctions;
+}
+
+
+function lister_toutes_fonctions ($prefixe = null) {
+    $fichiers_php = lister_fichiers_php();
+    $fonctions_user = array();
+
+    foreach ($fichiers_php as $fichier) {
+        foreach (lister_noms_fonctions($fichier) as $value) {
+            $fonctions_user[] = $value;
+        }
+    }
+    natcasesort($fonctions_user);
+
+    foreach ($fonctions_user as $value) {
+        if ($fonction = preg_split('/_/', $value['fonction'], -1, PREG_SPLIT_NO_EMPTY)) {
+            $fonctions_user[$fonction[0]][] = $value;
+            if (($key = array_search($value, $fonctions_user)) !== false) {
+                unset($fonctions_user[$key]);
+            }
+        }
+    }
+    ksort($fonctions_user);
+
+    $resultat = $fonctions_user;
+
+    if ($prefixe) {
+        // On pourrait faire aussi un contrôle avec array_key_exists()
+        // Mais ça risque de fausser le résultat attendu.
+        $resultat = $fonctions_user[$prefixe];
+    }
+
+    return $resultat;
 }
 ?>
