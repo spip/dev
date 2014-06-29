@@ -1,5 +1,6 @@
 * text=auto !eol
 /dev_fonctions.php -text
+/dev_json.html -text
 /dev_options.php -text
 formulaires/charter.html -text
 formulaires/charter.php -text
@@ -13,6 +14,8 @@ formulaires/lister_fonctions_utilisateur.php -text
 formulaires/lister_images.html -text
 formulaires/lister_images.php -text
 inc/minipres.php -text
+json/source_fonctions_completes.html -text
+json/source_fonctions_utilisateur.html -text
 lang/charter.xml -text
 lang/charter_ar.php -text
 lang/charter_en.php -text
@@ -43,6 +46,11 @@ prive/squelettes/contenu/source_constantes.html -text
 prive/squelettes/contenu/source_fonctions_completes.html -text
 prive/squelettes/contenu/source_fonctions_utilisateur.html -text
 prive/squelettes/contenu/source_images.html -text
+prive/squelettes/hierarchie/source_constantes.html -text
+prive/squelettes/hierarchie/source_fonctions_completes.html -text
+prive/squelettes/hierarchie/source_fonctions_utilisateur.html -text
+prive/squelettes/hierarchie/source_images.html -text
+prive/squelettes/inclure/fonction_complete_info_ligne.html -text
 prive/squelettes/inclure/fonction_info_ligne.html -text
 prive/squelettes/inclure/image_info_ligne.html -text
 prive/squelettes/navigation/source_constantes.html -text

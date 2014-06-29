@@ -16,26 +16,12 @@
             </tr>
         </thead>
         <tbody>
-        <BOUCLE_fonctions (DATA) {source table, (#VAL{''}|lister_toutes_fonctions)}>
+        <BOUCLE_fonctions (DATA) {source table, (#ENV{prefixe,''}|lister_toutes_fonctions)}>
             <BOUCLE_prefixe (DATA) {source table, #VALEUR} {si #VALEUR|is_array}>
-            [<tr class="prefixe">
-                <td colspan="3"><h3>(#_fonctions:CLE|unique)</h3></td>
-            </tr>]
-            <tr class="[(#ENV{class})]">
-                <td class="fonction principale">[(#VALEUR{fonction}|replace{'_','_<wbr/>'})] [(#VALEUR{fichier}|match{'/plugins/'}|non)<a href="http://code.spip.net/@#VALEUR{fonction}" target="_blank" class="aide">[(#CHEMIN_IMAGE{aide-16.png}|balise_img|inserer_attribut{title,<:titre_image_aide:>})]</a>]</td>
-                <td class="filename secondaire">[(#VALEUR{fichier}|replace{(/|_),$1<wbr/>})]</td>
-                <td class="surcharge secondaire">[(#VALEUR{fonction}|match{(_dist)$}|?{[(#CHEMIN_IMAGE{ok-16.png}|balise_img)],[(#CHEMIN_IMAGE{supprimer-8.png}|balise_img)]})]</td>
-            </tr>
+            #INCLURE{fond=prive/squelettes/inclure/fonction_complete_info_ligne,fonction=#VALEUR,class=(#COMPTEUR_BOUCLE|alterner{'row_odd','row_even'}),prefixe=(#_fonctions:CLE|unique)}
             </BOUCLE_prefixe>
             </B_prefixe>
-            [<tr class="prefixe">
-                <td colspan="3"><h3>(#ENV{prefixe,''}|unique)</h3></td>
-            </tr>]
-            <tr class="[(#ENV{class})]">
-                <td class="fonction principale">[(#VALEUR{fonction}|replace{'_','_<wbr/>'})] [(#VALEUR{fichier}|match{'/plugins/'}|non)<a href="http://code.spip.net/@#VALEUR{fonction}" target="_blank" class="aide">[(#CHEMIN_IMAGE{aide-16.png}|balise_img|inserer_attribut{title,<:titre_image_aide:>})]</a>]</td>
-                <td class="filename secondaire">[(#VALEUR{fichier}|replace{(/|_),$1<wbr/>})]</td>
-                <td class="surcharge secondaire">[(#VALEUR{fonction}|match{(_dist)$}|?{[(#CHEMIN_IMAGE{ok-16.png}|balise_img)],[(#CHEMIN_IMAGE{supprimer-8.png}|balise_img)]})]</td>
-            </tr>
+            #INCLURE{fond=prive/squelettes/inclure/fonction_complete_info_ligne,fonction=#VALEUR,class=(#COMPTEUR_BOUCLE|alterner{'row_odd','row_even'}),prefixe=(#ENV{prefixe}|unique)}
             <//B_prefixe>
         </BOUCLE_fonctions>
         </tbody>
