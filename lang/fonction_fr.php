@@ -11,6 +11,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
     'des_images' => '@nb@ images',
 
     // I
+    'icone_dev' => 'Développement',
     'info_constante' => 'Constante',
     'info_core_spip' => 'Core de SPIP',
     'info_filename' => 'Fichier d\'origine',
