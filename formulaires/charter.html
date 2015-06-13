@@ -120,6 +120,21 @@
 						<label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_',#GET{name},'_',#GET{val}}|_T)]</label>
 					</div>
 				</li>
+				<!--EX09b-->
+				#SET{name,checkbox_ouiounon}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
+				<li class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+					<label>[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
+					<span class='erreur_message'>(#GET{erreurs})</span>
+					]
+					<p class="explication">Des explications au-dessus d'un choix</p>
+					<div class="choix">
+						#SET{val,non}
+						<input type="hidden" name="#GET{name}" value="#GET{val}" />
+						#SET{val,oui}
+						<input type="checkbox" name="#GET{name}" class="checkbox" id="#GET{name}_#GET{val}" value="#GET{val}"[(#ENV{#GET{name},#GET{defaut}}|=={#GET{val}}|oui)checked="checked"] />
+						<label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_',#GET{name},'_',#GET{val}}|_T)]</label>
+					</div>
+				</li>
 				<!--EX10-->
 				#SET{name,checkbox}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
 				<li class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
@@ -136,22 +151,8 @@
 						<input type="checkbox" name="#GET{name}#EVAL{chr(91)}#EVAL{chr(93)}" class="checkbox" id="#GET{name}_#GET{val}" value="#GET{val}"[(#GET{val}|in_any{#ENV{#GET{name},#GET{defaut}}}|oui)checked="checked"] />
 						<label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_',#GET{name},'_',#GET{val}}|_T)]</label>
 					</div>
+					<p class="explication">Des explications au-dessous d'un choix</p>
 				</li>
-                <!--EX10b-->
-                #SET{name,checkbox_ouinon}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
-                <li class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-                    <label>[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
-                    <span class='erreur_message'>(#GET{erreurs})</span>
-                    ]
-                    #SET{val_non,0}
-                    #SET{val,1}
-                    <div class="choix">[
-                        (#REM) Valeur envoyee si case non cochee]
-                        <input type="hidden" name="#GET{name}" value="#GET{val_non}" />
-                        <input type="checkbox" name="#GET{name}" class="checkbox" id="#GET{name}_#GET{val}" value="#GET{val}"[(#GET{val}|=={#ENV{#GET{name},#GET{defaut}}}|oui)checked="checked"] />
-                        <label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_',#GET{name},'_',#GET{val}}|_T)]</label>
-                    </div>
-                </li>
 
 				<!--EX11-->
 				#SET{name,checkbox_long_label}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
@@ -167,20 +168,6 @@
 					#SET{val,2}
 					<div class="choix">
 						<input type="checkbox" name="#GET{name}#EVAL{chr(91)}#EVAL{chr(93)}" class="checkbox" id="#GET{name}_#GET{val}" value="#GET{val}"[(#GET{val}|in_any{#ENV{#GET{name},#GET{defaut}}}|oui)checked="checked"] />
-						<label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_',#GET{name},'_',#GET{val}}|_T)]</label>
-					</div>
-				</li>
-				#SET{name,checkboxouiounon}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
-				<li class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-					<label>[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
-					<span class='erreur_message'>(#GET{erreurs})</span>
-					]
-					<p class="explication">Des explications au-dessus d'un choix</p>
-					#SET{val,non}
-					<input type="hidden" name="#GET{name}" value="#GET{val}" />
-					#SET{val,oui}
-					<div class="choix">
-						<input type="checkbox" name="#GET{name}" class="checkbox" id="#GET{name}_#GET{val}" value="#GET{val}"[(#ENV{#GET{name},#GET{defaut}}|=={#GET{val}}|oui)checked="checked"] />
 						<label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_',#GET{name},'_',#GET{val}}|_T)]</label>
 					</div>
 				</li>
