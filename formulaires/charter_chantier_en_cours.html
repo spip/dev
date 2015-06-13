@@ -23,7 +23,7 @@
 		<fieldset>
 			<legend><:charter:legend:></legend>
 				<p class="explication">Des explications dans un fieldset</p>
-				<div class="liste-formulaire">
+				<div class="editer-groupe">
 				<!--EX01-->
 				#SET{name,text}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
 				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
@@ -54,7 +54,7 @@
 		</fieldset>
 		<fieldset>
 			<legend><:charter:legend:></legend>
-			<div class="liste-formulaire">
+			<div class="editer-groupe">
 				<!--EX04-->
 				#SET{name,text}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
 				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
@@ -188,7 +188,7 @@
 				<li class="fieldset">
 					<fieldset>
 						<legend><:charter:legend:></legend>
-						<div class="liste-formulaire">
+						<div class="editer-groupe">
 							<!--EX12-->
 							#SET{name,text}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
 							<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
