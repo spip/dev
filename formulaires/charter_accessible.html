@@ -69,7 +69,7 @@
 				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
 					<label for="#GET{name}">[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
-					]<input type="text" name="#GET{name}" class="text" value="#ENV*{#GET{name},#GET{defaut}}" id="#GET{name}" aria-describedby="#GET{name}_explication"  [(#HTML5|et{#GET{obli}})required='required']/>
+					]<input type="text" name="#GET{name}" class="text" value="#ENV*{#GET{name},#GET{defaut}}" id="#GET{name}" aria-describedby="#GET{name}_explication" [(#HTML5|et{#GET{obli}})required='required']/>
 					<p class="explication" id="#GET{name}_explication">Des explications après un champ de saisie</p>
 				</div>
 				<!--EX06-->
@@ -85,7 +85,7 @@
 				<div class="editer pleine_largeur editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
 					<label for="#GET{name}">[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
-					]<textarea name="#GET{name}" id="#GET{name}"  class="textarea">
+					]<textarea name="#GET{name}" id="#GET{name}" class="textarea">
 #ENV*{#GET{name},#GET{defaut}}</textarea>
 				</div>
 				#SET{name,textarea_pleine_largeur_obli}#SET{obli,'obligatoire'}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
@@ -108,15 +108,30 @@
 					<label>[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]
-					<p class="explication"  id="#GET{name}_explication">Des explications au-dessus d'un choix</p>
+					<p class="explication" id="#GET{name}_explication">Des explications au-dessus d'un choix</p>
 					#SET{val,oui}
 					<div class="choix">
-						<input type="radio" name="#GET{name}" class="radio" id="#GET{name}_#GET{val}" aria-describedby="#GET{name}_explication" value="#GET{val}"[(#ENV{#GET{name},#GET{defaut}}|=={#GET{val}}|oui)checked="checked"] />
+						<input type="radio" name="#GET{name}" class="radio" id="#GET{name}_#GET{val}" value="#GET{val}" aria-describedby="#GET{name}_explication" [(#ENV{#GET{name},#GET{defaut}}|=={#GET{val}}|oui)checked="checked"] />
 						<label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_',#GET{name},'_',#GET{val}}|_T)]</label>
 					</div>
 					#SET{val,non}
 					<div class="choix">
-						<input type="radio" name="#GET{name}" class="radio" id="#GET{name}_#GET{val}" value="#GET{val}"[(#ENV{#GET{name},#GET{defaut}}|=={#GET{val}}|oui)checked="checked"] />
+						<input type="radio" name="#GET{name}" class="radio" id="#GET{name}_#GET{val}" value="#GET{val}" aria-describedby="#GET{name}_explication" [(#ENV{#GET{name},#GET{defaut}}|=={#GET{val}}|oui)checked="checked"] />
+						<label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_',#GET{name},'_',#GET{val}}|_T)]</label>
+					</div>
+				</div>
+				<!--EX09b-->
+				#SET{name,checkbox_ouiounon}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
+				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+					<label>[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
+					<span class='erreur_message'>(#GET{erreurs})</span>
+					]
+					<p class="explication" id="#GET{name}_explication">Des explications au-dessus d'un choix</p>
+					<div class="choix">
+						#SET{val,non}
+						<input type="hidden" name="#GET{name}" value="#GET{val}" />
+						#SET{val,oui}
+						<input type="checkbox" name="#GET{name}" class="checkbox" id="#GET{name}_#GET{val}" value="#GET{val}" aria-describedby="#GET{name}_explication" [(#ENV{#GET{name},#GET{defaut}}|=={#GET{val}}|oui)checked="checked"] />
 						<label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_',#GET{name},'_',#GET{val}}|_T)]</label>
 					</div>
 				</div>
@@ -128,30 +143,16 @@
 					]
 					#SET{val,1}
 					<div class="choix">
-						<input type="checkbox" name="#GET{name}#EVAL{chr(91)}#EVAL{chr(93)}" class="checkbox" id="#GET{name}_#GET{val}" value="#GET{val}"[(#GET{val}|in_any{#ENV{#GET{name},#GET{defaut}}}|oui)checked="checked"] />
+						<input type="checkbox" name="#GET{name}#EVAL{chr(91)}#EVAL{chr(93)}" class="checkbox" id="#GET{name}_#GET{val}" value="#GET{val}" aria-describedby="#GET{name}_explication" [(#GET{val}|in_any{#ENV{#GET{name},#GET{defaut}}}|oui)checked="checked"] />
 						<label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_',#GET{name},'_',#GET{val}}|_T)]</label>
 					</div>
 					#SET{val,2}
 					<div class="choix">
-						<input type="checkbox" name="#GET{name}#EVAL{chr(91)}#EVAL{chr(93)}" class="checkbox" id="#GET{name}_#GET{val}" value="#GET{val}"[(#GET{val}|in_any{#ENV{#GET{name},#GET{defaut}}}|oui)checked="checked"] />
+						<input type="checkbox" name="#GET{name}#EVAL{chr(91)}#EVAL{chr(93)}" class="checkbox" id="#GET{name}_#GET{val}" value="#GET{val}" aria-describedby="#GET{name}_explication" [(#GET{val}|in_any{#ENV{#GET{name},#GET{defaut}}}|oui)checked="checked"] />
 						<label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_',#GET{name},'_',#GET{val}}|_T)]</label>
 					</div>
+					<p class="explication" id="#GET{name}_explication">Des explications au-dessous d'un choix</p>
 				</div>
-                <!--EX10b-->
-                #SET{name,checkbox_ouinon}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
-                <div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-                    <label>[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
-                    <span class='erreur_message'>(#GET{erreurs})</span>
-                    ]
-                    #SET{val_non,0}
-                    #SET{val,1}
-                    <div class="choix">[
-                        (#REM) Valeur envoyee si case non cochee]
-                        <input type="hidden" name="#GET{name}" value="#GET{val_non}" />
-                        <input type="checkbox" name="#GET{name}" class="checkbox" id="#GET{name}_#GET{val}" value="#GET{val}"[(#GET{val}|=={#ENV{#GET{name},#GET{defaut}}}|oui)checked="checked"] />
-                        <label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_',#GET{name},'_',#GET{val}}|_T)]</label>
-                    </div>
-                </div>
 
 				<!--EX11-->
 				#SET{name,checkbox_long_label}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
@@ -170,22 +171,8 @@
 						<label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_',#GET{name},'_',#GET{val}}|_T)]</label>
 					</div>
 				</div>
-				#SET{name,checkboxouiounon}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
-				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-					<label>[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
-					<span class='erreur_message'>(#GET{erreurs})</span>
-					]
-					<p class="explication"  id="#GET{name}_explication">Des explications au-dessus d'un choix</p>
-					#SET{val,non}
-					<input type="hidden" name="#GET{name}" value="#GET{val}" />
-					#SET{val,oui}
-					<div class="choix">
-						<input type="checkbox" name="#GET{name}" class="checkbox" id="#GET{name}_#GET{val}"  aria-describedby="#GET{name}_explication"  value="#GET{val}"[(#ENV{#GET{name},#GET{defaut}}|=={#GET{val}}|oui)checked="checked"] />
-						<label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_',#GET{name},'_',#GET{val}}|_T)]</label>
-					</div>
-				</div>
 
-				<li class="fieldset">
+				<div class="fieldset">
 					<fieldset>
 						<legend><:charter:legend:></legend>
 						<div class="editer-groupe">
@@ -210,6 +197,7 @@
 		</fieldset>
 	  [(#REM) ajouter les saisies supplémentaires : extra et autre, à cet endroit ]
 	  <!--extra-->
+		<p class="explication">Cliquez sur <q>Annuler</q> pour tester les messages d'erreur et sur <q>Enregistrer</q> pour tester les messages de succès.</p>
 	  <p class='boutons'><span class='image_loading'>&nbsp;</span>
 			<input type='submit' name="cancel" class='submit' value='<:bouton_annuler|attribut_html:>' />
 			<input type='submit' class='submit' value='<:bouton_enregistrer|attribut_html:>' /></p>
