@@ -2,10 +2,10 @@
 /dev-32.png -text
 /dev_fonctions.php -text
 /dev_options.php -text
-formulaires/charter.html -text
-formulaires/charter.php -text
 formulaires/charter_accessible.html -text
 formulaires/charter_accessible.php -text
+formulaires/charter_compat.html -text
+formulaires/charter_compat.php -text
 inc/minipres.php -text
 lang/charter.xml -text
 lang/charter_ar.php -text
