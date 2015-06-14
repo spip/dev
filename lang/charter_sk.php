@@ -14,6 +14,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'label_checkbox_long_label' => 'Výber z viacerých možností s veľmi dlhou menovkou, ktorý využíva triedu <tt>.long_label</tt>',
 	'label_checkbox_long_label_1' => 'Prvé zaškrtávacie pole',
 	'label_checkbox_long_label_2' => 'Druhé zaškrtávacie pole',
+	'label_checkbox_ouiounon_oui' => 'Áno',
 	'label_radio' => 'Výber jedinej možnosti',
 	'label_radio_non' => 'Nie',
 	'label_radio_oui' => 'Áno',

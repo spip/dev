@@ -14,6 +14,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'label_checkbox_long_label' => 'A multiple choice with a very long label that uses a class <tt>.long_label</tt>',
 	'label_checkbox_long_label_1' => 'A first choice',
 	'label_checkbox_long_label_2' => 'A second choice',
+	'label_checkbox_ouiounon_oui' => 'Yes',
 	'label_radio' => 'A single choice',
 	'label_radio_non' => 'No',
 	'label_radio_oui' => 'Yes',

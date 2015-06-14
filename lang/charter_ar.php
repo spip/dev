@@ -14,6 +14,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'label_checkbox_long_label' => 'خيار متعدد بعنوان طويل جداً يستخدم نمط <tt>.long_label</tt>',
 	'label_checkbox_long_label_1' => 'خيار أول',
 	'label_checkbox_long_label_2' => 'خيار ثان',
+	'label_checkbox_ouiounon_oui' => 'نعم',
 	'label_radio' => 'خيار وحيد',
 	'label_radio_non' => 'كلا',
 	'label_radio_oui' => 'نعم',

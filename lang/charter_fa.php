@@ -16,6 +16,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 اسفتاده مي‌كند',
 	'label_checkbox_long_label_1' => 'يك گزينه‌ي اوليه',
 	'label_checkbox_long_label_2' => 'يك گزينه‌ي ثانويه',
+	'label_checkbox_ouiounon_oui' => 'بله',
 	'label_radio' => 'يك گزينه‌ي تك',
 	'label_radio_non' => 'نه',
 	'label_radio_oui' => 'بله',
