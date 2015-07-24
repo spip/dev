@@ -13,6 +13,7 @@ if(!defined('_DEBUG_MINIPRES'))
 function affiche_usage_memoire(){
 	if (
 		(!defined('_AJAX') OR !_AJAX)
+		AND isset($GLOBALS['auteur_session']['webmestre'])
 		AND $GLOBALS['auteur_session']['webmestre'] == 'oui'
 		AND !_request('action')
 		AND !preg_match('#(\.css|\.js)#', _request('page'))
