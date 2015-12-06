@@ -109,7 +109,7 @@ function install_debut_html($titre = 'AUTO', $onLoad = '', $all_inline = false) 
  * @return string Code HTML
  */
 function install_fin_html() {
-	if (!_request('exec')=='install' && _DEBUG_MINIPRES) {
+	if (!_request('exec')=='install' && defined('_DEBUG_MINIPRES') && _DEBUG_MINIPRES) {
 		echo "<pre>";
 		debug_print_backtrace();
 		echo "</pre>";
