@@ -51,8 +51,8 @@ function install_debut_html($titre = 'AUTO', $onLoad = '', $all_inline = false) 
 
 	http_no_cache();
 
-	if ($titre=='AUTO') {
-		$titre=_T('info_installation_systeme_publication');
+	if ($titre == 'AUTO') {
+		$titre = _T('info_installation_systeme_publication');
 	}
 
 	# le charset est en utf-8, pour recuperer le nom comme il faut
@@ -72,7 +72,7 @@ function install_debut_html($titre = 'AUTO', $onLoad = '', $all_inline = false) 
 			} else {
 				$file = url_absolue_css($file); // precaution
 			}
-			lire_fichier($file,$c);
+			lire_fichier($file, $c);
 			$css .= $c;
 		}
 		$css = "<style type='text/css'>".$css."</style>";
@@ -109,7 +109,7 @@ function install_debut_html($titre = 'AUTO', $onLoad = '', $all_inline = false) 
  * @return string Code HTML
  */
 function install_fin_html() {
-	if (!_request('exec')=='install' && defined('_DEBUG_MINIPRES') && _DEBUG_MINIPRES) {
+	if (!_request('exec') == 'install' && defined('_DEBUG_MINIPRES') && _DEBUG_MINIPRES) {
 		echo "<pre>";
 		debug_print_backtrace();
 		echo "</pre>";
@@ -150,26 +150,26 @@ function install_fin_html() {
  * @return string
  *   HTML de la page
  */
-function minipres($titre = '', $corps = "", $options = array()){
+function minipres($titre = '', $corps = "", $options = array()) {
 
 	// compat signature old
 	// minipres($titre='', $corps="", $onload='', $all_inline = false)
 	$args = func_get_args();
-	if (isset($args[2]) AND is_string($args[2])){$options = array('onload' => $args[2]);}
+	if (isset($args[2]) and is_string($args[2])){$options = array('onload' => $args[2]);}
 	if (isset($args[3])) {$options['all_inline'] = $args[3];}
 
 	$options = array_merge(array(
 		'onload' => '',
 		'all_inline' => false,
-	),$options);
+	), $options);
 
 	if (!defined('_AJAX')) define('_AJAX', false); // par securite
 	if (!$titre) {
 		if (!isset($options['status']))
 			$options['status'] = 403;
 		if (!$titre = _request('action')
-		AND !$titre = _request('exec')
-		AND !$titre = _request('page'))
+		and !$titre = _request('exec')
+		and !$titre = _request('page'))
 			$titre = '?';
 
 		$titre = spip_htmlspecialchars($titre);
@@ -181,7 +181,7 @@ function minipres($titre = '', $corps = "", $options = array()){
 		$statut = isset($GLOBALS['visiteur_session']['statut']) ? $GLOBALS['visiteur_session']['statut'] : '';
 		$nom    = isset($GLOBALS['visiteur_session']['nom']) ? $GLOBALS['visiteur_session']['nom'] : '';
 
-		$corps = generer_form_ecrire('accueil', '','',
+		$corps = generer_form_ecrire('accueil', '', '',
 						$statut ? _T('public:accueil_site') : _T('public:lien_connecter')
 		);
 		spip_log($nom . " $titre " . $_SERVER['REQUEST_URI']);
@@ -197,10 +197,9 @@ function minipres($titre = '', $corps = "", $options = array()){
 	else {
 		include_spip('inc/headers');
 		include_spip('inc/actions');
-		$url = self('&',true);
+		$url = self('&', true);
 		foreach ($_POST as $v => $c)
 			$url = parametre_url($url, $v, $c, '&');
-		ajax_retour("<div>".$titre . redirige_formulaire($url)."</div>",false);
+		ajax_retour("<div>".$titre . redirige_formulaire($url)."</div>", false);
 	}
 }
-?>

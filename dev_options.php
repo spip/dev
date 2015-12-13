@@ -8,16 +8,16 @@ defined('_DEBUG_AUTORISER')    || define('_DEBUG_AUTORISER', true);
 $GLOBALS['test_i18n'] = true; // signaler les trads manquantes
 
 if(!defined('_DEBUG_MINIPRES'))
-	define('_DEBUG_MINIPRES',true);
+	define('_DEBUG_MINIPRES', true);
 
-function affiche_usage_memoire(){
+function affiche_usage_memoire() {
 	if (
-		(!defined('_AJAX') OR !_AJAX)
-		AND isset($GLOBALS['auteur_session']['webmestre'])
-		AND $GLOBALS['auteur_session']['webmestre'] == 'oui'
-		AND !_request('action')
-		AND !preg_match('#(\.css|\.js)#', _request('page'))
-		AND !preg_match('#(\.css|\.js)#', _request('file'))
+		(!defined('_AJAX') or !_AJAX)
+		and isset($GLOBALS['auteur_session']['webmestre'])
+		and $GLOBALS['auteur_session']['webmestre'] == 'oui'
+		and !_request('action')
+		and !preg_match('#(\.css|\.js)#', _request('page'))
+		and !preg_match('#(\.css|\.js)#', _request('file'))
 	) {
 		chdir(_ROOT_CWD); // precaution
 		echo "<div style='position:fixed;top:0;left:0;color:#fff;background:#666;padding:5px;z-index:1010;'>";
@@ -39,4 +39,3 @@ function affiche_usage_memoire(){
 	}
 }
 register_shutdown_function('affiche_usage_memoire');
-

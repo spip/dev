@@ -36,5 +36,3 @@ function bel_env($env) {
 	$res .= "</table>";
 	return $res;
 }
-
-?>

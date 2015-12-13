@@ -6,17 +6,17 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
  * Chargement des valeurs
  * @return array
  */
-function formulaires_charter_compat_charger_dist(){
+function formulaires_charter_compat_charger_dist() {
 
 	$valeurs = array(
-		'text'=>'',
-		'text_obli'=>'',
-		'textarea'=>'',
-		'textarea_pleine_largeur'=>'',
-		'text_long_label'=>'',
-		'radio'=>'non',
-		'checkbox'=>array(1),
-		'checkbox_long_label'=>array(1,2),
+		'text' => '',
+		'text_obli' => '',
+		'textarea' => '',
+		'textarea_pleine_largeur' => '',
+		'text_long_label' => '',
+		'radio' => 'non',
+		'checkbox' => array(1),
+		'checkbox_long_label' => array(1,2),
 	);
 
 	return $valeurs;
@@ -27,7 +27,7 @@ function formulaires_charter_compat_charger_dist(){
  * on simule des erreurs si on a clique sur annuler
  * @return array
  */
-function formulaires_charter_compat_verifier_dist(){
+function formulaires_charter_compat_verifier_dist() {
 	$erreurs = array();
 	if (_request('cancel')){
 		$erreurs['message_erreur'] = ('Un long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur...');
@@ -48,8 +48,6 @@ function formulaires_charter_compat_verifier_dist(){
 /**
  * Traitement de la saisie
  */
-function formulaires_charter_compat_traiter_dist(){
-	return array('message_ok'=>('Bravo, c\'est une reussite !'));
+function formulaires_charter_compat_traiter_dist() {
+	return array('message_ok' => ('Bravo, c\'est une reussite !'));
 }
-
-?>
