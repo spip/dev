@@ -19,7 +19,7 @@
 	<onglet nom="charte_listes" titre="charter:titre_listes" parent="charte" action="charte_listes" />
 	<onglet nom="charte_forms" titre="charter:titre_formulaires" parent="charte" action="charte_forms" />
 
-	<spip compatibilite="[3.1.0-dev;3.1.*]">
+	<spip compatibilite="[3.1.0;3.1.*]">
 		<menu nom="charte" titre="charter:titre_charte" parent="menu_developpement" icone="images/charte-16.png" action="charte" />
 	</spip>
 </paquet>
