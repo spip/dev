@@ -13,4 +13,3 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'dev_description' => 'Strumenti di sviluppo',
 	'dev_slogan' => 'Strumenti di sviluppo'
 );
-
