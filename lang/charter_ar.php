@@ -39,4 +39,3 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'titre_listes' => 'لوائح',
 	'titre_typo' => 'خطأ مطبعي'
 );
-

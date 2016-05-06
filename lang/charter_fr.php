@@ -38,4 +38,3 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'titre_listes' => 'Listes',
 	'titre_typo' => 'Typo'
 );
-

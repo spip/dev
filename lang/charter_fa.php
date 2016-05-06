@@ -45,4 +45,3 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'titre_listes' => 'فهرست‌ها',
 	'titre_typo' => 'تايپو'
 );
-
