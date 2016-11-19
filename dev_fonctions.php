@@ -9,12 +9,17 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
  *
  * @param string|array $env
  *		si une string est passée elle doit être le serialize d'un array 
+ * @param bool         $afficher_vide
+ *      si vrai indique qu'il faut afficher la chaine vide et la valeur
+ *      respectivement comme `''` et `null`. Sinon on affiche rien.
  *
  * @return string
  *		une chaîne html affichant une <table>
 **/
-function bel_env($env) {
-	$env = str_replace(array('&quot;', '&#039;'), array('"', '\''), $env);
+function bel_env($env, $afficher_vide = false) {
+	if (!$afficher_vide) {
+		$env = str_replace(array('&quot;', '&#039;'), array('"', '\''), $env);
+	}
 	if (is_array($env_tab = @unserialize($env))) {
 		$env = $env_tab;
 	}
@@ -25,7 +30,13 @@ function bel_env($env) {
 	$res = "<table style='border-collapse:collapse;'>\n";
 	foreach ($env as $nom => $val) {
 		if (is_array($val) || is_array(@unserialize($val))) {
-			$val = bel_env($val);
+			$val = bel_env($val, $afficher_vide);
+		}
+		elseif (($val === null) and $afficher_vide) {
+			$val = '<i>null</i>';
+		}
+		elseif (($val === '') and $afficher_vide) {
+			$val = "<i>''</i>";
 		}
 		else {
 			$val = entites_html($val);
