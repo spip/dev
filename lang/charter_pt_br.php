@@ -34,7 +34,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// T
 	'titre_boites' => 'Boxes',
-	'titre_charte' => 'Charte', # RELIRE
+	'titre_charte' => 'Legenda',
 	'titre_formulaires' => 'Formulários',
 	'titre_icones' => 'Icones',
 	'titre_listes' => 'Listas',
