@@ -5,9 +5,9 @@
 	etat="stable"
 	compatibilite="[3.0.0;3.0.*]"
 	logo="dev-32.png"
->	
+>
 
-	<nom>D&#233;veloppement</nom>
+	<nom>Développement</nom>
 	<!-- Outils de developpement -->
 
 	<auteur>Collectif SPIP</auteur>
