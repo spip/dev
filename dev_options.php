@@ -27,9 +27,11 @@ function affiche_usage_memoire() {
 				echo " | " . ($serveur ? $serveur . " : " : "") . $connexion['total_requetes'] . " requetes";
 			}
 		}
-		// définir $GLOBALS['page_start_time'] = microtime(true); le plus tôt possible (dans mes_options)
-		// pour afficher le temps de calcul de la page
-		if (isset($GLOBALS['page_start_time'])) {
+		if (version_compare(PHP_VERSION, '5.4.0') >= 0) {
+			echo " | " . number_format((microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"]), 2) . " s";
+		} else if (isset($GLOBALS['page_start_time'])) {
+			// définir $GLOBALS['page_start_time'] = microtime(true); le plus tôt possible (dans mes_options)
+			// pour afficher le temps de calcul de la page
 			echo " | " . number_format((microtime(true) - $GLOBALS['page_start_time']), 2) . " s";
 		}
 		echo "</div>";
