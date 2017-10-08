@@ -1,0 +1,24 @@
+<paquet
+	prefix="dev"
+	categorie="outil"
+	version="0.5.7"
+	etat="stable"
+	compatibilite="[3.2.0;3.2.*]"
+	logo="dev-32.png"
+>
+
+	<nom>Développement</nom>
+	<!-- Outils de developpement -->
+
+	<auteur>Collectif SPIP</auteur>
+
+	<onglet nom="charte" titre="charter:titre_charte" parent="charte" action="charte" />
+	<onglet nom="charte_icones" icone="images/cfg-24.png" titre="charter:titre_icones" parent="charte" action="charte_icones" />
+	<onglet nom="charte_typo" icone="images/article-24.png" titre="charter:titre_typo" parent="charte" action="charte_typo" />
+	<onglet nom="charte_boites" titre="charter:titre_boites" parent="charte" action="charte_boites" />
+	<onglet nom="charte_listes" titre="charter:titre_listes" parent="charte" action="charte_listes" />
+	<onglet nom="charte_forms" titre="charter:titre_formulaires" parent="charte" action="charte_forms" />
+
+	<menu nom="charte" titre="charter:titre_charte" parent="menu_developpement" icone="images/charte-16.png" action="charte" />
+
+</paquet>
