@@ -1,0 +1,62 @@
+[(#REM)
+
+  Squelette
+  (c) 2009 xxx
+  Distribué sous licence GPL
+
+]
+
+<h1 class="grostitre">Onglets</h1>
+
+<h2>Barre d'onglets</h2>
+
+<p>
+	Malgré son nom, ce menu constitue une navigation avec changement de page, fonctionnellement il ne s'agit pas de vrais onglets.
+	<br>Chaque menu est identifié par un nom, et la liste des pages le constituant est décrite dans <code>paquet.xml</code>, elle peut être étendue par les plugins.
+</p>
+
+[(#VAL{demo}|barre_onglets{demo})]
+
+<p>
+	<code class="spip">[(&#35;VAL{nomdelabarreonglet}|barre_onglets{pagecourante})]</code>
+</p>
+
+<h2>Onglets simples à deux niveaux</h2>
+
+<p>Les onglets simples sont utilisés préférentiellement pour de la navigation ou du filtrage au sein de la même page. Ils sont utilisés avec des liens ajax pour être plus réactifs, ce qui est attendu par les utilisateurs confrontés à un onglet.
+<br />
+Il n'y a pas de filtre pour les construire car leur structure HTML est très simple.</p>
+
+<div class='onglets_simple clearfix'>
+	<ul>
+		<li><strong>Onglet expos&eacute;</strong></li>
+		<li><a>Onglet cliquable</a></li>
+		<li><a>Onglet cliquable</a></li>
+	</ul>
+</div>
+
+<div class='onglets_simple second clearfix'>
+	<ul>
+		<li><strong>Onglet expos&eacute;</strong></li>
+		<li><a>Onglet cliquable</a></li>
+		<li><a>Onglet cliquable</a></li>
+	</ul>
+</div>
+
+<textarea rows="15" cols="60">
+	<div class='onglets_simple clearfix'>
+		<ul>
+			<li><strong>Onglet expos&eacute;</strong></li>
+			<li><a>Onglet cliquable</a></li>
+			<li><a>Onglet cliquable</a></li>
+		</ul>
+	</div>
+
+	<div class='onglets_simple second clearfix'>
+		<ul>
+			<li><strong>Onglet expos&eacute;</strong></li>
+			<li><a>Onglet cliquable</a></li>
+			<li><a>Onglet cliquable</a></li>
+		</ul>
+	</div>
+</textarea>

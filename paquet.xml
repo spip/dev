@@ -13,11 +13,17 @@
 	<auteur>Collectif SPIP</auteur>
 
 	<onglet nom="charte" titre="charter:titre_charte" parent="charte" action="charte" />
+	<onglet nom="charte_layout" titre="charter:titre_layout" parent="charte" action="charte_layout" />
+	<onglet nom="charte_onglets" titre="charter:titre_onglets" parent="charte" action="charte_onglets" />
 	<onglet nom="charte_icones" icone="images/cfg-24.png" titre="charter:titre_icones" parent="charte" action="charte_icones" />
 	<onglet nom="charte_typo" icone="images/article-24.png" titre="charter:titre_typo" parent="charte" action="charte_typo" />
 	<onglet nom="charte_boites" titre="charter:titre_boites" parent="charte" action="charte_boites" />
 	<onglet nom="charte_listes" titre="charter:titre_listes" parent="charte" action="charte_listes" />
 	<onglet nom="charte_forms" titre="charter:titre_formulaires" parent="charte" action="charte_forms" />
+
+	<onglet nom="demo" titre="charter:titre_barreonglets_demo1" parent="demo" action="charte_onglets" />
+	<onglet nom="demo_2" titre="charter:titre_barreonglets_demo2" parent="demo" action="charte_onglets" />
+	<onglet nom="demo_3" titre="charter:titre_barreonglets_demo3" parent="demo" action="charte_onglets" />
 
 	<menu nom="charte" titre="charter:titre_charte" parent="menu_developpement" icone="images/charte-16.png" action="charte" />
 

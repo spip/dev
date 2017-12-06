@@ -1,0 +1,52 @@
+<h1 class="grostitre">Layout</h1>
+
+<h2>Pleine largeur</h2>
+
+<p>
+	Lorsqu’une page n’utilise pas la navigation latérale, il est possible d’utiliser toute la largeur disponible au moyen de la balise <code class="spip">&#35;LARGEUR_ECRAN{pleine_largeur}</code>, à placer dans <code>squelettes/top/[page].html</code>
+</p>
+
+<h2>Colonnes</h2>
+
+<p>
+	Il est possible d’afficher deux blocs côte-à-côte.
+</p>
+
+<div class="gauche">
+	#BOITE_OUVRIR{gauche}
+	Je suis le bloc de gauche
+	#BOITE_FERMER
+</div>
+
+<div class="droite">
+	#BOITE_OUVRIR{droite}
+	Je suis le bloc de droite
+	#BOITE_FERMER
+</div>
+
+<p>
+  <textarea cols="40" rows="11">
+  <div class="gauche">
+    \#BOITE_OUVRIR{droite}
+    Je suis le bloc de gauche
+    \#BOITE_FERMER
+  </div>
+
+  <div class="droite">
+    \#BOITE_OUVRIR{droite}
+    Je suis le bloc de droite
+    \#BOITE_FERMER
+  </div>
+  </textarea>
+</p>
+
+<h2>Helpers</h2>
+
+<ul class="spip">
+	<li>
+		<code class="spip">&lt;div class=&quot;nettoyeur&quot;&gt;&lt;/div&gt;</code> pour éviter les chevauchements <strong>après</strong> des éléments flottants.
+	</li>
+	<li>
+		<code class="spip">&lt;div class=&quot;clearfix&quot;&gt;</code> pour éviter que les éléments flottants contenus <strong>à l’intérieur</strong> ne débordent.
+	</li>
+</ul>
