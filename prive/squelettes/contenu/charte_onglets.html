@@ -17,9 +17,8 @@
 
 [(#VAL{demo}|barre_onglets{demo})]
 
-<p>
-	<code class="spip">[(&#35;VAL{nomdelabarreonglet}|barre_onglets{pagecourante})]</code>
-</p>
+<pre class="spip"><code>[(&#35;VAL{nomdelabarreonglet}|barre_onglets{pagecourante})]</code></pre>
+
 
 <h2>Onglets simples à deux niveaux</h2>
 
@@ -43,20 +42,4 @@ Il n'y a pas de filtre pour les construire car leur structure HTML est très sim
 	</ul>
 </div>
 
-<textarea rows="15" cols="60">
-	<div class='onglets_simple clearfix'>
-		<ul>
-			<li><strong>Onglet expos&eacute;</strong></li>
-			<li><a>Onglet cliquable</a></li>
-			<li><a>Onglet cliquable</a></li>
-		</ul>
-	</div>
-
-	<div class='onglets_simple second clearfix'>
-		<ul>
-			<li><strong>Onglet expos&eacute;</strong></li>
-			<li><a>Onglet cliquable</a></li>
-			<li><a>Onglet cliquable</a></li>
-		</ul>
-	</div>
-</textarea>
+<pre class="spip"><code>&lt;div class=&apos;onglets_simple clearfix&apos;&gt;&#10;  &lt;ul&gt;&#10;    &lt;li&gt;&lt;strong&gt;Onglet exposé&lt;/strong&gt;&lt;/li&gt;&#10;    &lt;li&gt;&lt;a&gt;Onglet cliquable&lt;/a&gt;&lt;/li&gt;&#10;    &lt;li&gt;&lt;a&gt;Onglet cliquable&lt;/a&gt;&lt;/li&gt;&#10;  &lt;/ul&gt;&#10;&lt;/div&gt;&#10;&#10;&lt;div class=&apos;onglets_simple second clearfix&apos;&gt;&#10;  &lt;ul&gt;&#10;    &lt;li&gt;&lt;strong&gt;Onglet expos&amp;eacute;&lt;/strong&gt;&lt;/li&gt;&#10;    &lt;li&gt;&lt;a&gt;Onglet cliquable&lt;/a&gt;&lt;/li&gt;&#10;    &lt;li&gt;&lt;a&gt;Onglet cliquable&lt;/a&gt;&lt;/li&gt;&#10;  &lt;/ul&gt;&#10;&lt;/div&gt;</code></pre>

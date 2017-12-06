@@ -44,5 +44,6 @@ prive/squelettes/top/charte_layout.html -text
 prive/squelettes/top/charte_listes.html -text
 prive/squelettes/top/charte_onglets.html -text
 prive/squelettes/top/charte_typo.html -text
+prive/style_prive_plugin_dev.html -text
 prive/themes/spip/images/charte-16.png -text
 prive/themes/spip/images/charte-32.png -text

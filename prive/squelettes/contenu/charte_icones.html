@@ -11,16 +11,16 @@
 	Un filtre générant des icônes à appliquer sur des liens menant vers des pages d’édition ou autre.
 	<br>Il existe 2 variantes : une verticale et une horizontale.
 	<div class="notice">
-	Nb &ndash; pour des actions directes, il faut utiliser la balise <code class="spip">&#35;BOUTON_ACTION</code> qui génère un formulaire sécurisé.
+	Nb &ndash; pour des actions directes, utiliser la balise <code class="spip">&#35;BOUTON_ACTION</code> qui génère un formulaire sécurisé.
 	</div>
 </p>
 
-#BOITE_OUVRIR{'<code class="spip">|icone_verticale</code>'}
+#BOITE_OUVRIR{'|icone_verticale'}
 <dl>
 
 	<dt>Syntaxe</dt>
 	<dd>
-		<code class="spip">[(&#35;URL|icone_verticale{chaîne de langue, objet, action, alignement})]</code>
+		<pre class="spip"><code>[(&#35;URL|icone_verticale{chaîne de langue, objet, action, alignement})]</code></pre>
 	</dd>
 
 	<dt>Objet éditorial / image</dt>
@@ -29,11 +29,10 @@
 			Le 2ème paramètre indique le type d’objet éditorial.
 			<br>Nb &ndash; Concrètement, cela correspond à une image, on peut théoriquement utiliser n’importe quelle image du thème de l’espace privé.
 		</p>
-		<p>
-				<code class="spip">[(&#35;SELF|icone_verticale{&lt;:info_articles_2:&gt;, article, &apos;&apos;, left})]</code>
-				<br><code class="spip">[(&#35;SELF|icone_verticale{&lt;:texte_vider_cache:&gt;, cache-empty-24, &apos;&apos;, left})]</code>
-				<br><code class="spip">[(&#35;SELF|icone_verticale{&lt;:icone_activer_cookie:&gt;, cookie-24, &apos;&apos;, left})]</code>
-		</p>
+<pre class="spip"><code>[(&#35;SELF|icone_verticale{&lt;:info_articles_2:&gt;, article, &apos;&apos;, left})]
+[(&#35;SELF|icone_verticale{&lt;:texte_vider_cache:&gt;, cache-empty-24, &apos;&apos;, left})]
+[(&#35;SELF|icone_verticale{&lt;:icone_activer_cookie:&gt;, cookie-24, &apos;&apos;, left})]
+</code></pre>
 		<div class="nettoyeur"></div>
 		[(#SELF|icone_verticale{<:info_articles_2:>, article, '', left})]
 		[(#SELF|icone_verticale{<:texte_vider_cache:>, cache-empty-24, '', left})]
@@ -44,13 +43,11 @@
 	<dt>Tailles</dt>
 	<dd>
 		<p>
-			Il existe en général 3 tailles pour les icônes des objets éditoriaux, que l’on peut éventuellement préciser : <code>16</code>, <code></code>24</code>, <code></code>32</code>
+			Il existe au moins 3 tailles pour les icônes des objets éditoriaux, que l’on peut éventuellement préciser : <code class="spip">16</code>, <code class="spip">24</code>, <code class="spip">32</code>
 		</p>
-		<p>
-			<code class="spip">[(&#35;SELF|icone_verticale{&lt;:icone_ecrire_article:&gt;, article-16, add, left})]</code>
-			<code class="spip">[(&#35;SELF|icone_verticale{&lt;:icone_ecrire_article:&gt;, article-24, add, left})]</code>
-			<code class="spip">[(&#35;SELF|icone_verticale{&lt;:icone_ecrire_article:&gt;, article-32, add, left})]</code>
-		</p>
+<pre class="spip"><code>[(&#35;SELF|icone_verticale{&lt;:icone_ecrire_article:&gt;, article-16, add, left})]
+[(&#35;SELF|icone_verticale{&lt;:icone_ecrire_article:&gt;, article-24, add, left})]
+[(&#35;SELF|icone_verticale{&lt;:icone_ecrire_article:&gt;, article-32, add, left})]</code></pre>
 		<div class="nettoyeur"></div>
 		[(#SELF|icone_verticale{<:icone_ecrire_article:>, article-16, add, left})]
 		[(#SELF|icone_verticale{<:icone_ecrire_article:>, article-24, add, left})]
@@ -61,13 +58,11 @@
 	<dt>Action</dt>
 	<dd>
 		<p>
-			Le 3ème paramètre permet d’indiquer une action : <code>add</code>, <code>edit</code> ou <code>del</code>.
+			Le 3ème paramètre permet d’indiquer une action : <code class="spip">add</code>, <code class="spip">edit</code> ou <code class="spip">del</code>.
 		</p>
-		<p>
-			<code class="spip">[(&#35;SELF|icone_verticale{&lt;:icone_creer_rubrique:&gt;, rubrique, add, left})]</code>
-			<br><code class="spip">[(&#35;SELF|icone_verticale{&lt;:icone_modifier_rubrique:&gt;, rubrique, edit, left})]</code>
-			<br><code class="spip">[(&#35;SELF|icone_verticale{&lt;:icone_supprimer_rubrique:&gt;, rubrique, del, left})]</code>
-		</p>
+<pre class="spip"><code>[(&#35;SELF|icone_verticale{&lt;:icone_creer_rubrique:&gt;, rubrique, add, left})]
+[(&#35;SELF|icone_verticale{&lt;:icone_modifier_rubrique:&gt;, rubrique, edit, left})]
+[(&#35;SELF|icone_verticale{&lt;:icone_supprimer_rubrique:&gt;, rubrique, del, left})]</code></pre>
 		<div class="nettoyeur"></div>
 		[(#SELF|icone_verticale{<:icone_creer_rubrique:>, rubrique, add, left})]
 		[(#SELF|icone_verticale{<:icone_modifier_rubrique:>, rubrique, edit, left})]
@@ -81,11 +76,9 @@
 			Le 4ème paramètre permet d'ajouter une classe.
 			<br><code>left</code>, <code>right</code> et <code>center</code> définissent ’alignement.
 		</p>
-		<p>
-				<code class="spip">[(&#35;SELF|icone_verticale{&lt;:icone_ecrire_article:&gt;, article, add, center})]</code>
-			<code class="spip">[(&#35;SELF|icone_verticale{&lt;:icone_ecrire_article:&gt;, article, add, left})]</code>
-			<code class="spip">[(&#35;SELF|icone_verticale{&lt;:icone_ecrire_article:&gt;, article, add, right})]</code>
-		</p>
+		<pre class="spip"><code>[(&#35;SELF|icone_verticale{&lt;:icone_ecrire_article:&gt;, article, add, center})]
+[(&#35;SELF|icone_verticale{&lt;:icone_ecrire_article:&gt;, article, add, left})]
+[(&#35;SELF|icone_verticale{&lt;:icone_ecrire_article:&gt;, article, add, right})]</code></pre>
 		<div class="nettoyeur"></div>
 		[(#SELF|icone_verticale{<:icone_ecrire_article:>, article, add, center})]
 		<br class="clear">
@@ -103,7 +96,7 @@
 	<p>
 		Variante horizontale, prend les mêmes paramètres.
 	</p>
-	<code class="spip">[(&#35;SELF|icone_horizontale{<:icone_modifier_article:>,article,new})]</code>
+<pre class="spip"><code></code>[(&#35;SELF|icone_horizontale{<:icone_modifier_article:>,article,new})]</code></pre>
 	<table><tr>
 		<td>[(#SELF|icone_horizontale{<:icone_modifier_article:>,article,new})]
 		</td>
