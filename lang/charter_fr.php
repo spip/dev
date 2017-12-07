@@ -31,6 +31,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'legend' => 'Légende d’un fieldset, pour un groupe de saisie',
 
 	// T
+	'titre_barreonglets_demo1' => 'Page 1',
+	'titre_barreonglets_demo2' => 'Page 2',
+	'titre_barreonglets_demo3' => 'Page 3',
 	'titre_boites' => 'Boîtes',
 	'titre_charte' => 'Charte',
 	'titre_formulaires' => 'Formulaires',
@@ -38,8 +41,5 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'titre_layout' => 'Layout',
 	'titre_listes' => 'Listes',
 	'titre_onglets' => 'Onglets',
-	'titre_typo' => 'Typo',
-	'titre_barreonglets_demo1' => 'Page 1',
-	'titre_barreonglets_demo2' => 'Page 2',
-	'titre_barreonglets_demo3' => 'Page 3',
+	'titre_typo' => 'Typo'
 );
