@@ -33,10 +33,15 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'legend' => 'Legende van een fieldset, voor een groep invoervelden',
 
 	// T
+	'titre_barreonglets_demo1' => 'Bladzijde 1',
+	'titre_barreonglets_demo2' => 'Bladzijde 2',
+	'titre_barreonglets_demo3' => 'Bladzijde 3',
 	'titre_boites' => 'Dozen',
 	'titre_charte' => 'Conventie',
 	'titre_formulaires' => 'Formulieren',
 	'titre_icones' => 'Ikonen',
+	'titre_layout' => 'Layout',
 	'titre_listes' => 'Lijsten',
+	'titre_onglets' => 'Tabs',
 	'titre_typo' => 'Typo'
 );
