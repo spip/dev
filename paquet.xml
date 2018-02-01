@@ -1,7 +1,7 @@
 <paquet
 	prefix="dev"
 	categorie="outil"
-	version="0.6.1"
+	version="0.6.2"
 	etat="stable"
 	compatibilite="[3.3.0-dev;3.3.*]"
 	logo="dev-32.png"

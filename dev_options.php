@@ -16,7 +16,7 @@ function affiche_usage_memoire() {
 		and isset($GLOBALS['auteur_session']['webmestre'])
 		and $GLOBALS['auteur_session']['webmestre'] == 'oui'
 		and !_request('action')
-		and !preg_match('#(\.css|\.js)#', _request('page'))
+		and !preg_match('#(\.css|\.js|backend)#', _request('page'))
 		and !preg_match('#(\.css|\.js)#', _request('file'))
 	) {
 		chdir(_ROOT_CWD); // precaution
