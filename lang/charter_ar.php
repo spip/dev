@@ -36,6 +36,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'titre_charte' => 'ميثاق',
 	'titre_formulaires' => 'استمارات',
 	'titre_icones' => 'أيقونات',
+	'titre_layout' => 'تصميم',
 	'titre_listes' => 'لوائح',
+	'titre_onglets' => 'لسان',
 	'titre_typo' => 'خطأ مطبعي'
 );
