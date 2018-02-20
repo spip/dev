@@ -33,10 +33,15 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'legend' => 'Legenda de um fieldset, para um grupo de entradas de dados',
 
 	// T
+	'titre_barreonglets_demo1' => 'Página 1',
+	'titre_barreonglets_demo2' => 'Página 2',
+	'titre_barreonglets_demo3' => 'Página 3',
 	'titre_boites' => 'Boxes',
 	'titre_charte' => 'Legenda',
 	'titre_formulaires' => 'Formulários',
 	'titre_icones' => 'Icones',
+	'titre_layout' => 'Layout',
 	'titre_listes' => 'Listas',
+	'titre_onglets' => 'Abas',
 	'titre_typo' => 'Tipografia'
 );
