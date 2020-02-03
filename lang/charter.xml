@@ -1,4 +1,10 @@
-<traduction module="charter" gestionnaire="salvatore" url="https://trad.spip.net" source="svn://zone.spip.org/spip-zone/_core_/plugins/dev/lang/" reference="fr">
+<traduction
+	module="charter"
+	id="charter--dev-dec7e"
+	gestionnaire="salvatore"
+	url="https://trad.spip.net"
+	source="svn://zone.spip.org/spip-zone/_core_/plugins/dev/lang"
+	reference="fr">
 	<langue code="ar" url="https://trad.spip.net/tradlang_module/charter?lang_cible=ar" total="32" traduits="28" relire="0" modifs="0" nouveaux="4" pourcent="87.50">
 		<traducteur nom="George" lien="https://trad.spip.net/auteur/جورج-قندلفت" />
 	</langue>
@@ -11,8 +17,7 @@
 	<langue code="fa" url="https://trad.spip.net/tradlang_module/charter?lang_cible=fa" total="32" traduits="26" relire="0" modifs="0" nouveaux="6" pourcent="81.25">
 		<traducteur nom="Davood Hossein" lien="https://trad.spip.net/auteur/davood-hossein" />
 	</langue>
-	<langue code="fr" url="https://trad.spip.net/tradlang_module/charter?lang_cible=fr" total="32" traduits="32" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
-	</langue>
+	<langue code="fr" url="https://trad.spip.net/tradlang_module/charter?lang_cible=fr" total="32" traduits="32" relire="0" modifs="0" nouveaux="0" pourcent="100.00" />
 	<langue code="nl" url="https://trad.spip.net/tradlang_module/charter?lang_cible=nl" total="32" traduits="32" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
 		<traducteur nom="Hanjo" lien="https://trad.spip.net/auteur/hanjo" />
 	</langue>
