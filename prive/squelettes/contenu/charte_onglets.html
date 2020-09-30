@@ -5,6 +5,7 @@
   Distribué sous licence GPL
 
 ]
+#SET{class_pre,#PLUGIN{coloration_code}|?{color,dark}}
 
 <h1 class="grostitre">Onglets</h1>
 
@@ -42,4 +43,4 @@ Il n'y a pas de filtre pour les construire car leur structure HTML est très sim
 	</ul>
 </div>
 
-<pre class="spip"><code>&lt;div class=&apos;onglets_simple clearfix&apos;&gt;&#10;  &lt;ul&gt;&#10;    &lt;li&gt;&lt;strong&gt;Onglet exposé&lt;/strong&gt;&lt;/li&gt;&#10;    &lt;li&gt;&lt;a&gt;Onglet cliquable&lt;/a&gt;&lt;/li&gt;&#10;    &lt;li&gt;&lt;a&gt;Onglet cliquable&lt;/a&gt;&lt;/li&gt;&#10;  &lt;/ul&gt;&#10;&lt;/div&gt;&#10;&#10;&lt;div class=&apos;onglets_simple second clearfix&apos;&gt;&#10;  &lt;ul&gt;&#10;    &lt;li&gt;&lt;strong&gt;Onglet expos&amp;eacute;&lt;/strong&gt;&lt;/li&gt;&#10;    &lt;li&gt;&lt;a&gt;Onglet cliquable&lt;/a&gt;&lt;/li&gt;&#10;    &lt;li&gt;&lt;a&gt;Onglet cliquable&lt;/a&gt;&lt;/li&gt;&#10;  &lt;/ul&gt;&#10;&lt;/div&gt;</code></pre>
+<pre[ class="(#GET{class_pre})"]><code>[(#INCLURE{fond=prive/squelettes/inclure/charte/code_onglets}|appliquer_filtre{#PLUGIN{coloration_code}|?{coloration_code_color,htmlentities},#PLUGIN{coloration_code}|?{html5,#CONST{ENT_COMPAT}}})]</code></pre>

@@ -1,3 +1,5 @@
+#SET{class_pre,#PLUGIN{coloration_code}|?{color,dark}}
+
 <h1 class="grostitre">Layout</h1>
 
 <h2>Pleine largeur</h2>
@@ -26,7 +28,7 @@
 
 <div class="nettoyeur"></div>
 
-<pre class="spip"><code>&lt;div class=&quot;gauche&quot;&gt;&#10;  &#35;BOITE_OUVRIR&#10;  Je suis le bloc de gauche&#10;  &#35;BOITE_FERMER&#10;&lt;/div&gt;&#10;&#10;&lt;div class=&quot;droite&quot;&gt;&#10;  &#35;BOITE_OUVRIR&#10;  Je suis le bloc de droite&#10;  &#35;BOITE_FERMER&#10;&lt;/div&gt;</code></pre>
+<pre[ class="(#GET{class_pre})"]><code>[(#INCLURE{fond=prive/squelettes/inclure/charte/code_layout}|appliquer_filtre{#PLUGIN{coloration_code}|?{coloration_code_color,htmlentities},#PLUGIN{coloration_code}|?{html5,#CONST{ENT_COMPAT}}})]</code></pre>
 
 <h2>Helpers</h2>
 

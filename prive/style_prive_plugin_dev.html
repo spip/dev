@@ -12,19 +12,54 @@
 #HTTP_HEADER{Content-Type: text/css; charset=utf-8}
 #HTTP_HEADER{Vary: Accept-Encoding}
 
-[class^=charte_] pre.spip,
-[class^=charte_] code.spip {
+[class^=charte_] dl dt {
+	margin-bottom: 1em;
+}
+
+/**
+ * Codes et blocs de codes
+ * - avec plugin coloration code : pre.color
+ * - sans : pre.dark
+ */
+[class^=charte_] code {
+	padding: 0.2em 0.33em;
 	background-color: #eee;
 	background-color: hsla(0, 0%, 0%, 0.033);
 	color: navy;
-	border-radius: 2px;
+	border-radius: inherit;
+	font-size: 0.8rem;
 }
-[class^=charte_] code.spip {
-	padding: 0.1em;
-}
-[class^=charte_] pre.spip {
-	display: inline-block;
-	padding: 1em;
+[class^=charte_] pre {
+	display: block;
 	max-width: 100%;
 	overflow-x: auto;
+	margin-top: 0;
+	border-radius: 0.25em;
+}
+[class^=charte_] pre.dark {
+	padding: 0.5em;
+	background-color: #272822;
+}
+[class^=charte_] pre.dark code {
+	color: white;
+}
+
+/* Ajustements coloration code */
+[class^=charte_] pre.color {
+	white-space: normal;
+}
+[class^=charte_] pre.color code {
+	padding: 0;
+}
+.coloration_code > *:first-child {
+	padding: 0.5em;
+	font-size: 0.8rem;
+	background-color: hsl(0, 0%, 96%);
+	border-radius: 0.25em;
+}
+.coloration_code ol {
+	margin-left: 2em;
+}
+.coloration_code .download {
+	font-size: 0.8em;
 }

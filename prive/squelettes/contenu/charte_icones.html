@@ -5,103 +5,362 @@
   Distribué sous licence GPL
 
 ]
-<h1 class="grostitre">Icônes</h1>
+#SET{class_pre,#PLUGIN{coloration_code}|?{color,dark}}
+#SET{actions_icones,#ARRAY{
+	add,Créer,
+	edit,Modifier,
+	del,Supprimer,
+	config,Configurer,
+}}
+#SET{actions_boutons,#GET{actions_icones}|array_merge{#ARRAY{
+	import,Importer,
+	export,Exporter,
+	ouvrir,Ouvrir,
+	fermer,Fermer,
+	ok,Ok,
+}}}
+#SET{tailles,#LISTE{16,24,32}}
+#SET{variantes,#LISTE{principal,secondaire,link,danger,bloc}}
+#SET{float,#LISTE{left,right}}
+
+<h1 class="grostitre"><:charter:titre_boutons_icones:></h1>
 
 <p>
-	Un filtre générant des icônes à appliquer sur des liens menant vers des pages d’édition ou autre.
+	Les boutons correspondent à 4 éléments d'interface :
+	<ol class="spip">
+		<li><a href="#icones" class="charte__ancre">Les icônes :</a> <code class="spip">[(\#URL|icone_verticale)]</code></li>
+		<li><a href="#boutons_lambda" class="charte__ancre">Les boutons :</a> <code class="spip">&lt;a class=&quot;bouton&quot;&gt;</code></li>
+		<li><a href="#boutons_actions" class="charte__ancre">Les boutons d'action :</a> <code class="spip">\#BOUTON_ACTION</code></li>
+		<li><a href="#boutons_formulaires" class="charte__ancre">Les boutons de formulaires :</a> <code class="spip">&#60;input class=&#34;submit&#34;&#62;</code> et  <code class="spip">&#60;button&#62;</code></li>
+	</ol>
+</p>
+
+[(#BOITE_OUVRIR{<:charter:titre_icones:>}|inserer_attribut{id,icones})]
+
+<p>
+	Le filtre <code class="spip">|icone_xxx</code> transforme des liens en « boutons icônes ».
 	<br>Il existe 2 variantes : une verticale et une horizontale.
 	<div class="notice">
-	Nb &ndash; pour des actions directes, utiliser la balise <code class="spip">&#35;BOUTON_ACTION</code> qui génère un formulaire sécurisé.
+	Nb &ndash; pour des actions directes, utiliser <a href="#boutons_actions">la balise <code class="spip">&#35;BOUTON_ACTION</code></a> qui génère un formulaire sécurisé.
 	</div>
 </p>
 
-#BOITE_OUVRIR{'|icone_verticale'}
+<h4 class="h2">|icone_verticale</h4>
 <dl>
 
 	<dt>Syntaxe</dt>
 	<dd>
-		<pre class="spip"><code>[(&#35;URL|icone_verticale{chaîne de langue, objet, action, alignement})]</code></pre>
+		<pre[ class="(#GET{class_pre})"]><code>[(#INCLURE{fond=prive/squelettes/inclure/charte/code_icone_verticale}|appliquer_filtre{#PLUGIN{coloration_code}|?{coloration_code_color,htmlentities},#PLUGIN{coloration_code}|?{spip,#CONST{ENT_COMPAT}}})]</code></pre>
 	</dd>
 
 	<dt>Objet éditorial / image</dt>
-	<dd>
-		<p>
-			Le 2ème paramètre indique le type d’objet éditorial.
-			<br>Nb &ndash; Concrètement, cela correspond à une image, on peut théoriquement utiliser n’importe quelle image du thème de l’espace privé.
-		</p>
-<pre class="spip"><code>[(&#35;SELF|icone_verticale{&lt;:info_articles_2:&gt;, article, &apos;&apos;, left})]
-[(&#35;SELF|icone_verticale{&lt;:texte_vider_cache:&gt;, cache-empty-24, &apos;&apos;, left})]
-[(&#35;SELF|icone_verticale{&lt;:icone_activer_cookie:&gt;, cookie-24, &apos;&apos;, left})]
-</code></pre>
-		<div class="nettoyeur"></div>
-		[(#SELF|icone_verticale{<:info_articles_2:>, article, '', left})]
-		[(#SELF|icone_verticale{<:texte_vider_cache:>, cache-empty-24, '', left})]
-		[(#SELF|icone_verticale{<:icone_activer_cookie:>, cookie-24, '', left})]
-		<div class="nettoyeur"></div>
+	<dd class="clearfix">
+		<div class="gauche">
+			<p>
+				Le 2ème paramètre indique le type d’objet éditorial.
+				<br>Nb &ndash; Concrètement, cela correspond à une image, on peut théoriquement utiliser n’importe quelle image du thème de l’espace privé.
+			</p>
+			<pre[ class="(#GET{class_pre})"]><code>[(#INCLURE{fond=prive/squelettes/inclure/charte/code_icone_verticale_objet}|appliquer_filtre{#PLUGIN{coloration_code}|?{coloration_code_color,htmlentities},#PLUGIN{coloration_code}|?{spip,#CONST{ENT_COMPAT}}})]</code></pre>
+		</div>
+		<div class="droite">
+			[(#SELF|icone_verticale{<:info_articles_2:>, article, '', left})]
+			[(#SELF|icone_verticale{<:texte_vider_cache:>, cache-empty-24, '', left})]
+			[(#SELF|icone_verticale{<:icone_activer_cookie:>, cookie-24, '', left})]
+		</div>
 	</dd>
 
 	<dt>Tailles</dt>
-	<dd>
-		<p>
-			Il existe au moins 3 tailles pour les icônes des objets éditoriaux, que l’on peut éventuellement préciser : <code class="spip">16</code>, <code class="spip">24</code>, <code class="spip">32</code>
-		</p>
-<pre class="spip"><code>[(&#35;SELF|icone_verticale{&lt;:icone_ecrire_article:&gt;, article-16, add, left})]
-[(&#35;SELF|icone_verticale{&lt;:icone_ecrire_article:&gt;, article-24, add, left})]
-[(&#35;SELF|icone_verticale{&lt;:icone_ecrire_article:&gt;, article-32, add, left})]</code></pre>
-		<div class="nettoyeur"></div>
-		[(#SELF|icone_verticale{<:icone_ecrire_article:>, article-16, add, left})]
-		[(#SELF|icone_verticale{<:icone_ecrire_article:>, article-24, add, left})]
-		[(#SELF|icone_verticale{<:icone_ecrire_article:>, article-32, add, left})]
-		<div class="nettoyeur"></div>
+	<dd class="clearfix">
+		<div class="gauche">
+			<p>
+				Le 2ème paramètre permet également de préciser une taille pour les objets éditoriaux : <code class="spip">16</code>, <code class="spip">24</code>, <code class="spip">32</code>
+			</p>
+			<pre[ class="(#GET{class_pre})"]><code>[(#INCLURE{fond=prive/squelettes/inclure/charte/code_icone_verticale_taille}|appliquer_filtre{#PLUGIN{coloration_code}|?{coloration_code_color,htmlentities},#PLUGIN{coloration_code}|?{spip,#CONST{ENT_COMPAT}}})]</code></pre>
+		</div>
+		<div class="droite">
+			[(#SELF|icone_verticale{<:icone_ecrire_article:>, article-16, add, left})]
+			[(#SELF|icone_verticale{<:icone_ecrire_article:>, article-24, add, left})]
+			[(#SELF|icone_verticale{<:icone_ecrire_article:>, article-32, add, left})]
+		</div>
 	</dd>
 
 	<dt>Action</dt>
-	<dd>
-		<p>
-			Le 3ème paramètre permet d’indiquer une action : <code class="spip">add</code>, <code class="spip">edit</code> ou <code class="spip">del</code>.
-		</p>
-<pre class="spip"><code>[(&#35;SELF|icone_verticale{&lt;:icone_creer_rubrique:&gt;, rubrique, add, left})]
-[(&#35;SELF|icone_verticale{&lt;:icone_modifier_rubrique:&gt;, rubrique, edit, left})]
-[(&#35;SELF|icone_verticale{&lt;:icone_supprimer_rubrique:&gt;, rubrique, del, left})]</code></pre>
-		<div class="nettoyeur"></div>
-		[(#SELF|icone_verticale{<:icone_creer_rubrique:>, rubrique, add, left})]
-		[(#SELF|icone_verticale{<:icone_modifier_rubrique:>, rubrique, edit, left})]
-		[(#SELF|icone_verticale{<:icone_supprimer_rubrique:>, rubrique, del, left})]
-		<div class="nettoyeur"></div>
+	<dd class="clearfix">
+		<div class="gauche">
+			<p>
+				Le 3ème paramètre permet d’indiquer une action : 
+				<BOUCLE_actions(DATA) {source table, #GET{actions_icones}|array_keys} {","}>
+				<code class="spip">#VALEUR</code>
+				</BOUCLE_actions>
+			</p>
+			<pre[ class="(#GET{class_pre})"]><code>[(#INCLURE{fond=prive/squelettes/inclure/charte/code_icone_verticale_action}|appliquer_filtre{#PLUGIN{coloration_code}|?{coloration_code_color,htmlentities},#PLUGIN{coloration_code}|?{spip,#CONST{ENT_COMPAT}}})]</code></pre>
+		</div>
+		<div class="droite">
+			<BOUCLE_actions2(DATA) {source table, #GET{actions_icones}}>
+			[(#SELF|icone_verticale{#VALEUR, rubrique, #CLE, left})]
+			</BOUCLE_actions2>
+		</div>
 	</dd>
 
 	<dt>Classe</dt>
-	<dd>
-		<p>
-			Le 4ème paramètre permet d'ajouter une classe.
-			<br><code>left</code>, <code>right</code> et <code>center</code> définissent ’alignement.
-		</p>
-		<pre class="spip"><code>[(&#35;SELF|icone_verticale{&lt;:icone_ecrire_article:&gt;, article, add, center})]
-[(&#35;SELF|icone_verticale{&lt;:icone_ecrire_article:&gt;, article, add, left})]
-[(&#35;SELF|icone_verticale{&lt;:icone_ecrire_article:&gt;, article, add, right})]</code></pre>
-		<div class="nettoyeur"></div>
-		[(#SELF|icone_verticale{<:icone_ecrire_article:>, article, add, center})]
-		<br class="clear">
-		[(#SELF|icone_verticale{<:icone_ecrire_article:>, article, add, left})]
-		<br class="clear">
-		[(#SELF|icone_verticale{<:icone_ecrire_article:>, article, add, right})]
-		<div class="nettoyeur"></div>
+	<dd class="clearfix">
+		<div class="gauche">
+			<p>
+				Le 4ème paramètre permet d’ajouter une classe.
+				<br><code>left</code>, <code>right</code> et <code>center</code> définissent l’alignement (Les icônes centrées prennent une ligne entière).
+			</p>
+			<pre[ class="(#GET{class_pre})"]><code>[(#INCLURE{fond=prive/squelettes/inclure/charte/code_icone_verticale_classe}|appliquer_filtre{#PLUGIN{coloration_code}|?{coloration_code_color,htmlentities},#PLUGIN{coloration_code}|?{spip,#CONST{ENT_COMPAT}}})]</code></pre>
+		</div>
+		<div class="droite">
+			[(#SELF|icone_verticale{Flottant à gauche, article, add, left})]
+			[(#SELF|icone_verticale{Flottant à droite, article, add, right})]
+			[(#SELF|icone_verticale{Centré, article, add, center})]
+		</div>
 	</dd>
 
 </dl>
-#BOITE_FERMER
 
+<h4 class="h2">|icone_horizontale</h4>
 
-#BOITE_OUVRIR{<code>|icone_horizontale</code>}
+<div class="gauche">
 	<p>
 		Variante horizontale, prend les mêmes paramètres.
 	</p>
-<pre class="spip"><code></code>[(&#35;SELF|icone_horizontale{<:icone_modifier_article:>,article,new})]</code></pre>
-	<table><tr>
-		<td>[(#SELF|icone_horizontale{<:icone_modifier_article:>,article,new})]
-		</td>
-		<td>[(#SELF|icone_horizontale{texte sur plusieurs<br />lignes pour voir si l'icône<br /> se centre bien <br />verticalement,rubrique,edit})]</td>
-		<td>[(#SELF|icone_horizontale{'deux<br />lignes',site,del})]</td>
-		<td>[(#SELF|icone_horizontale{'short',mot})]</td>
-	</tr></table>
+	<pre[ class="(#GET{class_pre})"]><code>[(#INCLURE{fond=prive/squelettes/inclure/charte/code_icone_horizontale}|appliquer_filtre{#PLUGIN{coloration_code}|?{coloration_code_color,htmlentities},#PLUGIN{coloration_code}|?{spip,#CONST{ENT_COMPAT}}})]</code></pre>
+</div>
+<div class="droite">
+	[(#SELF|icone_horizontale{<:icone_ecrire_article:>,article,new})]
+	[(#SELF|icone_horizontale{Texte sur plusieurs lignes<br /> pour voir si l'icône<br /> se centre bien verticalement,rubrique,edit})]
+	[(#SELF|icone_horizontale{'Danger sur<br />deuxlignes',site,del})]
+	[(#SELF|icone_horizontale{'Short',mot})]
+</div>
+
+#BOITE_FERMER
+
+
+[(#BOITE_OUVRIR{<:charter:titre_boutons:>}|inserer_attribut{id,boutons_lambda})]
+
+<p>
+	En complément des icônes, une classe générique <code class="spip">.bouton</code> peut être appliquée aux liens pour les afficher sous forme de boutons.
+	<br>Il existe plusieurs variantes pour moduler l’affichage, que l’on peut combiner ensemble.
+</p>
+
+<dl>
+
+	<dt>Syntaxe & défaut</dt>
+	<dd class="clearfix">
+		<div class="gauche">
+			<pre[ class="(#GET{class_pre})"]><code>[(#INCLURE{fond=prive/squelettes/inclure/charte/code_boutons_defaut}|appliquer_filtre{#PLUGIN{coloration_code}|?{coloration_code_color,htmlentities},#PLUGIN{coloration_code}|?{html5,#CONST{ENT_COMPAT}}})]</code></pre>
+		</div>
+		<div class="droite">
+			<a href="#" class="bouton">Bouton par défaut</a>
+		</div>
+	</dd>
+
+	<dt>Variantes de base</dt>
+	<dd class="clearfix">
+		<div class="gauche">
+			<p>
+				Quelques variantes génériques, pour différencier notamment les boutons selon leur importance.
+			</p>
+		</div>
+		<div class="droite">
+			<BOUCLE_variantes2(DATA) {source table, #GET{variantes}}>
+			<a href="#" class="bouton #VALEUR">.#VALEUR</a>
+			</BOUCLE_variantes2>
+		</div>
+	</dd>
+
+	<dt>Icônes prédéfinies</dt>
+	<dd class="clearfix">
+		<div class="gauche">
+			<p>
+				Des icônes pour souligner le rôle des boutons.
+				<br>(Liste identique aux actions du filtre <code class="spip">|icone_xxx</code>, complétées par quelques autres).
+			</p>
+		</div>
+		<div class="droite">
+			<BOUCLE_actions_boutons2(DATA) {source table, #GET{actions_boutons}}>
+			<a href="#" class="bouton #CLE">.#CLE</a>
+			</BOUCLE_actions_boutons2>
+		</div>
+	</dd>
+
+	<dt>Icônes libres</dt>
+	<dd class="clearfix">
+		<div class="gauche">
+			<p>
+				On peut également ajouter n'importe quelle image/icône dans le HTML en l’encapsulant dans un <code class="spip">span.icone-image</code>.
+			</p>
+			<pre[ class="(#GET{class_pre})"]><code>[(#INCLURE{fond=prive/squelettes/inclure/charte/code_boutons_icones}|appliquer_filtre{#PLUGIN{coloration_code}|?{coloration_code_color,htmlentities},#PLUGIN{coloration_code}|?{html5,#CONST{ENT_COMPAT}}})]</code></pre>
+		</div>
+		<div class="droite">
+			<a class="bouton s24" href="#"><span class="icone-image">[(#VAL{favicon-spip.png}|chemin_image|balise_img)]</span> favicon-spip.png</a>
+			<a class="bouton" href="#"><span class="icone-image">[(#VAL{cookie-24.png}|chemin_image|balise_img)]</span> cookie-24.png</a>
+			<a class="bouton" href="#"><span class="icone-image">[(#VAL{cadenas-24.png}|chemin_image|balise_img)]</span> cadenas-24.png</a>
+		</div>
+	</dd>
+
+	<dt>Tailles</dt>
+	<dd class="clearfix">
+		<div class="gauche">
+			<p>
+				Différentes tailles, impactant notamment l'éventuelle icône.
+			</p>
+		</div>
+		<div class="droite">
+			<BOUCLE_tailles2(DATA) {source table, #GET{tailles}} {"<br>"}>
+			<a href="#" class="bouton s#VALEUR">.s#VALEUR</a>
+			<a href="#" class="bouton s#VALEUR add">.s#VALEUR</a>
+			</BOUCLE_tailles2>
+		</div>
+	</dd>
+
+	<dt>Flottants</dt>
+	<dd class="clearfix">
+		<div class="gauche">
+			<p>
+				Boutons flottants sur les côtés.
+			</p>
+		</div>
+		<div class="droite">
+			<BOUCLE_float2(DATA) {source table, #GET{float}}>
+			<a href="#" class="bouton #VALEUR">.#VALEUR</a>
+			</BOUCLE_float2>
+		</div>
+	</dd>
+
+	<dt>Désactivés</dt>
+	<dd class="clearfix">
+		<div class="gauche">
+			<p>
+				Les boutons sont mis en retrait et ne sont plus cliquables.
+			</p>
+		</div>
+		<div class="droite">
+			<BOUCLE_disable(DATA) {source table, #GET{variantes}}>
+			<a href="#" class="bouton #VALEUR desactive">.desactive.#VALEUR</a>
+			</BOUCLE_disable>
+		</div>
+	</dd>
+
+	<dt>Groupe de boutons</dt>
+	<dd class="clearfix">
+		<div class="gauche">
+			<p>
+				Il est possible de regrouper visuellement un ensemble de boutons en les encapsulant dans un conteneur <code class="spip">.groupe-boutons</code>, avec 2 variantes <code class="spip">.bloc</code> et <code class="spip">.vertical</code> :
+			</p>
+			<pre[ class="(#GET{class_pre})"]><code>[(#INCLURE{fond=prive/squelettes/inclure/charte/code_boutons_groupe}|appliquer_filtre{#PLUGIN{coloration_code}|?{coloration_code_color,htmlentities},#PLUGIN{coloration_code}|?{html5,#CONST{ENT_COMPAT}}})]</code></pre>
+		</div>
+		<div class="droite">
+			<BOUCLE_groupes(DATA) {source table, #LISTE{'',bloc,vertical}}>
+			<div class="groupe-boutons #VALEUR">
+				<a class="bouton #VALEUR" href="#">[(#VALEUR|?{.#VALEUR,Groupe})]</a>
+				<a class="bouton #VALEUR" href="#">[(#VALEUR|?{.#VALEUR,Groupe})]</a>
+				<a class="bouton #VALEUR" href="#">[(#VALEUR|?{.#VALEUR,Groupe})]</a>
+			</div>
+			</BOUCLE_groupes>
+	</dd>
+
+</dl>
+
+#BOITE_FERMER
+
+
+[(#BOITE_OUVRIR{Boutons d’action}|inserer_attribut{id,boutons_actions})]
+
+<p>
+	La balise <code class="spip">\#BOUTON_ACTION</code> produit des formulaires sécurisés affichés sous forme de bouton.
+	<br>Toutes les variantes du composant <code class="spip">.bouton</code> sont appliquables en passant ces mêmes classes en 3ème paramètre.
+
+	<div class="notice">
+		Nb &ndash; La combinaison \#BOUTON_ACTION + classe <code>.icone</code> est encore supportée, mais dépréciée. Il est recommandé de ne plus l’utiliser.
+		</div>
+</p>
+
+<dl class="spip">
+
+	<dt>Syntaxe et exemples</dt>
+	<dd class="clearfix">
+		<div class="gauche">
+			<pre[ class="(#GET{class_pre})"]><code>[(#INCLURE{fond=prive/squelettes/inclure/charte/code_boutons_actions}|appliquer_filtre{#PLUGIN{coloration_code}|?{coloration_code_color,htmlentities},#PLUGIN{coloration_code}|?{spip,#CONST{ENT_COMPAT}}})]</code></pre>
+		</div>
+		<div class="droite">
+			#BOUTON_ACTION{Défaut,#SELF}
+			<BOUCLE_variantes3(DATA) {source table, #GET{variantes}}>
+			#BOUTON_ACTION{.#VALEUR,#SELF,#VALEUR}
+			</BOUCLE_variantes3>
+			<BOUCLE_actions_boutons3(DATA) {source table, #GET{actions_boutons}}>
+			#BOUTON_ACTION{.#CLE,#SELF,#CLE}
+			</BOUCLE_actions_boutons3>
+			<BOUCLE_tailles3(DATA) {source table, #GET{tailles}}>
+			#BOUTON_ACTION{.s#VALEUR,#SELF,s#VALEUR}
+			</BOUCLE_tailles3>
+			#BOUTON_ACTION{.desactive,#SELF,desactive}
+			<BOUCLE_float3(DATA) {source table, #GET{float}}>
+			#BOUTON_ACTION{.#VALEUR,#SELF,#VALEUR}
+			</BOUCLE_float3>
+			<div class="nettoyeur"></div>
+			<BOUCLE_groupes2(DATA) {source table, #LISTE{'',bloc,vertical}}>
+			<div class="groupe-boutons #VALEUR">
+				#BOUTON_ACTION{#VALEUR|?{.#VALEUR,Groupe},#SELF,#VALEUR}
+				#BOUTON_ACTION{#VALEUR|?{.#VALEUR,Groupe},#SELF,#VALEUR}
+				#BOUTON_ACTION{#VALEUR|?{.#VALEUR,Groupe},#SELF,#VALEUR}
+			</div>
+			</BOUCLE_groupes2>
+		</div>
+	</dd>
+
+</dl>
+
+#BOITE_FERMER
+
+
+[(#BOITE_OUVRIR{Boutons de formulaires}|inserer_attribut{id,boutons_formulaires})]
+
+<p>
+	Les boutons de validation de formulaires acceptent également toutes les variantes du composant <code class="spip">.bouton</code>.
+</p>
+
+<dl class="spip">
+
+	<dt>Syntaxe et exemples</dt>
+	<dd class="clearfix">
+		<div class="gauche">
+			<pre[ class="(#GET{class_pre})"]><code>[(#INCLURE{fond=prive/squelettes/inclure/charte/code_boutons_formulaires}|appliquer_filtre{#PLUGIN{coloration_code}|?{coloration_code_color,htmlentities},#PLUGIN{coloration_code}|?{html5,#CONST{ENT_COMPAT}}})]</code></pre>
+		</div>
+		<div class="droite">
+			<div class="formulaire_spip" style="margin: 0">
+				<h3 class="titrem">Formulaire</h3>
+				<p>Ici les saisies du formulaire…</p>
+				<form><div>
+					<div class="boutons">
+						<input type="submit" class="submit" value="Défaut" />
+						<BOUCLE_input_variantes(DATA) {source table, #GET{variantes}}>
+						<input type="submit" class="submit #VALEUR" value=".#VALEUR" />
+						</BOUCLE_input_variantes>
+					</div>
+					<div class="boutons">
+						<BOUCLE_input_icones(DATA) {source table, #GET{actions_boutons}}>
+						<input type="submit" class="submit #CLE" value=".#CLE" />
+						</BOUCLE_input_icones>
+					</div>
+					<div class="boutons">
+						<button type="submit" class="submit">&lt;button&gt;</button>
+					</div>
+					<div class="boutons groupe-boutons">
+						<input type="submit" class="submit" value="Clic" />
+						<input type="submit" class="submit" value="Clac" />
+					</div>
+					<div class="boutons groupe-boutons bloc">
+						<input type="submit" class="submit" value="Clic" />
+						<input type="submit" class="submit" value="Clac" />
+					</div>
+				</div></form>
+			</div>
+		</div>
+	</dd>
+
+</dl>
+
 #BOITE_FERMER
