@@ -18,6 +18,7 @@
 	ouvrir,Ouvrir,
 	fermer,Fermer,
 	ok,Ok,
+	actualiser,Actualiser,
 }}}
 #SET{tailles,#LISTE{16,24,32}}
 #SET{variantes,#LISTE{principal,secondaire,link,danger,bloc}}
@@ -319,7 +320,7 @@
 [(#BOITE_OUVRIR{Boutons de formulaires}|inserer_attribut{id,boutons_formulaires})]
 
 <p>
-	Les boutons de validation de formulaires acceptent également toutes les variantes du composant <code class="spip">.bouton</code>.
+	Les boutons des formulaires acceptent également toutes les variantes du composant <code class="spip">.bouton</code>.
 </p>
 
 <dl class="spip">
@@ -331,14 +332,24 @@
 		</div>
 		<div class="droite">
 			<div class="formulaire_spip" style="margin: 0">
-				<h3 class="titrem">Formulaire</h3>
-				<p>Ici les saisies du formulaire…</p>
+				<h3 class="titrem">Un formulaire</h3>
 				<form><div>
+					<p>Contient des boutons dans le pied du formulaire, ou éventuellement parmi les saisies.</p>
+					<div class="editer-groupe">
+						<div class="editer">
+							<label>Boutons</label>
+							<input type="submit" class="submit" value="Défaut" />
+							<button type="submit" class="submit">&lt;button&gt;</button>
+						</div>
+					</div>
 					<div class="boutons">
 						<input type="submit" class="submit" value="Défaut" />
-						<BOUCLE_input_variantes(DATA) {source table, #GET{variantes}}>
+						<BOUCLE_input_variantes(DATA) {source table, #GET{variantes}|array_diff{#LISTE{bloc}}}>
 						<input type="submit" class="submit #VALEUR" value=".#VALEUR" />
 						</BOUCLE_input_variantes>
+					</div>
+					<div class="boutons">
+						<input type="submit" class="submit bloc" value=".bloc" />
 					</div>
 					<div class="boutons">
 						<BOUCLE_input_icones(DATA) {source table, #GET{actions_boutons}}>
@@ -358,6 +369,10 @@
 					</div>
 				</div></form>
 			</div>
+			#BOITE_OUVRIR{Une boîte}
+			#BOITE_PIED
+			#BOUTON_ACTION{Bouton d’action,#SELF}
+			#BOITE_FERMER
 		</div>
 	</dd>
 
