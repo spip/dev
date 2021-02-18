@@ -137,8 +137,8 @@
 				</div>
 				<!--EX10-->
 				#SET{name,checkbox}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
-				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-					<label>[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
+				<fieldset class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+					<legend class="label">[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</legend>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]
 					#SET{val,1}
@@ -152,7 +152,7 @@
 						<label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_',#GET{name},'_',#GET{val}}|_T)]</label>
 					</div>
 					<p class="explication" id="#GET{name}_explication">Des explications au-dessous d'un choix</p>
-				</div>
+				</fieldset>
 
 				<!--EX11-->
 				#SET{name,checkbox_long_label}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
