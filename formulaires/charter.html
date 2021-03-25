@@ -104,8 +104,8 @@
 				</div>
 				<!--EX09-->
 				#SET{name,radio}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
-				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-					<label>[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
+				<fieldset class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+					<legend class="label">[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</legend>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]
 					<p class="explication" id="#GET{name}_explication">Des explications au-dessus d'un choix</p>
@@ -119,11 +119,11 @@
 						<input type="radio" name="#GET{name}" class="radio" id="#GET{name}_#GET{val}" value="#GET{val}" aria-describedby="#GET{name}_explication" [(#ENV{#GET{name},#GET{defaut}}|=={#GET{val}}|oui)checked="checked"] />
 						<label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_',#GET{name},'_',#GET{val}}|_T)]</label>
 					</div>
-				</div>
+				</fieldset>
 				<!--EX09b-->
 				#SET{name,checkbox_ouiounon}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
-				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-					<label>[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
+				<fieldset class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+					<legend class="label">[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</legend>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]
 					<p class="explication" id="#GET{name}_explication">Des explications au-dessus d'un choix</p>
@@ -134,7 +134,7 @@
 						<input type="checkbox" name="#GET{name}" class="checkbox" id="#GET{name}_#GET{val}" value="#GET{val}" aria-describedby="#GET{name}_explication" [(#ENV{#GET{name},#GET{defaut}}|=={#GET{val}}|oui)checked="checked"] />
 						<label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_',#GET{name},'_',#GET{val}}|_T)]</label>
 					</div>
-				</div>
+				</fieldset>
 				<!--EX10-->
 				#SET{name,checkbox}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
 				<fieldset class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
@@ -156,8 +156,8 @@
 
 				<!--EX11-->
 				#SET{name,checkbox_long_label}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
-				<div class="editer long_label editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-					<label>[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</label>[
+				<fieldset class="editer long_label editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+					<legend class="label">[(#GET{fl}|concat{':label_',#GET{name}}|_T)]</legend>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]
 					#SET{val,1}
@@ -170,7 +170,7 @@
 						<input type="checkbox" name="#GET{name}\[\]" class="checkbox" id="#GET{name}_#GET{val}" value="#GET{val}"[(#GET{val}|in_any{#ENV{#GET{name},#GET{defaut}}}|oui)checked="checked"] />
 						<label for="#GET{name}_#GET{val}">[(#GET{fl}|concat{':label_',#GET{name},'_',#GET{val}}|_T)]</label>
 					</div>
-				</div>
+				</fieldset>
 
 				<div class="fieldset">
 					<fieldset>
