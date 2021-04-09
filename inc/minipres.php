@@ -109,12 +109,15 @@ function install_debut_html($titre = 'AUTO', $onLoad = '', $all_inline = false) 
  * @return string Code HTML
  */
 function install_fin_html() {
+	$trace = '';
 	if (!_request('exec') == 'install' && defined('_DEBUG_MINIPRES') && _DEBUG_MINIPRES) {
-		echo "<pre>";
+		ob_start();
 		debug_print_backtrace();
-		echo "</pre>";
+		$trace = ob_get_contents();
+		ob_end_clean();
+		$trace = "<pre>$trace</pre>";
 	}
-	return "\n\t</div>\n\t</div>\n</body>\n</html>";
+	return "\n\t</div>\n\t</div>{$trace}\n</body>\n</html>";
 }
 
 
