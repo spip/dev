@@ -9,38 +9,35 @@
 
 <h1 class="grostitre">Onglets</h1>
 
-<h2>Barre d'onglets</h2>
+
+<h2 class="h2" id="barre-onglets">Barre d'onglets</h2>
 
 <p>
 	Malgré son nom, ce menu constitue une navigation avec changement de page, fonctionnellement il ne s'agit pas de vrais onglets.
 	<br>Chaque menu est identifié par un nom, et la liste des pages le constituant est décrite dans <code>paquet.xml</code>, elle peut être étendue par les plugins.
 </p>
 
-[(#VAL{demo}|barre_onglets{demo})]
-
-<pre class="spip"><code>[(&#35;VAL{nomdelabarreonglet}|barre_onglets{pagecourante})]</code></pre>
-
-
-<h2>Onglets simples à deux niveaux</h2>
-
-<p>Les onglets simples sont utilisés préférentiellement pour de la navigation ou du filtrage au sein de la même page. Ils sont utilisés avec des liens ajax pour être plus réactifs, ce qui est attendu par les utilisateurs confrontés à un onglet.
-<br />
-Il n'y a pas de filtre pour les construire car leur structure HTML est très simple.</p>
-
-<div class='onglets_simple clearfix'>
-	<ul>
-		<li><strong>Onglet expos&eacute;</strong></li>
-		<li><a>Onglet cliquable</a></li>
-		<li><a>Onglet cliquable</a></li>
-	</ul>
+<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bare-onglets"><span class="spicon">&#43;</span> Voir le code</a>
+<div class="demo-preview clearfix">
+	[(#VAL{demo}|barre_onglets{demo})]
+</div>
+<div class="demo-code" data-toggable id="code-bare-onglets">
+	[(#INCLURE{prive/squelettes/inclure/charte/code_barre_onglets.html}|dev_afficher_code{spip})]
 </div>
 
-<div class='onglets_simple second clearfix'>
-	<ul>
-		<li><strong>Onglet expos&eacute;</strong></li>
-		<li><a>Onglet cliquable</a></li>
-		<li><a>Onglet cliquable</a></li>
-	</ul>
-</div>
 
-<pre[ class="(#GET{class_pre})"]><code>[(#INCLURE{fond=prive/squelettes/inclure/charte/code_onglets}|appliquer_filtre{#PLUGIN{coloration_code}|?{coloration_code_color,htmlentities},#PLUGIN{coloration_code}|?{html5,#CONST{ENT_COMPAT}}})]</code></pre>
+<h2 class="h2" id="onglets">Onglets simples à deux niveaux</h2>
+
+<p>
+	Les onglets simples sont utilisés préférentiellement pour de la navigation ou du filtrage au sein de la même page. Ils sont utilisés avec des liens ajax pour être plus réactifs, ce qui est attendu par les utilisateurs confrontés à un onglet.
+	<br>
+	Il n'y a pas de filtre pour les construire car leur structure HTML est très simple.
+</p>
+
+<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-onglets"><span class="spicon">&#43;</span> Voir le code</a>
+<div class="demo-preview clearfix">
+	[(#INCLURE{fond=prive/squelettes/inclure/charte/code_onglets})]
+</div>
+<div class="demo-code" data-toggable id="code-onglets">
+	[(#INCLURE{prive/squelettes/inclure/charte/code_onglets.html}|dev_afficher_code)]
+</div>

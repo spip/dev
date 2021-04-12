@@ -1,17 +1,15 @@
 <h1 class="grostitre">Listes</h1>
-<h2>Liste d'objets</h2>
-<INCLURE{fond=prive/objets/liste/articles,titre=<:articles_recents:>,par=date,nb=20,env,ajax} />
 
-<h2>Liste d'items</h2>
-<p>un paragraphe avant pour voir</p>
-<div class="liste">
-	<h4>Un titre pour la liste : peut être un &lt;hn> quelconque</h4>
-	<ul class="liste-items">
-		<li class="item"><a href="#SELF">Un lien ici</a></li>
-		<li class="item"><a href="#SELF">Un autre lien ici avec un très long texte sur plusieurs lignes. Un autre lien ici avec un très long texte sur plusieurs lignes .Un autre lien ici avec un très long texte sur plusieurs lignes</a></li>
-		<li class="item on"><a href="#SELF">Un item exposé, mais avec un lien clicable quand même</a></li>
-		<li class="item"><strong class="on">Le contenu de l'item exposé par un strong</strong></li>
-		<li class="item"><a href="#SELF">Un lien normal pour finir</a></li>
-	</ul>
+<h2 id="liste-objets">Liste d'objets</h2>
+
+<INCLURE{fond=prive/objets/liste/articles,titre=<:articles_recents:>,par=date,nb=10,env,ajax} />
+
+<h2 id="liste-items">Liste d'items</h2>
+
+<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-liste-items"><span class="spicon">&#43;</span> Voir le code</a>
+<div class="demo-preview clearfix">
+	[(#INCLURE{fond=prive/squelettes/inclure/charte/code_liste_items})]
 </div>
-<pre class="spip"><code>&lt;div class=&quot;liste&quot;&gt;&#10;  &lt;h4&gt;Un titre pour la liste : peut &ecirc;tre un &lt;hn&gt; quelconque&lt;/h4&gt;&#10;  &lt;ul class=&quot;liste-items&quot;&gt;&#10;    &lt;li class=&quot;item&quot;&gt;&lt;a href=&quot;#SELF&quot;&gt;Un lien ici&lt;/a&gt;&lt;/li&gt;&#10;    &lt;li class=&quot;item&quot;&gt;&lt;a href=&quot;#SELF&quot;&gt;Un autre lien ici avec un tr&egrave;s long texte sur plusieurs lignes. Un autre lien ici avec un tr&egrave;s long texte sur plusieurs lignes .Un autre lien ici avec un tr&egrave;s long texte sur plusieurs lignes&lt;/a&gt;&lt;/li&gt;&#10;    &lt;li class=&quot;item on&quot;&gt;&lt;a href=&quot;#SELF&quot;&gt;Un item expos&eacute;, mais avec un lien clicable quand m&ecirc;me&lt;/a&gt;&lt;/li&gt;&#10;    &lt;li class=&quot;item&quot;&gt;&lt;strong class=&quot;on&quot;&gt;Le contenu de l&apos;item expos&eacute; par un strong&lt;/strong&gt;&lt;/li&gt;&#10;    &lt;li class=&quot;item&quot;&gt;&lt;a href=&quot;#SELF&quot;&gt;Un lien normal pour finir&lt;/a&gt;&lt;/li&gt;&#10;  &lt;/ul&gt;&#10;&lt;/div&gt;</code></pre>
+<div class="demo-code" data-toggable id="code-liste-items">
+	[(#INCLURE{prive/squelettes/inclure/charte/code_liste_items.html}|dev_afficher_code{html5})]
+</div>
