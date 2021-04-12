@@ -53,3 +53,25 @@ function bel_env($env, $afficher_en_clair = false) {
 	$res .= "</table>";
 	return $res;
 }
+
+/**
+ * Afficher un bloc de code informatique avec coloration syntaxique si possible.
+ *
+ * Coloration syntaxique si le plugin coloration code est activé.
+ * Sinon le texte est retourné entre des balises <pre><code>.
+ *
+ * @param string $texte
+ * @param string $language
+ *     Type de code : html5 | spip
+ * @return string
+ */
+function filtre_dev_afficher_code_dist(string $texte, string $language = 'html5') : string {
+	include_spip('inc/utils');
+	if (test_plugin_actif('coloration_code') === true) {
+		$texte = coloration_code_color($texte, $language);
+	} else {
+		include_spip('inc/filtres');
+		$texte = '<pre class="pre_code"><code>' . entites_html($texte) . '</code></pre>';
+	}
+	return $texte;
+}
