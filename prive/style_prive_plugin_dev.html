@@ -17,49 +17,81 @@
 }
 
 /**
- * Codes et blocs de codes
- * - avec plugin coloration code : pre.color
- * - sans : pre.dark
+ * Blocs de codes
+ * - avec plugin coloration code : div.coloration_code
+ * - sans : pre.pre_code
  */
+/* code inline */
 [class^=charte_] code {
-	padding: 0.2em 0.33em;
-	background-color: #eee;
-	background-color: hsla(0, 0%, 0%, 0.033);
-	color: navy;
-	border-radius: inherit;
-	font-size: 0.8rem;
+	font-size: 0.9em;
+	color: #d63384;
 }
-[class^=charte_] pre {
+/* bloc de code non coloré & coloré */
+[class^=charte_] .pre_code,
+[class^=charte_] .coloration_code {
+	background-color: var(--spip-color-gray-lightest);
+	padding: 0.5em;
+	font-size: 0.8rem;
+	font-family: monospace;
+}
+/* bloc de code non coloré */
+[class^=charte_] .pre_code {
 	display: block;
 	max-width: 100%;
 	overflow-x: auto;
 	margin-top: 0;
-	border-radius: 0.25em;
 }
-[class^=charte_] pre.dark {
-	padding: 0.5em;
-	background-color: #272822;
+[class^=charte_] .pre_code code {
+	font-size: inherit;
+	color: inherit;
 }
-[class^=charte_] pre.dark code {
-	color: white;
-}
-
-/* Ajustements coloration code */
-[class^=charte_] pre.color {
+/* bloc de code coloré */
+[class^=charte_] .coloration_code {
 	white-space: normal;
 }
-[class^=charte_] pre.color code {
-	padding: 0;
-}
-.coloration_code > *:first-child {
-	padding: 0.5em;
-	font-size: 0.8rem;
-	background-color: hsl(0, 0%, 96%);
-	border-radius: 0.25em;
-}
-.coloration_code ol {
+[class^=charte_] .coloration_code ol {
 	margin-left: 2em;
 }
-.coloration_code .download {
+[class^=charte_] .coloration_code .download {
 	font-size: 0.8em;
+	margin: 0;
 }
+
+/* Blocs démo */
+.demo-preview {
+	border: 1px solid var(--spip-color-gray-lighter);
+	padding: 1em;
+	clear: both;
+}
+.demo-code {
+	clear: both;
+	margin-bottom: 1em;
+}
+.demo-preview + p,
+.demo-code + p {
+	margin-top: 1.5em;
+}
+
+/* Titraille */
+[class^=charte_] .h1 {
+	margin-top: 3em;
+}
+[class^=charte_] .h2 {
+	margin-top: 2.5em;
+}
+[class^=charte_] .h3 {
+	margin-top: 2em;
+}
+
+/* Fonds de couleur */
+[class*=bg_] {
+	padding: 1em;
+}
+<BOUCLE_fonds(DATA) {source table, #LISTE{lightest,lighter,light,'',dark,darker}}>
+.bg_color[_(#VALEUR)] {
+	background-color: var(--spip-color-theme[-(#VALEUR)]);
+}
+.bg_gray[_(#VALEUR)] {
+	background-color: var(--spip-color-gray[-(#VALEUR)]);
+}
+</BOUCLE_fonds>

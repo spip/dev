@@ -1,0 +1,35 @@
+<div class="liste-objets liste-objets-lies auteurs">
+	<table class="spip liste">
+		<caption>
+			<strong class="caption">
+				[(#VAL{2}|objet_afficher_nb{auteur})]
+			</strong>
+		</caption>
+		<tbody>
+			<tr class="row_odd">
+				<td>
+					<td class="statut">[(#CHEMIN_IMAGE{auteur-0minirezo-16.png}|balise_img)]</td>
+					<td class="nom"><a href="#">Spip</a></td>
+					<td class="logo">[(#CHEMIN_IMAGE{favicon-spip.png}|image_reduire{24})]</td>
+					<td class="email"><a href="#">spip@spip.net</a></td>
+					<td class="nombre">[(#VAL{999}|objet_afficher_nb{article})]</td>
+					<td class="action">
+						<button class="btn_supprimer btn_link btn_mini"><:lien_retirer_auteur:></button>
+					</td>
+				</td>
+			</tr>
+			<tr class="row_even">
+				<td>
+					<td class="statut">[(#CHEMIN_IMAGE{auteur-0minirezo-16.png}|balise_img)]</td>
+					<td class="nom"><a href="#">Spip</a></td>
+					<td class="logo">[(#CHEMIN_IMAGE{favicon-spip.png}|image_reduire{24})]</td>
+					<td class="email"><a href="#">spip@spip.net</a></td>
+					<td class="nombre">[(#VAL{999}|objet_afficher_nb{article})]</td>
+					<td class="action">
+						<button class="btn_ajouter btn_mini"><:lien_ajouter_auteur:></button>
+					</td>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
