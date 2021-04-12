@@ -17,7 +17,7 @@
 	<onglet nom="charte" titre="charter:titre_charte" parent="charte" action="charte" />
 	<onglet nom="charte_layout" titre="charter:titre_layout" parent="charte" action="charte_layout" />
 	<onglet nom="charte_onglets" titre="charter:titre_onglets" parent="charte" action="charte_onglets" />
-	<onglet nom="charte_icones" titre="charter:titre_boutons_icones" parent="charte" action="charte_icones" />
+	<onglet nom="charte_boutons" titre="charter:titre_boutons_icones" parent="charte" action="charte_boutons" />
 	<onglet nom="charte_typo" titre="charter:titre_typo" parent="charte" action="charte_typo" />
 	<onglet nom="charte_boites" titre="charter:titre_boites" parent="charte" action="charte_boites" />
 	<onglet nom="charte_listes" titre="charter:titre_listes" parent="charte" action="charte_listes" />
