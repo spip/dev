@@ -6,17 +6,11 @@
 [(#BOUTON_ACTION{
     Bouton d’action mini secondaire ajaxé,
     #URL_ACTION_AUTEUR{action, params, #SELF},
-    #ARRAY{
-        bouton, btn_secondaire btn_mini,
-        formulaire, ajax,
-    }
+    "ajax btn_secondaire btn_mini"
 })]
 
 [(#BOUTON_ACTION{
     Bouton d’action pleine largeur,
     #URL_ACTION_AUTEUR{action, params, #SELF},
-    #ARRAY{
-        bouton, btn_bloc,
-        formulaire, bloc,
-    }
-})]
+    "ajax btn_bloc"
+}|ajouter_class{bloc})]
