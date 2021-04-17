@@ -6,7 +6,7 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
  * Chargement des valeurs
  * @return array
  */
-function formulaires_charter_charger_dist() {
+function formulaires_charter_charger_dist(string $suffixe = '') {
 
 	$valeurs = array(
 		'text' => '',
@@ -17,6 +17,7 @@ function formulaires_charter_charger_dist() {
 		'radio' => 'non',
 		'checkbox' => array(1),
 		'checkbox_long_label' => array(1,2),
+		'suffixe' => $suffixe,
 	);
 
 	return $valeurs;
@@ -27,7 +28,7 @@ function formulaires_charter_charger_dist() {
  * on simule des erreurs si on a clique sur annuler
  * @return array
  */
-function formulaires_charter_verifier_dist() {
+function formulaires_charter_verifier_dist(string $suffixe = '') {
 	$erreurs = array();
 	if (_request('cancel')){
 		$erreurs['message_erreur'] = ('Un long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur...');
@@ -48,6 +49,6 @@ function formulaires_charter_verifier_dist() {
 /**
  * Traitement de la saisie
  */
-function formulaires_charter_traiter_dist() {
+function formulaires_charter_traiter_dist(string $suffixe = '') {
 	return array('message_ok' => ('Bravo, c\'est une reussite !'));
 }
