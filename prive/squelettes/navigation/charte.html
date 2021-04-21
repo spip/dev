@@ -1,0 +1,35 @@
+[(#REM)
+
+	Charte : menu de navigation
+
+]
+#SET{pages,#ARRAY{
+	charte,         titre_charte,
+	charte_layout,  titre_layout,
+	charte_onglets, titre_onglets,
+	charte_boutons, titre_boutons,
+	charte_typo,    titre_typo,
+	charte_boites,  titre_boites,
+	charte_alertes, titre_alertes,
+	charte_listes,  titre_listes,
+	charte_forms,   titre_formulaires,
+	charte_php,     titre_obsoletes,
+}}
+<nav class="navigation" role="navigation">
+	<ul class="liste-items sous_navigation">
+		<BOUCLE_pages(data) {source table, #GET{pages}}>
+		#SET{active,#ENV{exec}|=={#CLE}}
+		#SET{nom,#VAL{charter:}|concat{#VALEUR}|_T}
+		<li class="item[ (#GET{active}|oui)on]">
+			<a href="[(#URL_ECRIRE{#CLE})]">#GET{nom}</a>
+			[(#REM)
+			[(#URL_ECRIRE{#CLE}|lien_ou_expose{#GET{nom}, #GET{active}})]
+			]
+		</li>
+		</BOUCLE_pages>
+	</ul>
+</nav>
+
+<script type="text/javascript">
+	[(#INCLURE{prive/javascript/dev.js}|compacte{js})]
+</script>
