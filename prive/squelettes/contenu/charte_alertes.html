@@ -1,0 +1,65 @@
+[(#REM)
+
+  Squelette
+  (c) 2009 xxx
+  Distribué sous licence GPL
+
+]
+
+	<h1 class="grostitre"><:charter:titre_charte:> / <:charter:titre_alertes:></h1>
+
+	#BOITE_OUVRIR
+		Bla bla introduction
+	#BOITE_FERMER
+
+	<h2>Alertes simples</h2>
+
+	[(#ALERTE{Quelque chose mérite votre attention., '', notice})]
+	[(#ALERTE{Une erreur s’est produite., '', error})]
+	[(#ALERTE{'Bravo, c’est une réussite !', '', success})]
+	[(#ALERTE{Il est important de se brosser régulièrement les dents., '', info})]
+
+	<h2>Alertes avec titres</h2>
+
+	[(#ALERTE{Quelque chose mérite votre attention., Notice, notice})]
+	[(#ALERTE{Une erreur s’est produite., Erreur, error})]
+	[(#ALERTE{'Bravo, c’est une réussite !', Succès, success})]
+	[(#ALERTE{Avez-vous penser à vous brosser les dents ?, Info, info})]
+	
+	<h2>Alertes complexes</h2>
+
+	#ALERTE_OUVRIR{Un message complexe., notice}
+		<p>
+			Quelque chose ne vas pas, voici une explication complexe sur plusieurs lignes.
+			<br>Ci-dessous une liste de suggestions pour remédier au problème.
+		</p>
+		<ul class="spip">
+			<li>Lisez <a href="https://spip.net">la documentation</a>.</li>
+			<li>Ouvrez un ticket.</li>
+			<li>Redémarrez.</li>
+		</ul>
+	#ALERTE_FERMER
+
+	<h2>Variantes</h2>
+
+	<h3>Simples</h3>
+
+	[(#ALERTE{Quelque chose mérite votre attention., '', notice simple})]
+	[(#ALERTE{Une erreur s’est produite., '', error simple})]
+	[(#ALERTE{'Bravo, c’est une réussite !', '', success simple})]
+	[(#ALERTE{Il est important de se brosser régulièrement les dents., '', info simple})]
+
+	<h3>Petites</h3>
+
+	[(#ALERTE{Quelque chose mérite votre attention., '', notice mini})]
+	[(#ALERTE{Une erreur s’est produite., '', error mini})]
+	[(#ALERTE{'Bravo, c’est une réussite !', '', success mini})]
+	[(#ALERTE{Il est important de se brosser régulièrement les dents., '', info mini})]
+
+	<h3>(WIP) Alertes fermables</h3>
+
+	<p>Si le message contient un bouton pour fermer, voici comment il s’affiche.</p>
+
+	#ALERTE_OUVRIR{'','fermable'}
+	Ce message peut être fermé. <button type="button" class="msg-alert__close" aria-label="<:fermer|attribut_html:>"></button>
+	#ALERTE_FERMER
