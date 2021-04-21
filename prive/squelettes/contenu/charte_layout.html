@@ -1,10 +1,14 @@
-<h1 class="grostitre">Layout</h1>
+<h1 class="grostitre"><:charter:titre_charte:> / <:charter:titre_layout:></h1>
+
+#BOITE_OUVRIR
+
 
 <h2>Pleine largeur</h2>
 
 <p>
 	Lorsqu’une page n’utilise pas la navigation latérale, il est possible d’utiliser toute la largeur disponible au moyen de la balise <code class="spip">&#35;LARGEUR_ECRAN{pleine_largeur}</code>, à placer dans <code>squelettes/top/[page].html</code>
 </p>
+
 
 <h2 class="h2" id="colonnes">Colonnes</h2>
 
@@ -20,6 +24,7 @@
 	[(#INCLURE{prive/squelettes/inclure/charte/code_colonnes.html}|dev_afficher_code{html5})]
 </div>
 
+
 <h2 class="h2" id="helpers">Helpers</h2>
 
 <ul class="spip">
@@ -30,3 +35,5 @@
 		<code class="spip">&lt;div class=&quot;clearfix&quot;&gt;</code> pour éviter que les éléments flottants contenus <strong>à l’intérieur</strong> ne débordent.
 	</li>
 </ul>
+
+#BOITE_FERMER

@@ -73,6 +73,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'titre_icones' => 'Icônes',
 	'titre_layout' => 'Layout',
 	'titre_listes' => 'Listes',
+	'titre_alertes' => 'Alertes',
 	'titre_onglets' => 'Onglets',
+	'titre_obsoletes' => 'Obsolètes',
 	'titre_typo' => 'Typo'
 );
