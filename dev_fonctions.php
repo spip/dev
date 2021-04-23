@@ -57,21 +57,29 @@ function bel_env($env, $afficher_en_clair = false) {
 /**
  * Afficher un bloc de code informatique avec coloration syntaxique si possible.
  *
- * Coloration syntaxique si le plugin coloration code est activé.
- * Sinon le texte est retourné entre des balises <pre><code>.
+ * Retours :
+ * - sans plugin : <pre class="brut"><code>
+ * - avec plugin version PrismJS : <pre class="avec-prism"><code>
+ * - avec plugin version Geshi : <div class="coloration_code">
  *
  * @param string $texte
  * @param string $language
- *     Type de code : html5 | spip
+ *     Type de code : html | spip
  * @return string
  */
-function filtre_dev_afficher_code_dist(string $texte, string $language = 'html5') : string {
+function filtre_dev_afficher_code_dist(string $texte, string $language = '') : string {
 	include_spip('inc/utils');
-	if (test_plugin_actif('coloration_code') === true) {
-		$texte = coloration_code_color($texte, $language);
+	$fn_coloration_geshi = (function_exists('coloration_code_color') ? 'coloration_code_color' : null);
+	$class_pre_color = (test_plugin_actif('coloration_code') ? 'avec-prism' : 'brut');
+	$language_defaut = ($fn_coloration_geshi ? 'html5' : 'html');
+	$language = $language ?: $language_defaut;
+	// Avec coloration Geshi
+	if ($fn_coloration_geshi) {
+		$texte = $fn_coloration_geshi($texte, $language);
+	// Avec ou sans coloration Prism
 	} else {
 		include_spip('inc/filtres');
-		$texte = '<pre class="pre_code"><code>' . entites_html($texte) . '</code></pre>';
+		$texte = "<pre class=\"pre_code $class_pre_color line-numbers\"><code class=\"language-$language\">" . entites_html(trim($texte)) . '</code></pre>';
 	}
 	return $texte;
 }

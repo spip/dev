@@ -27,8 +27,8 @@
 	font-size: 0.9em;
 	color: #d63384;
 }
-/* bloc de code non coloré & coloré */
-[class^=charte_] .pre_code,
+/* bloc de code non coloré & coloré avec Geshi */
+[class^=charte_] .pre_code.brut,
 [class^=charte_] .coloration_code {
 	background-color: var(--spip-color-gray-lightest);
 	padding: 0.5em;
@@ -36,17 +36,17 @@
 	font-family: monospace;
 }
 /* bloc de code non coloré */
-[class^=charte_] .pre_code {
+[class^=charte_] .pre_code.brut {
 	display: block;
 	max-width: 100%;
 	overflow-x: auto;
 	margin-top: 0;
 }
-[class^=charte_] .pre_code code {
+[class^=charte_] .pre_code.brut code {
 	font-size: inherit;
 	color: inherit;
 }
-/* bloc de code coloré */
+/* bloc de code coloré avec Geshi */
 [class^=charte_] .coloration_code {
 	white-space: normal;
 }
@@ -89,6 +89,7 @@
 	display: grid;
 	grid-gap: 1em;
 	grid-template-columns: 1fr 1fr;
+	align-items: start;
 }
 
 /* Fonds de couleur */
