@@ -1,0 +1,137 @@
+[(#ALERTE{Un super test, '', notice, status})]
+
+
+[(#SELF|bouton_action_horizontal{Class texte,article,add,super,Vraiment ?})]
+[(#SELF|bouton_action_horizontal{Class array,article,add,right,Vraiment ?})]
+
+[(#SELF|icone_verticale{Class texte,article,add,super})]
+
+<hr>
+
+#BOUTON_ACTION{Défaut,#SELF}
+<BOUCLE_variantes3(DATA) {source table, #GET{variantes}} {cle != btn_bloc}>
+#BOUTON_ACTION{#VALEUR,#SELF,#CLE}
+</BOUCLE_variantes3>
+[(#BOUTON_ACTION{Pleine largeur,#SELF,btn_bloc}|ajouter_class{bloc})]
+<BOUCLE_groupes2(DATA) {source table, #LISTE{'',bloc,vertical}}>
+<div class="groupe-btns groupe-btns_#VALEUR">
+	#BOUTON_ACTION{Bouton,#SELF}
+	#BOUTON_ACTION{Bouton,#SELF}
+	#BOUTON_ACTION{Bouton,#SELF}
+</div>
+</BOUCLE_groupes2>
+
+<hr>
+
+[(#BOITE_OUVRIR{Boutons de formulaires et de boîtes}|inserer_attribut{id,boutons_formulaires})]
+
+<p>
+	Les boutons des formulaires acceptent également toutes les variantes du composant <code class="spip">.btn</code>.
+</p>
+
+<dl class="spip">
+
+	<dt>Syntaxe et exemples</dt>
+	<dd class="clearfix">
+			<div class="formulaire_spip" style="margin: 0">
+				<h3 class="titrem">Un formulaire</h3>
+				<form><div>
+					<div class="editer-groupe">
+						<div class="editer">
+							<label>Boutons :</label>
+							<input type="submit" class="submit" value="Défaut" />
+							<button type="submit" class="submit">&lt;button&gt;</button>
+						</div>
+						<div class="editer">
+							<label>Obsolète :</label>
+							<button type="submit" class="delete">&lt;button.delete&gt;[ (#CHEMIN_IMAGE{supprimer-16.png}|balise_img)]</button>
+						</div>
+					</div>
+					<div class="boutons">
+						<button type="submit" class="submit">Bouton</button>
+					</div>
+					<div class="boutons groupe-btns">
+						<input type="submit" class="submit" value="Bouton" />
+						<input type="submit" class="submit" value="Bouton" />
+					</div>
+					<div class="boutons groupe-btns groupe-btns_bloc">
+						<input type="submit" class="submit" value="Bouton" />
+						<input type="submit" class="submit" value="Bouton" />
+					</div>
+				</div></form>
+			</div>
+			#BOITE_OUVRIR{Une boîte}
+			#BOITE_PIED
+			#BOUTON_ACTION{Bouton d’action,#SELF}
+			#BOITE_FERMER
+	</dd>
+
+</dl>
+
+#BOITE_FERMER
+
+
+
+[(#BOITE_OUVRIR{Divers}|inserer_attribut{id,boutons_deprecies})]
+
+<dl class="spip">
+
+	<dt>Formulaire editer_liens</dt>
+	<dd class="clearfix">
+		<div class="gauche">
+			<p>
+				Le formulaire <code>editer_liens</code> utilise 2 listes pour retirer ou ajouter des objets :
+				<ul class="spip">
+					<li>prive/objets/liste/{objet}-lies.html</li>
+					<li>prive/objets/liste/{objet}-associer.html</li>
+				</ul>
+				Dans ces listes, il est conseillé d’utiliser les classes appropriées pour les boutons d’ajout et de retrait.
+				<br>Il n’est plus nécessaire d’y inclure les images/icônes.
+			</p>
+			<p>
+				[(#INCLURE{fond=prive/squelettes/inclure/charte/code_bouton_editer_liens}|dev_afficher_code)]
+			</p>
+		</div>
+		<div class="droite fiche_objet">
+
+			<div class="liste-objets liste-objets-lies auteurs">
+				<table class="spip liste">
+					<caption>
+						<strong class="caption">
+							[(#VAL{2}|objet_afficher_nb{auteur})]
+						</strong>
+					</caption>
+					<tbody>
+						<tr class="row_odd">
+							<td>
+								<td class="statut">[(#CHEMIN_IMAGE{auteur-0minirezo-16.png}|balise_img)]</td>
+								<td class="nom"><a href="#">Spip</a></td>
+								<td class="logo">[(#CHEMIN_IMAGE{favicon-spip.png}|image_reduire{24})]</td>
+								<td class="email"><a href="#">spip@spip.net</a></td>
+								<td class="nombre">[(#VAL{999}|objet_afficher_nb{article})]</td>
+								<td class="action">
+									<button class="supprimer btn_link btn_mini"><:lien_retirer_auteur:></button>
+								</td>
+							</td>
+						</tr>
+						<tr class="row_even">
+							<td>
+								<td class="statut">[(#CHEMIN_IMAGE{auteur-0minirezo-16.png}|balise_img)]</td>
+								<td class="nom"><a href="#">Spip</a></td>
+								<td class="logo">[(#CHEMIN_IMAGE{favicon-spip.png}|image_reduire{24})]</td>
+								<td class="email"><a href="#">spip@spip.net</a></td>
+								<td class="nombre">[(#VAL{999}|objet_afficher_nb{article})]</td>
+								<td class="action">
+									<button class="ajouter btn_mini"><:lien_ajouter_auteur:></button>
+								</td>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</dd>
+</dl>
+
+#BOITE_FERMER

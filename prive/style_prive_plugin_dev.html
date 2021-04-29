@@ -74,9 +74,6 @@
 }
 
 /* Titraille */
-[class^=charte_] .h1 {
-	margin-top: 3em;
-}
 [class^=charte_] .h2 {
 	margin-top: 2.5em;
 }
@@ -90,6 +87,9 @@
 	grid-gap: 1em;
 	grid-template-columns: 1fr 1fr;
 	align-items: start;
+}
+[class^=charte_] .cols-2 .box {
+	margin: calc(var(--spip-box-spacing-y) / 2) 0;
 }
 
 /* Fonds de couleur */

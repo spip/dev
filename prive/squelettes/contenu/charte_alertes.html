@@ -6,60 +6,63 @@
 
 ]
 
-	<h1 class="grostitre"><:charter:titre_charte:> / <:charter:titre_alertes:></h1>
+	<h1 class="grostitre"><:charter:titre_charte:> &mdash; <:charter:titre_alertes:></h1>
 
-	#BOITE_OUVRIR
-		Bla bla introduction
-	#BOITE_FERMER
+	<p>
+		Les alertes permettent d’afficher un message nécessitant de retenir l’attention.
+		<br>Elles ont un rôle <code>alert</code> ou <code>status</code> selon l’importance du message,
+		et sont par conséquence accessibles aux technologies d’assistance.
+	</p>
 
-	<h2>Alertes simples</h2>
+	<h2 class="h2">Fonctionnement</h2>
+
+	<div class="demo-code" data-toggable id="code-alerte">
+		[(#INCLURE{prive/squelettes/inclure/charte/alerte_syntaxe.html}|dev_afficher_code{spip})]
+	</div>
+
+	<p>
+		La balise <code>\#ALERTE</code> convient aux messages simples.
+		<br>Pour les messages plus longs, utilisez les balises <code>\#ALERTE_OUVRIR</code> et <code>\#ALERTE_FERMER</code>.
+		<br>Si le titre passé paramètre ne commence pas par une balise (<code>&lt;hn&gt;</code>, <code>&lt;span&gt;</code>…), il est automatiquement encapsulé dans un <code>&lt;h3></code>.
+	</p>
+
+
+	<h2 class="h2">Types d’alertes</h2>
 
 	[(#ALERTE{Quelque chose mérite votre attention., '', notice})]
 	[(#ALERTE{Une erreur s’est produite., '', error})]
 	[(#ALERTE{'Bravo, c’est une réussite !', '', success})]
-	[(#ALERTE{Il est important de se brosser régulièrement les dents., '', info})]
+	[(#ALERTE{Brossez vous les dents régulièrement., '', info})]
 
-	<h2>Alertes avec titres</h2>
 
-	[(#ALERTE{Quelque chose mérite votre attention., Notice, notice})]
-	[(#ALERTE{Une erreur s’est produite., Erreur, error})]
-	[(#ALERTE{'Bravo, c’est une réussite !', Succès, success})]
-	[(#ALERTE{Avez-vous penser à vous brosser les dents ?, Info, info})]
-	
-	<h2>Alertes complexes</h2>
+	<h2 class="h2">Titres et contenus longs</h2>
 
-	#ALERTE_OUVRIR{Un message complexe., notice}
+	[(#ALERTE{'C’est indéniable, ce message a un titre.', Un message avec un titre., info})]
+
+	#ALERTE_OUVRIR{Un message complet., info}
 		<p>
-			Quelque chose ne vas pas, voici une explication complexe sur plusieurs lignes.
-			<br>Ci-dessous une liste de suggestions pour remédier au problème.
+			Ce message est long et s’étale sur plusieurs lignes.
+			<br>Il comprend même une liste de fruits :
 		</p>
 		<ul class="spip">
-			<li>Lisez <a href="https://spip.net">la documentation</a>.</li>
-			<li>Ouvrez un ticket.</li>
-			<li>Redémarrez.</li>
+			<li>Des pastèques.</li>
+			<li>Des poires.</li>
+			<li>Des pêches.</li>
 		</ul>
 	#ALERTE_FERMER
 
-	<h2>Variantes</h2>
+	<h2 class="h2">Tailles</h2>
 
-	<h3>Simples</h3>
+	[(#ALERTE{Une alerte plus petite., '', info mini})]
+	[(#ALERTE{Une alerte plus grande., '', info large})]
 
-	[(#ALERTE{Quelque chose mérite votre attention., '', notice simple})]
-	[(#ALERTE{Une erreur s’est produite., '', error simple})]
-	[(#ALERTE{'Bravo, c’est une réussite !', '', success simple})]
-	[(#ALERTE{Il est important de se brosser régulièrement les dents., '', info simple})]
+	<h2 class="h2">Alertes fermables (WIP)</h2>
 
-	<h3>Petites</h3>
+	<p>
+		Si le message contient un bouton pour fermer, voici comment il s’affiche
+		(la fonctionnalité de fermeture n’est pas implémentée).
+	</p>
 
-	[(#ALERTE{Quelque chose mérite votre attention., '', notice mini})]
-	[(#ALERTE{Une erreur s’est produite., '', error mini})]
-	[(#ALERTE{'Bravo, c’est une réussite !', '', success mini})]
-	[(#ALERTE{Il est important de se brosser régulièrement les dents., '', info mini})]
-
-	<h3>(WIP) Alertes fermables</h3>
-
-	<p>Si le message contient un bouton pour fermer, voici comment il s’affiche.</p>
-
-	#ALERTE_OUVRIR{'','fermable'}
+	#ALERTE_OUVRIR{'','info fermable'}
 	Ce message peut être fermé. <button type="button" class="msg-alert__close" aria-label="<:fermer|attribut_html:>"></button>
 	#ALERTE_FERMER

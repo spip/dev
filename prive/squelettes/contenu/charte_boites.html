@@ -6,26 +6,26 @@
 
 ]
 
-	<h1 class="grostitre"><:charter:titre_charte:> / <:charter:titre_boites:></h1>
+	<h1 class="grostitre"><:charter:titre_charte:> &mdash; <:charter:titre_boites:></h1>
 
-	#BOITE_OUVRIR
-		<p>«box» est le conteneur de <strong>base</strong> des boîtes. Tous les autres conteneurs sont hérités de celui-là.</p>
-		<h3><tt>&#35;BOITE_OUVRIR</tt></h3>
-		<p><tt>&#35;BOITE_OUVRIR</tt> ouvre une boîte HTML et accepte 3 arguments optionnels :</p>
-		<ul>
-			<li>le contenu du header en premier argument, en général un titre. Si il ne contient pas de balise &lt;hn> il est automatiquement «wrappé» par un &lt;h3>,</li>
-			<li>les classes de la boîte, qui peuvent être des classes d'habillages ou de fond, décrites ci-dessous,</li>
-			<li>les classes du header.</li>
-		</ul>
-		<h3><tt>&#35;BOITE_PIED</tt></h3>
-		<p><tt>&#35;BOITE_PIED</tt> ferme le corps de la boîte HTML et ouvre son pied</p>
-		<h3><tt>&#35;BOITE_FERMER</tt></h3>
-		<p><tt>&#35;BOITE_FERMER</tt> ferme la boîte HTML. Elle ne prend pas d'argument</p>
-	#BOITE_FERMER
+	<p>
+		Les boîtes sont des conteneurs génériques pouvant comprendre un entête, le contenu principal et un pied.
+	</p>
 
-	<h2>Habillage des boîtes</h2>
 
-	<h3>Variantes de base</h3>
+	<h2 class="h2">Fonctionnement</h2>
+
+	<div class="demo-code" data-toggable id="code-alerte">
+		[(#INCLURE{prive/squelettes/inclure/charte/boite_syntaxe.html}|dev_afficher_code{spip})]
+	</div>
+
+	<p>
+		Tous les paramètres sont optionnels.
+		<br>Si le titre passé en 1er paramètre ne contient pas de balise <code>&lt;hn></code>, il est automatiquement encapsulé dans un <code>&lt;h3></code>.
+	</p>
+
+
+	<h2 class="h2">Habillages de base</h2>
 
 	<div class="cols-2">
 
@@ -60,13 +60,12 @@
 
 	</div>
 
-	<h3>Variantes d'états</h3>
+
+	<h2 class="h2">Habillages d'états</h2>
 
 	#ALERTE_OUVRIR{'', notice}
-			Ces variantes n’ont <strong>pas</strong> vocation à afficher de simples messages.
-			<br>Elles contiennent en principe des appels à action, par exemple en alternative à des formulaires.
-			<br>Pour des messages, utilisez <a href="[(#URL_ECRIRE{charte_alertes})]">le composant messages d’alerte</a>.
-		#ALERTE_FERMER
+		Ces variantes ne se substituent pas aux <a href="[(#URL_ECRIRE{charte_alertes})]">messages d’alertes</a>.
+	#ALERTE_FERMER
 
 	<div class="cols-2">
 
@@ -91,33 +90,35 @@
 	</div>
 
 
-	<h2>Header de boîte</h2>
+	<h2 class="h2">Habillages divers</h2>
+
+	<ul class="spip">
+		<li><code>pop</code> ajoute ombre portée.</li>
+		<li><code>flat</code> la supprime.</li>
+	</ul>
+
+	#BOITE_OUVRIR{simple + pop,pop}
+		Odio iusto laboriosam aut consectetur dolorum.
+	#BOITE_FERMER
+
+	<h2 class="h2">Entêtes</h2>
 
 	<p>
 		<code>.titrem</code> sur le header pour forcer l'apparence par défaut, si le titre n’est pas en h3.
 		<br><code>.cadre-icône</code> dans le titre pour ajouter une icône.
 	</p>
 
-	#BOITE_OUVRIR{#CHEMIN_IMAGE{article-24.png}|balise_img{'',cadre-icone}|concat{'<h2>header en .titrem, titre en h2 avec icône</h2>'},simple,titrem}
+	#BOITE_OUVRIR{#CHEMIN_IMAGE{article-24.png}|balise_img{'',cadre-icone}|concat{'<h2>.titrem + &lt;h2&gt; + icône</h2>'},simple,titrem}
 		Odio iusto laboriosam aut consectetur dolorum nobis suscipit. Blanditiis velit quis.
 	#BOITE_FERMER
 
 
-	<h2>Pied de boîte</h2>
+	<h2 class="h2">Pieds</h2>
 
-	<p>Le pied de boîte est utilisé pour des boutons d'action</p>
+	<p>Le pied de boîte peut contenir des boutons d'action</p>
 
 	#BOITE_OUVRIR{'Boîte simple & titrem','simple','titrem'}
-		<tt>&#35;BOITE_OUVRIR{'Boîte simple & titrem','simple','titrem'}</tt>
-		<br><tt>&#35;BOITE_PIED</tt>
-		<br><tt>&#35;BOUTON_ACTION{demo,&#35;SELF}</tt>
-		<br><tt>&#35;BOITE_FERMER</tt>
+		Odio iusto laboriosam aut consectetur dolorum nobis suscipit. Blanditiis velit quis.
 	#BOITE_PIED
 		#BOUTON_ACTION{demo,#SELF}
-	#BOITE_FERMER
-
-	<h2>Boîte avec float dedans</h2>
-	#BOITE_OUVRIR{'Boîte simple','simple'}
-		<p>Odio iusto laboriosam aut consectetur dolorum nobis suscipit. Blanditiis velit quis.</p>
-		[(#SELF|icone_verticale{<:icone_modifier_article:>,article,new,right})]
 	#BOITE_FERMER
