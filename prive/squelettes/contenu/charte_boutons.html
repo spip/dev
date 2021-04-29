@@ -6,108 +6,8 @@
 
 ]
 
-<h1 class="grostitre"><:charter:titre_charte:> / </:charter:titre_boites:><:charter:titre_boutons_icones:></h1>
+<h1 class="grostitre"><:charter:titre_charte:> &mdash; <:charter:titre_boutons:></h1>
 
-#BOITE_OUVRIR
-
-
-<h2 class="h1" id="icone"><:charter:titre_icones:></h2>
-
-<p>
-	Les filtres <code>|icone_horizontale</code> et <code>|icone_verticale</code> transforment des liens de navigation en « boutons icônes ».
-	<br>Ils ne sont pas appropriés pour des liens d’actions tels que <code>\#URL_ACTION_AUTEUR</code>, utiliser <a href="#bouton_action">des boutons d’action</a> pour ces derniers.
-</p>
-
-<dl>
-
-	<dt class="h2">Syntaxe</dt>
-	<dd>
-		[(#INCLURE{prive/squelettes/inclure/charte/code_icone_verticale_horizontale.html}|dev_afficher_code{spip})]
-	</dd>
-
-	<dt class="h2">Objet</dt>
-	<dd>
-		<p>
-			Le 2ème paramètre permet de choisir une icône : on indique soit un type d’objet éditorial, soit une image du thème de l’espace privé.
-		</p>
-		<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-icone-verticale-objet"><span class="spicon">&#43;</span> Voir le code</a>
-		<div class="demo-preview clearfix">
-			[(#INCLURE{fond=prive/squelettes/inclure/charte/code_icone_verticale_objet})]
-		</div>
-		<div class="demo-code" data-toggable id="code-icone-verticale-objet">
-			[(#INCLURE{prive/squelettes/inclure/charte/code_icone_verticale_objet.html}|dev_afficher_code{spip})]
-		</div>
-	</dd>
-
-	<dt class="h2">Taille</dt>
-	<dd>
-		<p>
-			Par le biais du le 2ème paramètre on peut également préciser une taille en la suffixant.
-			<br> 3 tailles sont possibles : <code class="spip">16</code>, <code class="spip">24</code>, <code class="spip">32</code>
-		</p>
-		<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-icone-verticale-taille"><span class="spicon">&#43;</span> Voir le code</a>
-		<div class="demo-preview clearfix">
-			[(#INCLURE{fond=prive/squelettes/inclure/charte/code_icone_verticale_taille})]
-		</div>
-		<div class="demo-code" data-toggable id="code-icone-verticale-taille">
-			[(#INCLURE{prive/squelettes/inclure/charte/code_icone_verticale_taille.html}|dev_afficher_code{spip})]
-		</div>
-	</dd>
-
-	<dt class="h2">Action</dt>
-	<dd>
-		<p>
-			Le 3ème paramètre indique une action, son symbole est ajouté par dessus l'icône : 
-			<BOUCLE_actions(DATA) {source table, #LISTE{add,edit,del}} {","}>
-			<code class="spip">#VALEUR</code>
-			</BOUCLE_actions>
-			<br>NB &mdash; <code>del</code> provoque l’ajout automatique de la classe <code>.danger</code>.
-		</p>
-		<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-icone-verticale-actions"><span class="spicon">&#43;</span> Voir le code</a>
-		<div class="demo-preview clearfix">
-			[(#INCLURE{fond=prive/squelettes/inclure/charte/code_icone_verticale_action})]
-		</div>
-		<div class="demo-code" data-toggable id="code-icone-verticale-actions">
-			[(#INCLURE{prive/squelettes/inclure/charte/code_icone_verticale_action.html}|dev_afficher_code{spip})]
-		</div>
-	</dd>
-
-	<dt class="h2">Alignement</dt>
-	<dd>
-		<p>
-			Le 4ème paramètre permet d’ajouter une classe d’alignement :
-			<code>left</code>, <code>right</code> ou <code>center</code>.
-			<br>Les icônes centrées prennent une ligne entière.
-		</p>
-		<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-icone-verticale-align"><span class="spicon">&#43;</span> Voir le code</a>
-		<div class="demo-preview clearfix">
-			[(#SELF|icone_verticale{Flottant à gauche, article, add, left})]
-			[(#SELF|icone_verticale{Flottant à droite, article, add, right})]
-			[(#SELF|icone_verticale{Centré, article, add, center})]
-		</div>
-		<div class="demo-code" data-toggable id="code-icone-verticale-align">
-			[(#INCLURE{fond=prive/squelettes/inclure/charte/code_icone_verticale_classe}|dev_afficher_code{spip})]
-		</div>
-	</dd>
-
-	<dt class="h2">Filtre icone_horizontale</dt>
-	<dd>
-		<p>
-			La variante horizontale, prend les mêmes paramètres.
-		</p>
-		<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-icone-horizontale"><span class="spicon">&#43;</span> Voir le code</a>
-		<div class="demo-preview clearfix">
-			[(#INCLURE{fond=prive/squelettes/inclure/charte/code_icone_horizontale})]
-		</div>
-		<div class="demo-code" data-toggable id="code-icone-horizontale">
-			[(#INCLURE{prive/squelettes/inclure/charte/code_icone_horizontale.html}|dev_afficher_code{spip})]
-		</div>
-	</dd>
-
-</dl>
-
-
-<h2 class="h1" id="bouton"><:charter:titre_boutons:></h2>
 
 <p>
 	La classe générique <code class="spip">.btn</code> permet d’afficher des liens sous forme de boutons,
@@ -115,209 +15,199 @@
 	<br>Il existe plusieurs variantes que l’on peut combiner ensemble.
 </p>
 
-<dl>
-
-	<dt class="h2" id="bouton-defaut">Apparence par défaut</dt>
-	<dd>
-		<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-defaut"><span class="spicon">&#43;</span> Voir le code</a>
-		<div class="demo-preview">
-			[(#INCLURE{fond=prive/squelettes/inclure/charte/code_bouton})]
-		</div>
-		<div class="demo-code" data-toggable id="code-bouton-defaut">
-			[(#INCLURE{prive/squelettes/inclure/charte/code_bouton.html}|dev_afficher_code)]
-		</div>
-	</dd>
-
-	<dt class="h2" id="bouton-variantes">Variantes de base</dt>
-	<dd>
-		<p>
-			Des variantes génériques pour différencier les boutons selon leur rôle ou leur importance :
-			<code>.btn_secondaire</code>, <code>.btn_link</code>, <code>.btn_danger</code> et <code>.btn_bloc</code>.
-		</p>
-		<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-variante"><span class="spicon">&#43;</span> Voir le code</a>
-		<div class="demo-preview">
-			<INCLURE{fond=prive/squelettes/inclure/charte/code_bouton_variante}>
-		</div>
-		<div class="demo-code" data-toggable id="code-bouton-variante">
-			[(#INCLURE{prive/squelettes/inclure/charte/code_bouton_variante.html}|dev_afficher_code)]
-		</div>
-	</dd>
-
-	<dt class="h2" id="bouton-taille">Tailles</dt>
-	<dd>
-		<p><code>.btn_mini</code> et <code>.btn_large</code> font varier la taille.</p>
-		<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-taille"><span class="spicon">&#43;</span> Voir le code</a>
-		<div class="demo-preview">
-			<INCLURE{fond=prive/squelettes/inclure/charte/code_bouton_taille}>
-		</div>
-		<div class="demo-code" data-toggable id="code-bouton-taille">
-			[(#INCLURE{prive/squelettes/inclure/charte/code_bouton_taille.html}|dev_afficher_code)]
-		</div>
-	</dd>
-
-	<dt class="h2" id="bouton-desactive">Boutons désactivés</dt>
-	<dd>
-		<p>
-			<code>.btn_desactive</code> met les boutons en retrait et les rend non cliquables.
-		</p>
-		<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-desactive"><span class="spicon">&#43;</span> Voir le code</a>
-		<div class="demo-preview">
-			<INCLURE{fond=prive/squelettes/inclure/charte/code_bouton_desactive}>
-		</div>
-		<div class="demo-code" data-toggable id="code-bouton-desactive">
-			[(#INCLURE{prive/squelettes/inclure/charte/code_bouton_desactive.html}|dev_afficher_code)]
-		</div>
-	</dd>
-
-	<dt class="h2" id="bouton-groupe">Groupe de boutons</dt>
-	<dd>
-		<p>
-			<code>.groupe-btns</code> sur un conteneur de boutons permet de les regrouper visuellement.
-			<br>La variante <code>.groupe-btns_bloc</code> les met en pleine largeur, <code>.groupe-btns_vertical</code> à la verticale.
-		</p>
-		<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-groupe"><span class="spicon">&#43;</span> Voir le code</a>
-		<div class="demo-preview">
-			<INCLURE{fond=prive/squelettes/inclure/charte/code_bouton_groupe}>
-		</div>
-		<div class="demo-code" data-toggable id="code-bouton-groupe">
-			[(#INCLURE{prive/squelettes/inclure/charte/code_bouton_groupe.html}|dev_afficher_code)]
-		</div>
-
-		<p><code>.groupe-btns_mini</code> et <code>.groupe-btns_large</code> font changer la taille de tous les boutons inclus.</p>
-		<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-groupe-taille"><span class="spicon">&#43;</span> Voir le code</a>
-		<div class="demo-preview">
-			<INCLURE{fond=prive/squelettes/inclure/charte/code_bouton_groupe_taille}>
-		</div>
-		<div class="demo-code" data-toggable id="code-bouton-groupe-taille">
-			[(#INCLURE{prive/squelettes/inclure/charte/code_bouton_groupe_taille.html}|dev_afficher_code)]
-		</div>
-
-		<p>On peut utiliser certaines variantes de boutons à l’intérieur.</p>
-		<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-groupe-btn"><span class="spicon">&#43;</span> Voir le code</a>
-		<div class="demo-preview">
-			<INCLURE{fond=prive/squelettes/inclure/charte/code_bouton_groupe_btn}>
-		</div>
-		<div class="demo-code" data-toggable id="code-bouton-groupe-btn">
-			[(#INCLURE{prive/squelettes/inclure/charte/code_bouton_groupe_btn.html}|dev_afficher_code)]
-		</div>
-	</dd>
-
-	<dt class="h2" id="bouton-on-off">Barres d’outils</dt>
-	<dd>
-		<p>
-			<code>.btn_on</code> et <code>.btn_off</code> permettent de distinguer des boutons actifs ou inactifs.
-		</p>
-		<p>
-			Pour des barres d’outils, on peut inclure ces boutons dans un groupe <code>.groupe-btns_menu</code>.
-			<br>Tous les boutons inclus ont par défaut l’apparence de boutons inactifs,
-			il suffit d’indiquer ceux qui sont actifs avec <code>.btn_on</code>.
-			<br>Nb &mdash; Pensez aux attributs d’accessibilité : <code>aria-pressed="true"</code>, <code>role="button"</code> si besoin, etc.
-		</p>
-		<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-on-off"><span class="spicon">&#43;</span> Voir le code</a>
-		<div class="demo-preview">
-			<INCLURE{fond=prive/squelettes/inclure/charte/code_bouton_groupe_menu}>
-		</div>
-		<div class="demo-code" data-toggable id="code-bouton-on-off">
-			[(#INCLURE{prive/squelettes/inclure/charte/code_bouton_groupe_menu.html}|dev_afficher_code)]
-		</div>
-	</dd>
-
-	<dt class="h2" id="bouton-inverse">Boutons inverses</dt>
-	<dd>
-		<p><code>.btn_inverse</code> est à utiliser pour préserver la lisibilité lorsque les boutons se trouvent sur des fonds sombres.
-		<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-inverse"><span class="spicon">&#43;</span> Voir le code</a>
-		<div class="demo-preview bg_gray_darker">
-			<INCLURE{fond=prive/squelettes/inclure/charte/code_bouton_inverse}>
-		</div>
-		<div class="demo-code" data-toggable id="code-bouton-inverse">
-			[(#INCLURE{prive/squelettes/inclure/charte/code_bouton_inverse.html}|dev_afficher_code)]
-		</div>
-	</dd>
-
-	<dt class="h2" id="bouton-icone">Boutons avec icônes</dt>
-	<dd>
-		<p>
-			<strong>(WIP)</strong> Les boutons peuvent contenir une icône.
-			<br><code>.btn_icone_after</code> permet de forcer la position de l’icône <strong>après</strong> le texte.
-			<br><code>.btn_icone</code> sert à indiquer que le bouton ne contient qu’une icône, sans label visible, pour des barres d’outils par exemple.
-			<br>Nb &mdash; N’oubliez pas les attributs d’accessibilité <code>aria-hidden</code> et <code>aria-label</code> si nécessaire.
-		</p>
-		<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-icone"><span class="spicon">&#43;</span> Voir le code</a>
-		<div class="demo-preview">
-			<INCLURE{fond=prive/squelettes/inclure/charte/code_bouton_icone}>
-		</div>
-		<div class="demo-code" data-toggable id="code-bouton-icone">
-			[(#INCLURE{fond=prive/squelettes/inclure/charte/code_bouton_icone}|dev_afficher_code)]
-		</div>
-	</dd>
-
-	<dt class="h2" id="float">Alignements</dt>
-	<dd class="clearfix">
-		<p><code>.float-start</code> et <code>.float-end</code> font flotter n’importe quel élément sur les côtés, selon le sens du flux.</p>
-		<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-float"><span class="spicon">&#43;</span> Voir le code</a>
-		<div class="demo-preview clearfix">
-			<INCLURE{fond=prive/squelettes/inclure/charte/code_bouton_float}>
-		</div>
-		<div class="demo-code" data-toggable id="code-float">
-			[(#INCLURE{prive/squelettes/inclure/charte/code_bouton_float.html}|dev_afficher_code)]
-		</div>
-	</dd>
-
-</dl>
+[(#INCLURE{prive/squelettes/inclure/charte/bouton_syntaxe.html}|dev_afficher_code{spip})]
 
 
-<h2 class="h1" id="bouton-action">Boutons d’action</h2>
+<h2 class="h2" id="bouton-defaut">Apparence par défaut</h2>
+<dd>
+	<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-defaut"><span class="spicon">&#43;</span> Voir le code</a>
+	<div class="demo-preview">
+		[(#INCLURE{fond=prive/squelettes/inclure/charte/bouton})]
+	</div>
+	<div class="demo-code" data-toggable id="code-bouton-defaut">
+		[(#INCLURE{prive/squelettes/inclure/charte/bouton.html}|dev_afficher_code)]
+	</div>
+</dd>
+
+
+<h2 class="h2" id="bouton-variantes">Variantes de base</h2>
+<p>
+	Des variantes génériques pour différencier les boutons selon leur rôle ou leur importance :
+	<code>.btn_secondaire</code>, <code>.btn_link</code>, <code>.btn_danger</code> et <code>.btn_bloc</code>.
+</p>
+<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-variante"><span class="spicon">&#43;</span> Voir le code</a>
+<div class="demo-preview">
+	<INCLURE{fond=prive/squelettes/inclure/charte/bouton_variante}>
+</div>
+<div class="demo-code" data-toggable id="code-bouton-variante">
+	[(#INCLURE{prive/squelettes/inclure/charte/bouton_variante.html}|dev_afficher_code)]
+</div>
+
+
+<h2 class="h2" id="bouton-taille">Tailles</h2>
+<p><code>.btn_mini</code> et <code>.btn_large</code> font varier la taille.</p>
+<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-taille"><span class="spicon">&#43;</span> Voir le code</a>
+<div class="demo-preview">
+	<INCLURE{fond=prive/squelettes/inclure/charte/bouton_taille}>
+</div>
+<div class="demo-code" data-toggable id="code-bouton-taille">
+	[(#INCLURE{prive/squelettes/inclure/charte/bouton_taille.html}|dev_afficher_code)]
+</div>
+
+
+<h2 class="h2" id="bouton-desactive">Boutons désactivés</h2>
+<p>
+	<code>.btn_desactive</code> met les boutons en retrait et les rend non cliquables.
+</p>
+<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-desactive"><span class="spicon">&#43;</span> Voir le code</a>
+<div class="demo-preview">
+	<INCLURE{fond=prive/squelettes/inclure/charte/bouton_desactive}>
+</div>
+<div class="demo-code" data-toggable id="code-bouton-desactive">
+	[(#INCLURE{prive/squelettes/inclure/charte/bouton_desactive.html}|dev_afficher_code)]
+</div>
+
+
+<h2 class="h2" id="bouton-groupe">Groupe de boutons</h2>
+<p>
+	<code>.groupe-btns</code> sur un conteneur de boutons permet de les regrouper visuellement.
+	<br>La variante <code>.groupe-btns_bloc</code> les met en pleine largeur, <code>.groupe-btns_vertical</code> à la verticale.
+</p>
+<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-groupe"><span class="spicon">&#43;</span> Voir le code</a>
+<div class="demo-preview">
+	<INCLURE{fond=prive/squelettes/inclure/charte/bouton_groupe}>
+</div>
+<div class="demo-code" data-toggable id="code-bouton-groupe">
+	[(#INCLURE{prive/squelettes/inclure/charte/bouton_groupe.html}|dev_afficher_code)]
+</div>
+
+<p><code>.groupe-btns_mini</code> et <code>.groupe-btns_large</code> font changer la taille de tous les boutons inclus.</p>
+<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-groupe-taille"><span class="spicon">&#43;</span> Voir le code</a>
+<div class="demo-preview">
+	<INCLURE{fond=prive/squelettes/inclure/charte/bouton_groupe_taille}>
+</div>
+<div class="demo-code" data-toggable id="code-bouton-groupe-taille">
+	[(#INCLURE{prive/squelettes/inclure/charte/bouton_groupe_taille.html}|dev_afficher_code)]
+</div>
+
+<p>On peut utiliser certaines variantes de boutons à l’intérieur.</p>
+<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-groupe-btn"><span class="spicon">&#43;</span> Voir le code</a>
+<div class="demo-preview">
+	<INCLURE{fond=prive/squelettes/inclure/charte/bouton_groupe_btn}>
+</div>
+<div class="demo-code" data-toggable id="code-bouton-groupe-btn">
+	[(#INCLURE{prive/squelettes/inclure/charte/bouton_groupe_btn.html}|dev_afficher_code)]
+</div>
+
+
+<h2 class="h2" id="bouton-on-off">Barres d’outils</h2>
+<p>
+	<code>.btn_on</code> et <code>.btn_off</code> permettent de distinguer des boutons actifs ou inactifs.
+</p>
+<p>
+	Pour des barres d’outils, on peut inclure ces boutons dans un groupe <code>.groupe-btns_menu</code>.
+	<br>Tous les boutons inclus ont par défaut l’apparence de boutons inactifs,
+	il suffit d’indiquer ceux qui sont actifs avec <code>.btn_on</code>.
+	<br>Nb &mdash; Pensez aux attributs d’accessibilité : <code>aria-pressed="true"</code>, <code>role="button"</code> si besoin, etc.
+</p>
+<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-on-off"><span class="spicon">&#43;</span> Voir le code</a>
+<div class="demo-preview">
+	<INCLURE{fond=prive/squelettes/inclure/charte/bouton_groupe_menu}>
+</div>
+<div class="demo-code" data-toggable id="code-bouton-on-off">
+	[(#INCLURE{prive/squelettes/inclure/charte/bouton_groupe_menu.html}|dev_afficher_code)]
+</div>
+
+
+<h2 class="h2" id="bouton-inverse">Boutons inverses</h2>
+<p><code>.btn_inverse</code> est à utiliser pour préserver la lisibilité lorsque les boutons se trouvent sur des fonds sombres.</p>
+<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-inverse"><span class="spicon">&#43;</span> Voir le code</a>
+<div class="demo-preview bg_gray_darker">
+	<INCLURE{fond=prive/squelettes/inclure/charte/bouton_inverse}>
+</div>
+<div class="demo-code" data-toggable id="code-bouton-inverse">
+	[(#INCLURE{prive/squelettes/inclure/charte/bouton_inverse.html}|dev_afficher_code)]
+</div>
+
+
+<h2 class="h2" id="bouton-icone">Boutons avec icônes</h2>
+<p>
+	<strong>(WIP)</strong> Les boutons peuvent contenir une icône <code>.sp-icone</code>.
+	<br><code>.btn_icone</code> sert à indiquer que le bouton ne contient qu’une icône, sans label visible, pour des barres d’outils par exemple.
+	<br><code>.btn_icone_after</code> force la position de l’icône <strong>après</strong> le texte.
+	<br>Nb &mdash; N’oubliez pas les attributs d’accessibilité <code>aria-hidden</code> et <code>aria-label</code> si nécessaire.
+</p>
+<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-icone"><span class="spicon">&#43;</span> Voir le code</a>
+<div class="demo-preview">
+	<INCLURE{fond=prive/squelettes/inclure/charte/bouton_icone}>
+</div>
+<div class="demo-code" data-toggable id="code-bouton-icone">
+	[(#INCLURE{fond=prive/squelettes/inclure/charte/bouton_icone}|dev_afficher_code)]
+</div>
+
+
+<h2 class="h2" id="float">Alignements</h2>
+<div class="clearfix">
+	<p><code>.float-start</code> et <code>.float-end</code> font flotter n’importe quel élément sur les côtés, selon le sens du flux.</p>
+	<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-float"><span class="spicon">&#43;</span> Voir le code</a>
+	<div class="demo-preview clearfix">
+		<INCLURE{fond=prive/squelettes/inclure/charte/bouton_float}>
+	</div>
+	<div class="demo-code" data-toggable id="code-float">
+		[(#INCLURE{prive/squelettes/inclure/charte/bouton_float.html}|dev_afficher_code)]
+	</div>
+</div>
+
+
+<h2 class="h2" id="bouton-action">Boutons d’action</h2>
 
 <p>
 	Les boutons d’action sont des mini formulaires sécurisés ne contenant qu’un unique bouton.
 </p>
 
-<dt class="h2" id="bouton-action-balise">Balise \#BOUTON_ACTION</dt>
-<dd>
-	<div class="demo-code">
-		[(#INCLURE{prive/squelettes/inclure/charte/code_bouton_action_syntaxe.html}|dev_afficher_code{spip})]
-	</div>
-	<p>
-		Le 3ème paramètre permet de passer des classes au bouton pour utiliser les variantes de boutons.
-	</p>
-	<p>
-		Nb &mdash; Les classes s’appliquent au bouton, à l'exception de <code>ajax</code> qui va sur le formulaire.
-		<br>Pour ajouter d’autres classes au formulaire, il faut utiliser en plus le filtre <code>|ajouter_class</code>.
-		<br>Ainsi pour les boutons d’action en pleine largeur, on s’en servira pour ajouter la classe <code>.bloc</code> sur le formulaire en plus de <code>.btn_bloc</code> sur le bouton.
-	</p>
-	<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-action"><span class="spicon">&#43;</span> Voir le code</a>
-	<div class="demo-preview">
-		<INCLURE{fond=prive/squelettes/inclure/charte/code_bouton_action}>
-	</div>
-	<div class="demo-code" data-toggable id="code-bouton-action">
-		[(#INCLURE{prive/squelettes/inclure/charte/code_bouton_action.html}|dev_afficher_code{spip})]
-	</div>
-</dd>
+<h3 class="h3" id="bouton-action-balise">Balise \#BOUTON_ACTION</h3>
+<div class="demo-code">
+	[(#INCLURE{prive/squelettes/inclure/charte/bouton_action_syntaxe.html}|dev_afficher_code{spip})]
+</div>
+<p>
+	Le 3ème paramètre permet de passer des classes au bouton pour utiliser les variantes de boutons.
+</p>
+<p>
+	Nb &mdash; Les classes s’appliquent au bouton, à l'exception de <code>ajax</code> qui va sur le formulaire.
+	<br>Pour ajouter d’autres classes au formulaire, il faut utiliser en plus le filtre <code>|ajouter_class</code>.
+	<br>Ainsi pour les boutons d’action en pleine largeur, on s’en servira pour ajouter la classe <code>.bloc</code> sur le formulaire en plus de <code>.btn_bloc</code> sur le bouton.
+</p>
+<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-action"><span class="spicon">&#43;</span> Voir le code</a>
+<div class="demo-preview">
+	<INCLURE{fond=prive/squelettes/inclure/charte/bouton_action}>
+</div>
+<div class="demo-code" data-toggable id="code-bouton-action">
+	[(#INCLURE{prive/squelettes/inclure/charte/bouton_action.html}|dev_afficher_code{spip})]
+</div>
 
-<dt class="h2" id="bouton-action-horizontal">Filtre |bouton_action_horizontal</dt>
-<dd>
-	<div class="demo-code">
-		[(#INCLURE{prive/squelettes/inclure/charte/code_bouton_action_horizontal_syntaxe.html}|dev_afficher_code{spip})]
-	</div>
-	<p>
-		En alternative à la balise précédente, on peut utiliser le filtre <code>|bouton_action_horizontal</code>
-		qui s’utilise sur le même principe que <code>|icone_horizontale</code> : l’icône
-		de l’objet éditorial et le symbole de l’action sont ajoutés automatiquement.
-	</p>
-	<p>
-		Le paramètre ayant trait aux classe s’utilise de la même façon que la balise <code>\#BOUTON_ACTION</code>.
-		<br>NB &mdash; L’action <code>del</code> provoque l’ajout automatique de la classe <code>.btn_danger</code>.
-	</p>
-	<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-action-horizontal"><span class="spicon">&#43;</span> Voir le code</a>
-	<div class="demo-preview">
-		[(#INCLURE{fond=prive/squelettes/inclure/charte/code_bouton_action_horizontal})]
-	</div>
-	<div class="demo-code" data-toggable id="code-bouton-action-horizontal">
-		[(#INCLURE{prive/squelettes/inclure/charte/code_bouton_action_horizontal.html}|dev_afficher_code{spip})]
-	</div>
-</dd>
+<h3 class="h3" id="bouton-action-horizontal">Filtre |bouton_action_horizontal</h3>
+<div class="demo-code">
+	[(#INCLURE{prive/squelettes/inclure/charte/bouton_action_horizontal_syntaxe.html}|dev_afficher_code{spip})]
+</div>
+<p>
+	En alternative à la balise précédente, on peut utiliser le filtre <code>|bouton_action_horizontal</code>
+	qui s’utilise sur le même principe que <code>|icone_horizontale</code> : l’icône
+	de l’objet éditorial et le symbole de l’action sont ajoutés automatiquement.
+</p>
+<p>
+	Le paramètre ayant trait aux classe s’utilise de la même façon que la balise <code>\#BOUTON_ACTION</code>.
+	<br>NB &mdash; L’action <code>del</code> provoque l’ajout automatique de la classe <code>.btn_danger</code>.
+</p>
+<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-action-horizontal"><span class="spicon">&#43;</span> Voir le code</a>
+<div class="demo-preview">
+	[(#INCLURE{fond=prive/squelettes/inclure/charte/bouton_action_horizontal})]
+</div>
+<div class="demo-code" data-toggable id="code-bouton-action-horizontal">
+	[(#INCLURE{prive/squelettes/inclure/charte/bouton_action_horizontal.html}|dev_afficher_code{spip})]
+</div>
 
-<h2 class="h1" id="bouton-formulaire">Boutons de formulaires</h2>
+
+<h2 class="h2" id="bouton-formulaire">Boutons de formulaires</h2>
 
 <p>
 	Les boutons de soumission des formulaires sont encapsulés dans un div avec la classe <code>.boutons</code>.
@@ -327,13 +217,13 @@
 
 <a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-formulaire"><span class="spicon">&#43;</span> Voir le code</a>
 <div class="demo-preview">
-	[(#INCLURE{fond=prive/squelettes/inclure/charte/code_bouton_formulaire})]
+	[(#INCLURE{fond=prive/squelettes/inclure/charte/bouton_formulaire})]
 </div>
 <div class="demo-code" data-toggable id="code-bouton-formulaire">
-	[(#INCLURE{prive/squelettes/inclure/charte/code_bouton_formulaire.html}|dev_afficher_code)]
+	[(#INCLURE{prive/squelettes/inclure/charte/bouton_formulaire.html}|dev_afficher_code)]
 </div>
 
-<h2 class="h1" id="bouton-formulaire">Formulaire editer_liens</h2>
+<h2 class="h2" id="bouton-formulaire">Formulaire editer_liens</h2>
 <dd>
 	<p>
 		Ce formulaire utilise 2 listes d’objets pour associer ou dissocier, avec des boutons correspondants.
@@ -347,13 +237,10 @@
 
 	<a class="btn btn_link btn_mini float-end toggle" data-toggle="code" href="#code-bouton-editer-liens"><span class="spicon">&#43;</span> Voir le code</a>
 	<div class="demo-preview">
-		[(#INCLURE{fond=prive/squelettes/inclure/charte/code_bouton_editer_liens_demo})]
+		[(#INCLURE{fond=prive/squelettes/inclure/charte/bouton_editer_liens_demo})]
 	</div>
 	<div class="demo-code" data-toggable id="code-bouton-editer-liens">
-		[(#INCLURE{prive/squelettes/inclure/charte/code_bouton_editer_liens.html}|dev_afficher_code)]
+		[(#INCLURE{prive/squelettes/inclure/charte/bouton_editer_liens.html}|dev_afficher_code)]
 	</div>
 
 </dd>
-
-
-#BOITE_FERMER
