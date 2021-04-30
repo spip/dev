@@ -20,7 +20,7 @@ function affiche_usage_memoire() {
 		and !preg_match('#(\.css|\.js)#', _request('file'))
 	) {
 		chdir(_ROOT_CWD); // precaution
-		echo "<style type='text/css'>.stats_hit { position:fixed;top:0;left:0;color:#fff;background:#666;padding:5px;z-index:1010; }</style>\n";
+		echo "<style type='text/css'>.stats_hit { position:fixed;bottom:0;left:0;color:#fff;background:hsla(var(--spip-color-theme-dark--hsl, #444), .85);padding:5px;z-index:1010; border-top-right-radius: var(--spip-border-radius); } .stats_hit:focus, .stats_hit:hover { background:hsla(var(--spip-color-theme-dark--hsl, #444), 1); }</style>\n";
 		echo "<div class='stats_hit' onclick=\"this.style.display = 'none';\">";
 		echo number_format(memory_get_usage() / 1024 / 1024, 1) . ' Mo';
 		foreach ($GLOBALS['connexions'] as $serveur => $connexion) {
