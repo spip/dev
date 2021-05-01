@@ -11,8 +11,6 @@
 	<!-- Outils de developpement -->
 
 	<auteur>Collectif SPIP</auteur>
-	<credit lien="https://www.flaticon.com/authors/freepik">Icons made by Freepik</credit>
-	<credit lien="https://www.flaticon.com/authors/becris">Icons made by Becris</credit>
 
 	<onglet nom="charte" titre="charter:titre_charte" parent="charte" action="charte" />
 	<onglet nom="charte_layout" titre="charter:titre_layout" parent="charte" action="charte_layout" />
