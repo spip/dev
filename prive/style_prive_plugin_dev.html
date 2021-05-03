@@ -30,7 +30,7 @@
 /* bloc de code non coloré & coloré avec Geshi */
 [class^=charte_] .pre_code.brut,
 [class^=charte_] .coloration_code {
-	background-color: var(--spip-color-gray-lightest);
+	background-color: hsla(0, 0%, 0%, 0.05);
 	padding: 0.5em;
 	font-size: 0.8rem;
 	font-family: monospace;
@@ -88,8 +88,11 @@
 	grid-template-columns: 1fr 1fr;
 	align-items: start;
 }
-[class^=charte_] .cols-2 .box {
-	margin: calc(var(--spip-box-spacing-y) / 2) 0;
+/* les marges ne fusionnent pas dans une grille, on triche */
+[class^=charte_] .cols-2 .box,
+[class^=charte_] .cols-2 .formulaire_spip,
+[class^=charte_] .cols-2 .liste-objets  {
+	margin: calc(var(--spip-spacing-y) / 2) 0;
 }
 
 /* Fonds de couleur */
