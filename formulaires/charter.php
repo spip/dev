@@ -4,21 +4,18 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 
 /**
  * Chargement des valeurs
+ * @param string $suffixe
+ *     Suffixe pour utiliser plusieurs fois le formulaire sur la même page
  * @return array
  */
 function formulaires_charter_charger_dist(string $suffixe = '') {
 
 	$valeurs = array(
-		'text' => '',
-		'text_obli' => '',
-		'textarea' => '',
-		'textarea_pleine_largeur' => '',
-		'text_long_label' => '',
-		'radio' => 'non',
-		'checkbox' => array(1),
-		'checkbox_long_label' => array(1,2),
 		'suffixe' => $suffixe,
 	);
+	for ($i = 1; $i <= 36; $i++) {
+		$valeurs["saisie_$i"] = '';
+	}
 
 	return $valeurs;
 }
@@ -26,21 +23,24 @@ function formulaires_charter_charger_dist(string $suffixe = '') {
 /**
  * Verifier la saisie
  * on simule des erreurs si on a clique sur annuler
+ * @param string $suffixe
+ *   Suffixe pour utiliser plusieurs fois le formulaire sur la même page
  * @return array
  */
 function formulaires_charter_verifier_dist(string $suffixe = '') {
 	$erreurs = array();
-	if (_request('cancel')){
-		$erreurs['message_erreur'] = ('Un long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur...');
-		$erreurs['text'] = ('Erreur<br />'."<input type='checkbox' name='confirm' id='confirm' value='oui' /><label for='confirm'>Confirmez que vous &ecirc;tes sur</label>");
-		$erreurs['text_obli'] = ('Erreur');
-		$erreurs['textarea'] = ('Un long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur, long message d\'erreur...');
-		$erreurs['textarea_pleine_largeur'] = ('Erreur');
-		$erreurs['textarea_pleine_largeur_obli'] = ('Erreur');
-		$erreurs['text_long_label'] = ('Erreur');
-		$erreurs['radio'] = ('Erreur');
-		$erreurs['checkbox'] = ('Erreur');
-		$erreurs['checkbox_long_label'] = ('Erreur');
+	if (_request('cancel')) {
+		$erreurs['message_erreur']
+			= $erreurs['saisie_2']
+			= ('Un long message d’erreur, long message d’erreur, long message d’erreur, long message d’erreur, long message d’erreur, long message d’erreur, long message d’erreur…');
+		$erreurs['saisie_1'] = ('Erreur avec demande de confirmation<br />'."<input type='checkbox' name='confirm' id='confirm' value='oui' /><label for='confirm'>Confirmez que vous êtes sûr⋅e</label>");
+		$erreurs['saisie_3']
+			= $erreurs['saisie_4']
+			= $erreurs['saisie_5']
+			= $erreurs['saisie_6']
+			= $erreurs['saisie_7']
+			= $erreurs['saisie_8']
+			= ('Message d’explication de l’erreur');
 	}
 
 	return $erreurs;
@@ -48,7 +48,11 @@ function formulaires_charter_verifier_dist(string $suffixe = '') {
 
 /**
  * Traitement de la saisie
+ *
+ * @param string $suffixe
+ *     Suffixe pour utiliser plusieurs fois le formulaire sur la même page
+ * @return array
  */
 function formulaires_charter_traiter_dist(string $suffixe = '') {
-	return array('message_ok' => ('Bravo, c\'est une reussite !'));
+	return array('message_ok' => ('Bravo, c’est une réussite !'));
 }

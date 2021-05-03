@@ -27,26 +27,26 @@
 			<div class="editer-groupe">
 
 				<!-- input text -->
-				#SET{name,input_text}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_1}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-					<label for="#GET{id}">[(#VAL{charter:label_}|concat{#GET{name}}|_T)][ (#AIDER{' '})]</label>[
+					<label for="#GET{id}"><:charter:label_input_text:>[ (#AIDER{' '})]</label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]<input type="text" name="#GET{name}" class="text" value="#ENV*{#GET{name},#GET{defaut}}" id="#GET{id}" [(#HTML5|et{#GET{obli}})required='required']/>
 				</div>
 
 				<!-- textarea -->
-				#SET{name,textarea}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_2}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-					<label for="#GET{id}">[(#VAL{charter:label_}|concat{#GET{name}}|_T)]</label>[
+					<label for="#GET{id}"><:charter:label_textarea:></label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]<textarea name="#GET{name}" id="#GET{id}" class="textarea" rows="2">
 		#ENV*{#GET{name},#GET{defaut}}</textarea>
 				</div>
 
 				<!--select unique-->
-				#SET{name,select}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_3}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-					<label for="#GET{id}">[(#VAL{charter:label_}|concat{#GET{name}}|_T)]</label>[
+					<label for="#GET{id}"><:charter:label_select:></label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]<select name="#GET{name}" class="select" id="#GET{id}">
 						#SET{val,oui}
@@ -57,9 +57,9 @@
 				</div>
 
 				<!--select multiple-->
-				#SET{name,select_multiple}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_4}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-					<label for="#GET{id}">[(#VAL{charter:label_}|concat{#GET{name}}|_T)]</label>[
+					<label for="#GET{id}"><:charter:label_select_multiple:></label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]<select multiple name="#GET{name}\[\]" class="select" id="#GET{id}">
 						#SET{val,option1}
@@ -70,9 +70,9 @@
 				</div>
 
 				<!-- radio -->
-				#SET{name,radio}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_5}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<fieldset class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-					<legend class="label">[(#VAL{charter:label_}|concat{#GET{name}}|_T)]</legend>[
+					<legend class="label"><:charter:label_radio:></legend>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]
 					#SET{val,option1}
@@ -88,9 +88,9 @@
 				</fieldset>
 
 				<!-- radio mais dans un seul .choix -->
-				#SET{name,radio_inline}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_6}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<fieldset class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-					<legend class="label">[(#VAL{charter:label_}|concat{#GET{name}}|_T)]</legend>[
+					<legend class="label"><:charter:label_radio_inline:></legend>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]
 					#SET{val,option1}
@@ -104,9 +104,9 @@
 				</fieldset>
 
 				<!-- Checkbox unique -->
-				#SET{name,checkbox_ouiounon}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_7}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<fieldset class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-					<legend class="label" for="#GET{id}">[(#VAL{charter:label_}|concat{#GET{name}}|_T)]</legend>[
+					<legend class="label" for="#GET{id}"><:charter:label_checkbox_ouiounon:></legend>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]
 					#SET{val,non}
@@ -119,9 +119,9 @@
 				</fieldset>
 
 				<!-- Checkbox multiple -->
-				#SET{name,checkbox}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_8}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<fieldset class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-					<legend class="label">[(#VAL{charter:label_}|concat{#GET{name}}|_T)]</legend>[
+					<legend class="label"><:charter:label_checkbox:></legend>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]
 					#SET{val,1}
@@ -149,9 +149,9 @@
 				#SET{inputs_tous,#GET{inputs_text}|array_merge{#GET{inputs_autres}}}
 				<BOUCLE_types_inputs(DATA) {source table, #GET{inputs_tous}}>
 				<!-- input #VALEUR -->
-				#SET{name,input_#VALEUR}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,#VAL{saisie_}|concat{#COMPTEUR_BOUCLE|plus{8}}}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-					<label for="#GET{id}">[(#VAL{charter:label_}|concat{#GET{name}}|_T)]</label>[
+					<label for="#GET{id}">[(#VAL{charter:label_input_}|concat{#VALEUR}|_T)]</label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]<input type="#VALEUR" name="#GET{name}" class="[(#VALEUR|in_array{#GET{inputs_text}}|oui)text text_#VALEUR ]#VALEUR" value="#ENV*{#GET{name},#GET{defaut}}" id="#GET{id}" [(#HTML5|et{#GET{obli}})required='required']/>
 				</div>
@@ -166,36 +166,38 @@
 			<div class="editer-groupe">
 
 				<!-- Obligatoire -->
-				#SET{name,saisie_obli}#SET{obli,obligatoire}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_17}#SET{obli,obligatoire}#SET{defaut,Valeur obligatoire \(préremplie pour simplifier\)}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-					<label for="#GET{id}">[(#VAL{charter:label_}|concat{#GET{name}}|_T)] <span class="obligatoire"><:required:></span></label>[
+					<label for="#GET{id}"><:charter:label_saisie_obli:> <span class="obligatoire"><:required:></span></label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]<input type="text" name="#GET{name}" class="text" value="#ENV*{#GET{name},#GET{defaut}}" id="#GET{id}" [(#HTML5|et{#GET{obli}})required='required']/>
 				</div>
 
 				<!-- Disabled -->
-				#SET{name,saisie_disabled}#SET{obli,''}[(#SET{defaut,<:charter:label_valeur_disabled|attribut_html:>})]#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_18}#SET{obli,''}[(#SET{defaut,<:charter:label_valeur_disabled|attribut_html:>})]#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur] disabled">
-					<label for="#GET{id}">[(#VAL{charter:label_}|concat{#GET{name}}|_T)]</label>[
+					<label for="#GET{id}"><:charter:label_saisie_disabled:></label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]<input type="text" name="#GET{name}" disabled="disabled" class="text disabled" value="#ENV*{#GET{name},#GET{defaut}}" id="#GET{id}" [(#HTML5|et{#GET{obli}})required='required'] />
 				</div>
 
 				<!-- Readonly -->
-				#SET{name,saisie_readonly}#SET{obli,''}[(#SET{defaut,<:charter:label_valeur_readonly|attribut_html:>})]#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_19}#SET{obli,''}[(#SET{defaut,<:charter:label_valeur_readonly|attribut_html:>})]#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur] readonly">
-					<label for="#GET{id}">[(#VAL{charter:label_}|concat{#GET{name}}|_T)]</label>[
+					<label for="#GET{id}"><:charter:label_saisie_readonly:></label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]<input type="text" name="#GET{name}" readonly="readonly" class="text readonly" value="#ENV*{#GET{name},#GET{defaut}}" id="#GET{id}" [(#HTML5|et{#GET{obli}})required='required'] />
 				</div>
 
 				<!-- En erreur -->
-				#SET{name,saisie_erreur}#SET{obli,''}#SET{defaut,''}[(#SET{erreurs,<:charter:label_saisie_erreur_message:>})]#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				[(#REM)
+				#SET{name,saisie_20}#SET{obli,''}#SET{defaut,''}[(#SET{erreurs,<:charter:label_saisie_erreur_message:>})]#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-					<label for="#GET{id}">[(#VAL{charter:label_}|concat{#GET{name}}|_T)]</label>[
+					<label for="#GET{id}"><:charter:label_saisie_erreur:></label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]<input type="text" name="#GET{name}" class="text" value="#ENV*{#GET{name},#GET{defaut}}" id="#GET{id}" [(#HTML5|et{#GET{obli}})required='required'] />
 				</div>
+				]
 			</div>
 		</fieldset>
 
@@ -205,26 +207,26 @@
 			<div class="editer-groupe">
 
 				<!-- Label long -->
-				#SET{name,text_long_label}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_21}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<div class="editer long_label editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-					<label for="#GET{id}">[(#VAL{charter:label_}|concat{#GET{name}}|_T)]</label>[
+					<label for="#GET{id}"><:charter:label_text_long_label:></label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]<input type="text" name="#GET{name}" class="text" value="#ENV*{#GET{name},#GET{defaut}}" id="#GET{id}" [(#HTML5|et{#GET{obli}})required='required']/>
 				</div>
 
 				<!-- Pleine largeur -->
-				#SET{name,textarea_pleine_largeur}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_22}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<div class="editer pleine_largeur editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-					<label for="#GET{id}">[(#VAL{charter:label_}|concat{#GET{name}}|_T)]</label>[
+					<label for="#GET{id}"><:charter:label_textarea_pleine_largeur:></label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]<textarea name="#GET{name}" id="#GET{id}" class="textarea" rows="3">#ENV*{#GET{name},#GET{defaut}}</textarea>
 				</div>
 
 				<!-- Barre édition -->
 				[(#REM)
-				#SET{name,textarea_barre_edition}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_23}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<div class="editer pleine_largeur editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-					<label for="#GET{id}">[(#VAL{charter:label_}|concat{#GET{name}}|_T)]</label>[
+					<label for="#GET{id}"><:charter:label_textarea_barre_edition:></label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]<div class="edition">
 						<textarea name="#GET{name}" id="#GET{id}" class="textarea inserer_barre_edition" rows="3">#ENV*{#GET{name},#GET{defaut}}</textarea>
@@ -234,7 +236,7 @@
 
 				[(#REM)
 				<!-- plusieurs inputs text inline -->
-				#SET{name,text_inline}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_24}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<fieldset class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
 					<legend class="label">Inputs inline</legend>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
@@ -257,13 +259,13 @@
 			[(#REM)
 			<!-- 2 colonnes -->
 			<div class="editer-groupe deux_colonnes">
-				#SET{name,2cols1}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_25}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
 					<label for="#GET{id}">Saisie sur une 1 colonne</label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
 					]<input type="text" name="#GET{name}" class="text" value="#ENV*{#GET{name},#GET{defaut}}" id="#GET{id}" [(#HTML5|et{#GET{obli}})required='required']/>
 				</div>
-				#SET{name,2cols2}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_26}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
 					<label for="#GET{id}">Saisie sur une 1 colonne</label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
@@ -284,7 +286,7 @@
 			<div class="editer-groupe">
 
 				<!-- Explication avant -->
-				#SET{name,explication_avant}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_27}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
 					<label for="#GET{id}"><:charter:label_explication_avant:></label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
@@ -293,7 +295,7 @@
 				</div>
 
 				<!-- Explication après -->
-				#SET{name,explication_apres}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_28}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
 					<label for="#GET{id}"><:charter:label_explication_apres:></label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
@@ -311,7 +313,7 @@
 			<div class="editer-groupe">
 
 				<!-- Input 1er niveau -->
-				#SET{name,niveau1_1}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_29}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
 					<label for="#GET{id}">Saisie groupe racine</label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
@@ -319,7 +321,7 @@
 				</div>
 
 				<!-- Input 1er niveau -->
-				#SET{name,niveau1_2}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_30}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
 					<label for="#GET{id}">Saisie groupe racine</label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
@@ -332,14 +334,14 @@
 						<legend>Sous-groupe de champs</legend>
 						<div class="editer-groupe">
 							<!-- Input 2ème niveau -->
-							#SET{name,niveau2_1}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}
+							#SET{name,saisie_31}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}
 							<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
 								<label for="#GET{id}">Saisie sous-groupe</label>[
 								<span class='erreur_message'>(#GET{erreurs})</span>
 								]<input type="text" name="#GET{name}" class="text" value="#ENV*{#GET{name},#GET{defaut}}" id="#GET{id}" [(#HTML5|et{#GET{obli}})required='required']/>
 							</div>
 							<!-- Input 2ème niveau -->
-							#SET{name,niveau2_2}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}
+							#SET{name,saisie_32}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}
 							<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
 								<label for="#GET{id}">Saisie sous-groupe</label>[
 								<span class='erreur_message'>(#GET{erreurs})</span>
@@ -350,7 +352,7 @@
 				</div>
 
 				<!-- Input 1er niveau après fieldset -->
-				#SET{name,niveau1_3}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_33}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
 					<label for="#GET{id}">Saisie groupe racine</label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
@@ -358,7 +360,7 @@
 				</div>
 
 				<!-- Input 1er niveau après fieldset -->
-				#SET{name,niveau1_4}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+				#SET{name,saisie_34}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 				<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
 					<label for="#GET{id}">Saisie groupe racine</label>[
 					<span class='erreur_message'>(#GET{erreurs})</span>
@@ -370,14 +372,14 @@
 
 		<div class="editer-groupe">
 			<!-- Input 1er niveau après fieldset -->
-			#SET{name,niveau1_5}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+			#SET{name,saisie_35}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 			<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
 				<label for="#GET{id}">Saisie <strong>après</strong> le groupe racine</label>[
 				<span class='erreur_message'>(#GET{erreurs})</span>
 				]<input type="text" name="#GET{name}" class="text" value="#ENV*{#GET{name},#GET{defaut}}" id="#GET{id}" aria-describedby="#GET{name}_explication" [(#HTML5|et{#GET{obli}})required='required']/>
 			</div>
 			<!-- Input 1er niveau après fieldset -->
-			#SET{name,niveau1_6}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
+			#SET{name,saisie_36}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 			<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
 				<label for="#GET{id}">Saisie <strong>après</strong> le groupe racine</label>[
 				<span class='erreur_message'>(#GET{erreurs})</span>

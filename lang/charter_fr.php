@@ -9,7 +9,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// L
 	'label_checkbox' => 'Choix multiples à cocher',
-	'label_checkbox_long_label' => 'Choix multiple avec un très très long label qui utilise une class <tt>.long_label</tt>',
 	'label_checkbox_ouiounon' => 'Choix unique a cocher',
 	'label_radio' => 'Choix unique',
 	'label_radio_inline' => 'Choix unique (inline)',
