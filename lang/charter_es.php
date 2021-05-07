@@ -10,25 +10,12 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// L
-	'label_checkbox' => 'Opción múltiple',
-	'label_checkbox_1' => 'Primera opción',
-	'label_checkbox_2' => 'Segunda opción',
-	'label_checkbox_long_label' => 'Opción múltiple con una etiqueta muy muy larga que utiliza una clase <tt>.long_label</tt>',
-	'label_checkbox_long_label_1' => 'Primera opción',
-	'label_checkbox_long_label_2' => 'Segunda opción',
-	'label_checkbox_ouiounon_oui' => 'Sí',
-	'label_radio' => 'Opción única',
-	'label_radio_non' => 'No',
-	'label_radio_oui' => 'Sí',
-	'label_select' => 'Una entrada a modo de "select"',
-	'label_select_non' => 'No gracias, en absoluto',
-	'label_select_oui' => 'Eso es, SÍ',
-	'label_text' => 'Entrada en texto',
-	'label_text_long_label' => 'Entrada con una etiqueta muy muy larga que utiliza una clase <tt>.long_label</tt>',
-	'label_text_obli' => 'Entrada obligatoria',
-	'label_textarea' => 'Entrada en bloque',
-	'label_textarea_pleine_largeur' => 'Entrada en bloque en <tt>.pleine_largeur</tt>',
-	'label_textarea_pleine_largeur_obli' => 'Entrada obligatoria en bloque en <tt>.pleine_largeur</tt>',
+	'label_checkbox' => 'Opción múltiple', # MODIF
+	'label_radio' => 'Opción única', # MODIF
+	'label_select' => 'Una entrada a modo de "select"', # MODIF
+	'label_text_long_label' => 'Entrada con una etiqueta muy muy larga que utiliza una clase <tt>.long_label</tt>', # MODIF
+	'label_textarea' => 'Entrada en bloque', # MODIF
+	'label_textarea_pleine_largeur' => 'Entrada en bloque en <tt>.pleine_largeur</tt>', # MODIF
 	'legend' => 'Leyenda de un fieldset, para un grupo de entrada',
 
 	// T

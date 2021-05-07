@@ -10,26 +10,13 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// L
-	'label_checkbox' => 'Uma escolha múltipla',
-	'label_checkbox_1' => 'Uma primeira escolha',
-	'label_checkbox_2' => 'Uma segunda escolha',
-	'label_checkbox_long_label' => 'Uma escolha múltipla com um label muito longo, usando uma classe <tt>.long_label</tt>',
-	'label_checkbox_long_label_1' => 'Uma primeira escolha',
-	'label_checkbox_long_label_2' => 'Uma segunda escolha',
-	'label_checkbox_ouiounon' => 'Uma escolha a marcar',
-	'label_checkbox_ouiounon_oui' => 'Sim',
-	'label_radio' => 'Uma escolha única',
-	'label_radio_non' => 'Não',
-	'label_radio_oui' => 'Sim',
-	'label_select' => 'Uma entrada de dados na forma de seletor',
-	'label_select_non' => 'Não, obrigado, de modo algum',
-	'label_select_oui' => 'SIM, isso mesmo',
-	'label_text' => 'Uma entrada de dados em texto',
-	'label_text_long_label' => 'Uma entrada de dados com um label muito longo, que usa uma classe <tt>.long_label</tt>',
-	'label_text_obli' => 'Uma entrada de dados obrigatória',
-	'label_textarea' => 'Uma entrada de dados em bloco',
-	'label_textarea_pleine_largeur' => 'Uma entrada de dados em bloco com largura total <tt>.pleine_largeur</tt>',
-	'label_textarea_pleine_largeur_obli' => 'Uma entrada de dados em bloco obrigatória com largura total<tt>.pleine_largeur</tt>',
+	'label_checkbox' => 'Uma escolha múltipla', # MODIF
+	'label_checkbox_ouiounon' => 'Uma escolha a marcar', # MODIF
+	'label_radio' => 'Uma escolha única', # MODIF
+	'label_select' => 'Uma entrada de dados na forma de seletor', # MODIF
+	'label_text_long_label' => 'Uma entrada de dados com um label muito longo, que usa uma classe <tt>.long_label</tt>', # MODIF
+	'label_textarea' => 'Uma entrada de dados em bloco', # MODIF
+	'label_textarea_pleine_largeur' => 'Uma entrada de dados em bloco com largura total <tt>.pleine_largeur</tt>', # MODIF
 	'legend' => 'Legenda de um fieldset, para um grupo de entradas de dados',
 
 	// T

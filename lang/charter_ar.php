@@ -10,25 +10,12 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// L
-	'label_checkbox' => 'خيار متعدد',
-	'label_checkbox_1' => 'خيار أول',
-	'label_checkbox_2' => 'خيار ثان',
-	'label_checkbox_long_label' => 'خيار متعدد بعنوان طويل جداً يستخدم نمط <tt>.long_label</tt>',
-	'label_checkbox_long_label_1' => 'خيار أول',
-	'label_checkbox_long_label_2' => 'خيار ثان',
-	'label_checkbox_ouiounon_oui' => 'نعم',
-	'label_radio' => 'خيار وحيد',
-	'label_radio_non' => 'كلا',
-	'label_radio_oui' => 'نعم',
-	'label_select' => 'إدخال على شكل تحديد (select)',
-	'label_select_non' => 'كلا أبداً، مشكور',
-	'label_select_oui' => 'نعم، هكذا بالفعل',
-	'label_text' => 'إدخال نصي',
-	'label_text_long_label' => 'إدخال بعنوان طويل جداً يستخدم نمط <tt>.long_label</tt>',
-	'label_text_obli' => 'إدخال إجباري',
-	'label_textarea' => 'إدخال على شكل مقطع نص',
-	'label_textarea_pleine_largeur' => 'إدخال على شكل مقطع بخاصية <tt>.pleine_largeur</tt>',
-	'label_textarea_pleine_largeur_obli' => 'إدخال إجباري على شكل مقطع بخاصية <tt>.pleine_largeur</tt>',
+	'label_checkbox' => 'خيار متعدد', # MODIF
+	'label_radio' => 'خيار وحيد', # MODIF
+	'label_select' => 'إدخال على شكل تحديد (select)', # MODIF
+	'label_text_long_label' => 'إدخال بعنوان طويل جداً يستخدم نمط <tt>.long_label</tt>', # MODIF
+	'label_textarea' => 'إدخال على شكل مقطع نص', # MODIF
+	'label_textarea_pleine_largeur' => 'إدخال على شكل مقطع بخاصية <tt>.pleine_largeur</tt>', # MODIF
 	'legend' => 'عنوان حقل مجموعة إدخال ',
 
 	// T
