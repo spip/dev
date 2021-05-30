@@ -1,4 +1,4 @@
-<div class="ajax formulaire_spip formulaire_#FORM[ formulaire_(#ENV{variante})]">
+<div class="ajax formulaire_spip formulaire_#FORM[ (#ENV{variante})]">
 	<h3 class="titrem">Titre du formulaire[ \((#ENV{variante})\)]</h3>
 	[<p class="reponse_formulaire reponse_formulaire_ok" role="status">(#ENV**{message_ok})</p>]
 	[<p class="reponse_formulaire reponse_formulaire_erreur" role="alert">(#ENV**{message_erreur})</p>]
@@ -12,14 +12,6 @@
 
 			<!-- input text -->
 			#SET{name,saisie_1}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
-			<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
-				<label for="#GET{id}"><:charter:label_input_text:></label>[
-				<span class='erreur_message'>(#GET{erreurs})</span>
-				]<input type="text" name="#GET{name}" class="text" value="#ENV*{#GET{name},#GET{defaut}}" id="#GET{id}" [(#HTML5|et{#GET{obli}})required='required']/>
-			</div>
-
-			<!-- input text -->
-			#SET{name,saisie_2}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV**{erreurs/#GET{name}}}#SET{id,#GET{name}|concat{#ENV{suffixe}}}
 			<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
 				<label for="#GET{id}"><:charter:label_input_text:></label>[
 				<span class='erreur_message'>(#GET{erreurs})</span>
