@@ -29,15 +29,15 @@
 
 	<h2 class="h2">Types d’alertes</h2>
 
-	[(#ALERTE{Quelque chose mérite votre attention., '', notice})]
-	[(#ALERTE{Une erreur s’est produite., '', error})]
-	[(#ALERTE{'Bravo, c’est une réussite !', '', success})]
-	[(#ALERTE{Brossez vous les dents régulièrement., '', info})]
+	[(#ALERTE_MESSAGE{Quelque chose mérite votre attention., '', notice})]
+	[(#ALERTE_MESSAGE{Une erreur s’est produite., '', error})]
+	[(#ALERTE_MESSAGE{'Bravo, c’est une réussite !', '', success})]
+	[(#ALERTE_MESSAGE{Brossez vous les dents régulièrement., '', info})]
 
 
 	<h2 class="h2">Titres et contenus longs</h2>
 
-	[(#ALERTE{'C’est indéniable, ce message a un titre.', Un message avec un titre., info})]
+	[(#ALERTE_MESSAGE{'C’est indéniable, ce message a un titre.', Un message avec un titre., info})]
 
 	#ALERTE_OUVRIR{Un message complet., info}
 		<p>
@@ -53,8 +53,8 @@
 
 	<h2 class="h2">Tailles</h2>
 
-	[(#ALERTE{Une alerte plus petite., '', info mini})]
-	[(#ALERTE{Une alerte plus grande., '', info large})]
+	[(#ALERTE_MESSAGE{Une alerte plus petite., '', info mini})]
+	[(#ALERTE_MESSAGE{Une alerte plus grande., '', info large})]
 
 	<h2 class="h2">Alertes fermables (WIP)</h2>
 
