@@ -35,4 +35,6 @@ function affiche_usage_memoire() {
 		}
 	}
 }
-register_shutdown_function('affiche_usage_memoire');
+if (!_IS_CLI) {
+	register_shutdown_function('affiche_usage_memoire');
+}
