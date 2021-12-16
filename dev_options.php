@@ -15,8 +15,8 @@ function affiche_usage_memoire() {
 		and isset($GLOBALS['auteur_session']['webmestre'])
 		and $GLOBALS['auteur_session']['webmestre'] == 'oui'
 		and !_request('action')
-		and !preg_match('#(\.css|\.js|backend)#', _request('page'))
-		and !preg_match('#(\.css|\.js)#', _request('file'))
+		and !preg_match('#(\.css|\.js|backend)#', _request('page') ?? '')
+		and !preg_match('#(\.css|\.js)#', _request('file') ?? '')
 	) {
 		chdir(_ROOT_CWD); // precaution
 		echo "<style type='text/css'>.stats_hit { position:fixed;bottom:0;left:0;color:#fff;background:hsla(var(--spip-color-theme-dark--hsl, 0, 0%, 20%), .85);padding:5px;z-index:1010; border-top-right-radius: var(--spip-border-radius); } .stats_hit:focus, .stats_hit:hover { background:hsla(var(--spip-color-theme-dark--hsl, 0, 0%, 20%), 1); }</style>\n";
