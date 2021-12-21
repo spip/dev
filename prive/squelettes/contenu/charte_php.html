@@ -9,7 +9,7 @@ include_spip('inc/presentation');
 
 $i=0;
 $fonctions = array('','creer.gif','supprimer.gif');
-foreach(array('relief','enfonce','sous_rub','couleur','couleur_foncee','trait_couleur','alerte','info') as $type){
+foreach(array('relief','enfonce','sous_rub','couleur','trait_couleur','alerte','info') as $type){
 	$f = "debut_".(in_array($type,array('alerte','info'))?'boite_':'cadre_').$type;
 	echo $f('article-24', '', $fonctions[$i-3*floor($i/3)], "Cadre $type", "cadre".$i++);
 	echo 'Texte bolo bolo dans la boîte<br />';
