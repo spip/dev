@@ -181,8 +181,8 @@ function minipres($titre = '', $corps = "", $options = array()) {
 		  ?  _T('avis_espace_interdit')
 		  : $titre . '&nbsp;: '. _T('info_acces_interdit');
 
-		$statut = isset($GLOBALS['visiteur_session']['statut']) ? $GLOBALS['visiteur_session']['statut'] : '';
-		$nom    = isset($GLOBALS['visiteur_session']['nom']) ? $GLOBALS['visiteur_session']['nom'] : '';
+		$statut = $GLOBALS['visiteur_session']['statut'] ?? '';
+		$nom    = $GLOBALS['visiteur_session']['nom'] ?? '';
 
 		$corps = generer_form_ecrire('accueil', '', '',
 						$statut ? _T('public:accueil_site') : _T('public:lien_connecter')
