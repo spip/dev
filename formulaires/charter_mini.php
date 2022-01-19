@@ -9,11 +9,11 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  * @return array
  */
 function formulaires_charter_mini_charger_dist(string $variante = '') {
-	$valeurs = array(
+	$valeurs = [
 		'saisie_1' => '',
 		'saisie_2' => '',
 		'variante' => $variante,
-	);
+	];
 	return $valeurs;
 }
 
@@ -31,5 +31,5 @@ function formulaires_charter_mini_verifier_dist(string $variante = '') {
  * Traitement de la saisie
  */
 function formulaires_charter_mini_traiter_dist(string $variante = '') {
-	return array('message_ok' => ('Bravo, c’est une réussite !'));
+	return ['message_ok' => ('Bravo, c’est une réussite !')];
 }

@@ -1,13 +1,16 @@
 <?php
 
-if (!defined('_ECRIRE_INC_VERSION')) return;
+if (!defined('_ECRIRE_INC_VERSION')) { 
+	return;
+}
 
 defined('_LOG_FILTRE_GRAVITE') || define('_LOG_FILTRE_GRAVITE', 8);
 
 $GLOBALS['test_i18n'] = true; // signaler les trads manquantes
 
-if(!defined('_DEBUG_MINIPRES'))
+if (!defined('_DEBUG_MINIPRES')) {
 	define('_DEBUG_MINIPRES', true);
+}
 
 function affiche_usage_memoire() {
 	if (
@@ -24,11 +27,11 @@ function affiche_usage_memoire() {
 		echo number_format(memory_get_usage() / 1024 / 1024, 1) . ' Mo';
 		foreach ($GLOBALS['connexions'] as $serveur => $connexion) {
 			if (isset($connexion['total_requetes'])) {
-				echo " | " . ($serveur ? $serveur . " : " : "") . $connexion['total_requetes'] . " requetes";
+				echo ' | ' . ($serveur ? $serveur . ' : ' : '') . $connexion['total_requetes'] . ' requetes';
 			}
 		}
-		echo " | " . number_format((microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"]), 2) . " s";
-		echo "</div>";
+		echo ' | ' . number_format((microtime(true) - $_SERVER['REQUEST_TIME_FLOAT']), 2) . ' s';
+		echo '</div>';
 		if (isset($GLOBALS['_debug'])) {
 			echo var_export($GLOBALS['_debug'], true);
 		}

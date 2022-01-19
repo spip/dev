@@ -1,6 +1,8 @@
 <?php
 
-if (!defined('_ECRIRE_INC_VERSION')) return;
+if (!defined('_ECRIRE_INC_VERSION')) { 
+	return;
+}
 
 /**
  * Chargement des valeurs
@@ -10,9 +12,9 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
  */
 function formulaires_charter_charger_dist(string $suffixe = '') {
 
-	$valeurs = array(
+	$valeurs = [
 		'suffixe' => $suffixe,
-	);
+	];
 	for ($i = 1; $i <= 36; $i++) {
 		$valeurs["saisie_$i"] = '';
 	}
@@ -28,12 +30,12 @@ function formulaires_charter_charger_dist(string $suffixe = '') {
  * @return array
  */
 function formulaires_charter_verifier_dist(string $suffixe = '') {
-	$erreurs = array();
+	$erreurs = [];
 	if (_request('cancel')) {
 		$erreurs['message_erreur']
 			= $erreurs['saisie_2']
 			= ('Un long message d’erreur, long message d’erreur, long message d’erreur, long message d’erreur, long message d’erreur, long message d’erreur, long message d’erreur…');
-		$erreurs['saisie_1'] = ('Erreur avec demande de confirmation<br />'."<input type='checkbox' name='confirm' id='confirm' value='oui' /><label for='confirm'>Confirmez que vous êtes sûr⋅e</label>");
+		$erreurs['saisie_1'] = ('Erreur avec demande de confirmation<br />' . "<input type='checkbox' name='confirm' id='confirm' value='oui' /><label for='confirm'>Confirmez que vous êtes sûr⋅e</label>");
 		$erreurs['saisie_3']
 			= $erreurs['saisie_4']
 			= $erreurs['saisie_5']
@@ -54,5 +56,5 @@ function formulaires_charter_verifier_dist(string $suffixe = '') {
  * @return array
  */
 function formulaires_charter_traiter_dist(string $suffixe = '') {
-	return array('message_ok' => ('Bravo, c’est une réussite !'));
+	return ['message_ok' => ('Bravo, c’est une réussite !')];
 }

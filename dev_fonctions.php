@@ -1,6 +1,8 @@
 <?php
 
-if (!defined('_ECRIRE_INC_VERSION')) return;
+if (!defined('_ECRIRE_INC_VERSION')) { 
+	return;
+}
 
 /**
  * Une fonction récursive pour joliment afficher #ENV, #GET, #SESSION...
@@ -8,7 +10,7 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
  *		ou encore [(#ARRAY{0,1, a,#SESSION, 1,#ARRAY{x,y}}|bel_env)]
  *
  * @param string|array $env
- *		si une string est passée elle doit être le serialize d'un array 
+ *		si une string est passée elle doit être le serialize d'un array
  * @param bool         $afficher_en_clair
  *      si vrai indique qu'il faut afficher la chaine vide, la valeur null
  *      et les booleens respectivement comme `''`, `null`, `true` ou `false`.
@@ -18,7 +20,7 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 **/
 function bel_env($env, $afficher_en_clair = false) {
 	if (!$afficher_en_clair) {
-		$env = str_replace(array('&quot;', '&#039;'), array('"', '\''), $env);
+		$env = str_replace(['&quot;', '&#039;'], ['"', '\''], $env);
 	}
 	if (is_array($env_tab = @unserialize($env))) {
 		$env = $env_tab;
@@ -47,10 +49,10 @@ function bel_env($env, $afficher_en_clair = false) {
 		else {
 			$val = entites_html($val);
 		}
-		$res .= "<tr>\n<td$style><strong>". entites_html($nom).
-				"&nbsp;:&nbsp;</strong></td><td$style>" .$val. "</td>\n</tr>\n";
+		$res .= "<tr>\n<td$style><strong>" . entites_html($nom) .
+				"&nbsp;:&nbsp;</strong></td><td$style>" . $val . "</td>\n</tr>\n";
 	}
-	$res .= "</table>";
+	$res .= '</table>';
 	return $res;
 }
 
@@ -67,7 +69,7 @@ function bel_env($env, $afficher_en_clair = false) {
  *     Type de code : html | spip
  * @return string
  */
-function filtre_dev_afficher_code_dist(string $texte, string $language = '') : string {
+function filtre_dev_afficher_code_dist(string $texte, string $language = ''): string {
 	include_spip('inc/utils');
 	$fn_coloration_geshi = (function_exists('coloration_code_color') ? 'coloration_code_color' : null);
 	$class_pre_color = (test_plugin_actif('coloration_code') ? 'avec-prism' : 'brut');
