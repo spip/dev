@@ -1,0 +1,137 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Function entites_html not found\\.$#"
+			count: 3
+			path: dev_fonctions.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 2
+			path: dev_fonctions.php
+
+		-
+			message: "#^Function test_plugin_actif not found\\.$#"
+			count: 1
+			path: dev_fonctions.php
+
+		-
+			message: "#^Function _request not found\\.$#"
+			count: 3
+			path: dev_options.php
+
+		-
+			message: "#^Function _request not found\\.$#"
+			count: 1
+			path: formulaires/charter.php
+
+		-
+			message: "#^Function _request not found\\.$#"
+			count: 1
+			path: formulaires/charter_compat.php
+
+		-
+			message: "#^Function _T not found\\.$#"
+			count: 5
+			path: inc/minipres.php
+
+		-
+			message: "#^Function _request not found\\.$#"
+			count: 4
+			path: inc/minipres.php
+
+		-
+			message: "#^Function ajax_retour not found\\.$#"
+			count: 1
+			path: inc/minipres.php
+
+		-
+			message: "#^Function direction_css not found\\.$#"
+			count: 2
+			path: inc/minipres.php
+
+		-
+			message: "#^Function find_in_theme not found\\.$#"
+			count: 2
+			path: inc/minipres.php
+
+		-
+			message: "#^Function generer_form_ecrire not found\\.$#"
+			count: 1
+			path: inc/minipres.php
+
+		-
+			message: "#^Function html_lang_attributes not found\\.$#"
+			count: 1
+			path: inc/minipres.php
+
+		-
+			message: "#^Function http_no_cache not found\\.$#"
+			count: 1
+			path: inc/minipres.php
+
+		-
+			message: "#^Function http_status not found\\.$#"
+			count: 1
+			path: inc/minipres.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 4
+			path: inc/minipres.php
+
+		-
+			message: "#^Function lire_fichier not found\\.$#"
+			count: 1
+			path: inc/minipres.php
+
+		-
+			message: "#^Function minipres\\(\\) should return string but return statement is missing\\.$#"
+			count: 1
+			path: inc/minipres.php
+
+		-
+			message: "#^Function parametre_url not found\\.$#"
+			count: 1
+			path: inc/minipres.php
+
+		-
+			message: "#^Function redirige_formulaire not found\\.$#"
+			count: 1
+			path: inc/minipres.php
+
+		-
+			message: "#^Function self not found\\.$#"
+			count: 1
+			path: inc/minipres.php
+
+		-
+			message: "#^Function spip_htmlspecialchars not found\\.$#"
+			count: 1
+			path: inc/minipres.php
+
+		-
+			message: "#^Function spip_log not found\\.$#"
+			count: 1
+			path: inc/minipres.php
+
+		-
+			message: "#^Function textebrut not found\\.$#"
+			count: 1
+			path: inc/minipres.php
+
+		-
+			message: "#^Function url_absolue_css not found\\.$#"
+			count: 1
+			path: inc/minipres.php
+
+		-
+			message: "#^Function utiliser_langue_visiteur not found\\.$#"
+			count: 1
+			path: inc/minipres.php
+
+		-
+			message: "#^Undefined variable\\: \\$c$#"
+			count: 2
+			path: inc/minipres.php
+
